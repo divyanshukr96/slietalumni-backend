@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 
-class NewsStoreValidate extends APIRequest
+class EventTypeStoreValidate extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,10 +23,9 @@ class NewsStoreValidate extends APIRequest
     public function rules()
     {
         return [
-            'title' => 'required|string|max:200',
-            'content' => 'required|string|min:300',
-            'image.*' => 'required|image|max:2000',
-            'social_link' => 'nullable|url'
+            'name' => 'required|string|unique:event_types',
+            'title' => 'required|string',
+            'about' => 'nullable|string|min:150'
         ];
     }
 }

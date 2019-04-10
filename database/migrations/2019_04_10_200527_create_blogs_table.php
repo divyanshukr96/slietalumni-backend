@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsImagesTable extends Migration
+class CreateBlogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateNewsImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_images', function (Blueprint $table) {
-            $table->unsignedBigInteger('news_id');
-            $table->unsignedBigInteger('image_id');
+        Schema::create('blogs', function (Blueprint $table) {
+            $table->bigIncrements('id');
+
+            $table->string('title');
+            $table->longText('content');
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateNewsImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_images');
+        Schema::dropIfExists('blogs');
     }
 }

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Image;
-use App\News;
 use Illuminate\Http\Request;
 use App\Http\Requests\NewsStoreValidate;
 
-class NewsController extends Controller
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,6 +19,15 @@ class NewsController extends Controller
         //
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -28,28 +37,28 @@ class NewsController extends Controller
      */
     public function store(NewsStoreValidate $request)
     {
-        $news = News::create($request->all());
+        $blog = Blog::create($request->all());
         if ($request->hasFile('image')) {
             $photos = $request->file('image');
             foreach ($photos as $photo) {
                 $image = Image::create(['image' => $photo]);
-                $news->images()->attach($image);
+                $blog->images()->attach($image);
             }
         }
         return response()->json([
             'status' => "success",
             'code' => 201,
-            'data' => $news
+            'data' => $blog
         ], 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\News $news
+     * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show(Blog $blog)
     {
         //
     }
@@ -57,10 +66,10 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\News $news
+     * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit(Blog $blog)
     {
         //
     }
@@ -68,11 +77,11 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\News $news
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, Blog $blog)
     {
         //
     }
@@ -80,10 +89,10 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\News $news
+     * @param  \App\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy(Blog $blog)
     {
         //
     }

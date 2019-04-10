@@ -7,13 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @method static create(array $all)
  */
-class News extends Model
+class Blog extends Model
 {
-    protected $fillable = ['title', 'content', 'social_link'];
+    protected $fillable = ['title', 'content'];
 
     public function images()
     {
         return $this->belongsToMany('App\Image');
     }
-
 }

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
+use App\EventType;
+use App\Http\Requests\EventStoreValidate;
 use App\Image;
-use App\News;
 use Illuminate\Http\Request;
-use App\Http\Requests\NewsStoreValidate;
 
-class NewsController extends Controller
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,37 +20,41 @@ class NewsController extends Controller
         //
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param NewsStoreValidate $request
+     * @param EventStoreValidate $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NewsStoreValidate $request)
+    public function store(EventStoreValidate $request)
     {
-        $news = News::create($request->all());
+        $event_type = EventType::where('name', $request->only('event'))->first();
+        $event = $event_type->events()->create($request->all());
         if ($request->hasFile('image')) {
-            $photos = $request->file('image');
-            foreach ($photos as $photo) {
-                $image = Image::create(['image' => $photo]);
-                $news->images()->attach($image);
-            }
+            $image = Image::create(['image' => $request->file('image')]);
+            $event->image()->associate($image);
+            $event->save();
         }
-        return response()->json([
-            'status' => "success",
-            'code' => 201,
-            'data' => $news
-        ], 200);
+        return response($event);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\News $news
+     * @param  \App\Event $event
      * @return \Illuminate\Http\Response
      */
-    public function show(News $news)
+    public function show(Event $event)
     {
         //
     }
@@ -57,10 +62,10 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\News $news
+     * @param  \App\Event $event
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit(Event $event)
     {
         //
     }
@@ -69,10 +74,10 @@ class NewsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \App\News $news
+     * @param  \App\Event $event
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, News $news)
+    public function update(Request $request, Event $event)
     {
         //
     }
@@ -80,10 +85,10 @@ class NewsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\News $news
+     * @param  \App\Event $event
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy(Event $event)
     {
         //
     }

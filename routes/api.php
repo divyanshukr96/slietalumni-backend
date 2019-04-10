@@ -18,3 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/news/create', 'NewsController@store');
+Route::post('/blog/create', 'BlogController@store');
+Route::post('/event/create', 'EventController@store');
+Route::post('/event-type/create', 'EventTypeController@store');
