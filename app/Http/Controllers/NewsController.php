@@ -30,6 +30,7 @@ class NewsController extends Controller
     {
         $news = News::create($request->all());
 
+
         return response()->json([
             'status' => "success",
             'code' => 201,
