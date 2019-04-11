@@ -21,3 +21,6 @@ Route::post('/news/create', 'NewsController@store');
 Route::post('/blog/create', 'BlogController@store');
 Route::post('/event/create', 'EventController@store');
 Route::post('/event-type/create', 'EventTypeController@store');
+Route::post('/data-collection/create', 'AlumniDataCollectionController@store');
+Route::get('/alumni', 'AlumniRegistrationController@index');
+Route::post('/alumni/register', 'AlumniRegistrationController@store');

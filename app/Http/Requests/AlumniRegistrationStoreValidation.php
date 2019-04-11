@@ -1,0 +1,53 @@
+<?php
+
+namespace App\Http\Requests;
+
+use App\Rules\PhoneNumber;
+
+class AlumniRegistrationStoreValidation extends APIRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+            'name' => "required|regex:/^[.\'\-a-zA-Z ]+$/|max:150",
+            'email' => 'required|email',
+            'mobile' => ['required', new PhoneNumber],
+            'programme' => 'required',
+            'branch' => 'required',
+            'passing' => 'required|digits:4|integer|min:1980|max:' . (date('Y')),
+            'organisation' => 'required|string|max:100',
+            'designation' => 'required|string|max:100',
+            'image' => "required|image|max:2000",
+            'accept' => 'required|accepted'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.regex' => "The name contains ony alphabet."
+        ];
+    }
+
+    public function attributes()
+    {
+        return [
+            'passing' => 'passing year',
+        ];
+    }
+}
