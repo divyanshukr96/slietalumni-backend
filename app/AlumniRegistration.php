@@ -7,12 +7,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @method static create(array $all)
+ * @method static where(string $string, $email)
+ * @property bool verified
+ * @property mixed email
  */
 class AlumniRegistration extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name', 'email', 'mobile', 'programme', 'batch', 'branch', 'passing', 'organisation', 'designation', 'image'];
+    protected $fillable = ['name', 'email', 'mobile', 'programme', 'branch', 'passing', 'organisation', 'designation', 'image'];
 
     public function image()
     {

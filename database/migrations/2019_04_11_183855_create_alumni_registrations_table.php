@@ -17,13 +17,16 @@ class CreateAlumniRegistrationsTable extends Migration
             $table->unsignedBigInteger('image_id')->nullable();
 
             $table->string('name');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('mobile');
             $table->string('programme');
             $table->string('branch');
             $table->year('passing')->nullable();
             $table->string('organisation')->nullable();
             $table->string('designation')->nullable();
+
+            $table->boolean('verified')->default(false);
+            $table->timestamp('verified_at')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

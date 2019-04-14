@@ -24,8 +24,8 @@ class AlumniRegistrationStoreValidation extends APIRequest
     public function rules()
     {
         return [
-            'name' => "required|regex:/^[.\'\-a-zA-Z ]+$/|max:150",
-            'email' => 'required|email',
+            'name' => "required|regex:/^[.\'\-a-zA-Z ]+$/|max:50",
+            'email' => 'required|email|max:50|unique:alumni_registrations,email',
             'mobile' => ['required', new PhoneNumber],
             'programme' => 'required',
             'branch' => 'required',
@@ -40,7 +40,7 @@ class AlumniRegistrationStoreValidation extends APIRequest
     public function messages()
     {
         return [
-            'name.regex' => "The name contains ony alphabet."
+            'name.regex' => "The name contains only alphabet."
         ];
     }
 

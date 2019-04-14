@@ -18,6 +18,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed organisation
  * @property mixed designation
  * @property mixed created_at
+ * @property mixed verified
  */
 class RegisteredAlumni extends JsonResource
 {
@@ -40,6 +41,7 @@ class RegisteredAlumni extends JsonResource
             "passing" => $this->passing,
             "organisation" => $this->organisation,
             "designation" => $this->designation,
+            'verified' => $this->verified,
             "created_at" => Carbon::parse($this->created_at)->format('d-m-Y H:i'),
         ];
     }

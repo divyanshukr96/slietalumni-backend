@@ -17,10 +17,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::post('/alumni/register', 'AlumniRegistrationController@store');
+Route::post('/alumni/set-username', 'AlumniRegistrationController@setUsername');
+
+
 Route::post('/news/create', 'NewsController@store');
 Route::post('/blog/create', 'BlogController@store');
 Route::post('/event/create', 'EventController@store');
 Route::post('/event-type/create', 'EventTypeController@store');
 Route::post('/data-collection/create', 'AlumniDataCollectionController@store');
+
 Route::get('/alumni', 'AlumniRegistrationController@index');
-Route::post('/alumni/register', 'AlumniRegistrationController@store');
+Route::get('/alumni/{alumni}', 'AlumniRegistrationController@show');
+Route::patch('/alumni/{alumni}', 'AlumniRegistrationController@update');
+
