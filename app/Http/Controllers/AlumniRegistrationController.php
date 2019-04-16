@@ -2,18 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use Str;
+use Hash;
+use App\User;
+use App\Academic;
 use App\AlumniRegistration;
-use App\Http\Requests\AlumniRegistrationStoreValidation;
+use App\ProfessionalDetails;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Http\JsonResponse;
+use App\Http\Resources\UserResource;
+use App\Http\Resources\RegisteredAlumni;
 use App\Http\Requests\SetUsernameValidate;
 use App\Http\Resources\AlumniRegisterResource;
-use App\Http\Resources\RegisteredAlumni;
-use App\User;
-use DB;
-use Hash;
-use Illuminate\Http\Request;
+use App\Http\Requests\AlumniRegistrationStoreValidation;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
-use Illuminate\Http\Response;
-use Str;
 
 class AlumniRegistrationController extends Controller
 {
@@ -79,7 +83,7 @@ class AlumniRegistrationController extends Controller
         if ($status) $alumni->verified = true;
         $alumni->save();
 
-        //send a mail to alumni with $token
+        //send a mail to alumni with $tokenAP
 
         return new RegisteredAlumni($alumni);
     }
@@ -88,16 +92,23 @@ class AlumniRegistrationController extends Controller
      * Update the specified resource in storage.
      *
      * @param SetUsernameValidate $request
-     * @return RegisteredAlumni
+     * @return UserResource
      */
     public function setUsername(SetUsernameValidate $request)
     {
         $context = DB::table('username_tokens')->where('token', $request->get('token'))->get()->first();
         if (!$context) {
-            return response()->json('error', 400);
+            return response()->json(['errors' => []], 404);
         }
         if ($context->email !== $request->get('email')) {
-            return response()->json('not match mail', 400);
+            return response()->json([
+                'status' => "Invalid data",
+                'code' => JsonResponse::HTTP_NOT_FOUND,
+                'message' => 'Invalid credential given . . .',
+                'errors' => [
+                    'email' => "The given email id invalid.",
+                ]
+            ], JsonResponse::HTTP_NOT_FOUND);
         }
 
         $alumni = AlumniRegistration::where('email', $context->email)->get()->first();
@@ -110,18 +121,24 @@ class AlumniRegistrationController extends Controller
             'image_id' => $alumni->image->id,
             'mobile' => $alumni->mobile
         ];
-        $user = User::create($data);
+        $user = new User($data);
+        $user->save();
+        $user->educations()->save(new Academic([
+            "programme" => $alumni->programme,
+            "branch" => $alumni->branch,
+            "passing" => $alumni->passing,
+        ]));
+        $user->professional()->save(new ProfessionalDetails([
+            "organisation" => $alumni->organisation,
+            "designation" => $alumni->designation,
+        ]));
 
-//        $user->educationa()->save(new Education::create([]))
-//        $user->workinf()->save(new Working::create([]))
+        // send welcome email to user
 
         $alumni->delete();
         DB::table('username_tokens')->where('token', $request->get('token'))->delete();
 
-        return response()->json(['alumni' => $alumni, 'user' => $user]);
-//        return ;
-
-
+        return new UserResource($user);
     }
 
     /**

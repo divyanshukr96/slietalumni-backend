@@ -24,8 +24,8 @@ class SetUsernameValidate extends APIRequest
     {
         return [
             'token' => 'required|string|exists:username_tokens',
-            'email' => 'required|email',
-            'username' => "required|regex:/^['\_\-a-zA-Z0-9 ]+$/|min:6|max:50",
+            'email' => 'required|email|unique:users',
+            'username' => "required|regex:/^['\_\-a-zA-Z0-9 ]+$/|min:6|max:50|unique:users",
             'password' => 'required|string|min:8'
         ];
     }
@@ -33,6 +33,8 @@ class SetUsernameValidate extends APIRequest
     public function messages()
     {
         return [
+            'token.exists' => 'The selected link is invalid.',
+            'email.unique' => "The email has already been registered.",
             'username.regex' => "The username format is invalid only hyphen & underscore is allowed."
         ];
     }

@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -18,6 +17,7 @@ class CreateBlogsTable extends Migration
 
             $table->string('title');
             $table->longText('content');
+            $table->boolean('published')->default(false);
 
             $table->softDeletes();
             $table->timestamps();

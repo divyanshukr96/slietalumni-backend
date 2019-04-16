@@ -2,15 +2,19 @@
 
 namespace App;
 
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 
 /**
  * @method static create(array $data)
  */
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -30,9 +34,28 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-//    public function educations()
-//    {
-//        return $this->hasMany('Edivajkas');
-//    }
+    /**
+     * @return BelongsTo
+     */
+    public function photo()
+    {
+        return $this->belongsTo(Academic::class);
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function educations()
+    {
+        return $this->hasMany(Academic::class);
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function professional()
+    {
+        return $this->hasMany(ProfessionalDetails::class);
+    }
 
 }
