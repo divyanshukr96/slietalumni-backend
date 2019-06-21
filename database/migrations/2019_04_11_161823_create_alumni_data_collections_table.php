@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -14,7 +13,8 @@ class CreateAlumniDataCollectionsTable extends Migration
     public function up()
     {
         Schema::create('alumni_data_collections', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
+            $table->uuid('image_id')->nullable();
 
             $table->string('name');
             $table->string('email')->nullable();

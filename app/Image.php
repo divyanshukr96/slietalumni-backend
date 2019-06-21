@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Traits\StoreImage;
+use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Image extends Model
 {
-    use StoreImage;
+    use StoreImage, UsesUuid;
 
     protected $fillable = ['image'];
 

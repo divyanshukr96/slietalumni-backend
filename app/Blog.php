@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Blog extends Model
 {
+    use UsesUuid;
+
     protected $fillable = ['title', 'content'];
 
     public function images()

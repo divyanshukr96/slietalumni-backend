@@ -13,9 +13,10 @@ class CreateBlogsTable extends Migration
     public function up()
     {
         Schema::create('blogs', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
 
             $table->string('title');
+            $table->text('description')->nullable();
             $table->longText('content');
             $table->boolean('published')->default(false);
 

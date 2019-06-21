@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\AlumniDataCollection;
 use DB;
 use Str;
 use Hash;
@@ -28,7 +29,7 @@ class AlumniRegistrationController extends Controller
      */
     public function index()
     {
-        return RegisteredAlumni::collection(AlumniRegistration::all());
+        return RegisteredAlumni::collection(AlumniRegistration::latest()->whereVerified(false)->get());
     }
 
 
@@ -74,6 +75,10 @@ class AlumniRegistrationController extends Controller
      */
     public function update(Request $request, AlumniRegistration $alumni)
     {
+        if ($alumni->verified) return response()->json([
+            'alreadyVerified' => true,
+            'data' => $alumni
+        ]);
         $token = Str::random(60);
         $status = DB::table('username_tokens')->insert([
             'email' => $alumni->email,
@@ -96,7 +101,8 @@ class AlumniRegistrationController extends Controller
      */
     public function setUsername(SetUsernameValidate $request)
     {
-        $context = DB::table('username_tokens')->where('token', $request->get('token'))->get()->first();
+        $validateData = $request->validated();
+        $context = DB::table('username_tokens')->where('token', $validateData['token'])->get()->first();
         if (!$context) {
             return response()->json(['errors' => []], 404);
         }
@@ -113,19 +119,32 @@ class AlumniRegistrationController extends Controller
 
         $alumni = AlumniRegistration::where('email', $context->email)->get()->first();
 
+        if (!$alumni) {
+            return response()->json([
+                'status' => "Invalid data",
+                'code' => JsonResponse::HTTP_NOT_FOUND,
+                'message' => 'Invalid credential given . . .',
+                'errors' => [
+                    'email' => "The given email id invalid.",
+                ]
+            ], JsonResponse::HTTP_NOT_FOUND);
+        }
+
         $data = [
             'name' => $alumni->name,
             'email' => $alumni->email,
-            'username' => $request->get('username'),
-            'password' => Hash::make($request->get('password')),
+            'mobile' => $alumni->mobile,
+            'username' => $validateData['username'],
+            'password' => $validateData['password'],
             'image_id' => $alumni->image->id,
-            'mobile' => $alumni->mobile
+            'alumni' => true
         ];
         $user = new User($data);
         $user->save();
         $user->educations()->save(new Academic([
             "programme" => $alumni->programme,
             "branch" => $alumni->branch,
+            "batch" => $alumni->batch,
             "passing" => $alumni->passing,
         ]));
         $user->professional()->save(new ProfessionalDetails([
@@ -136,7 +155,7 @@ class AlumniRegistrationController extends Controller
         // send welcome email to user
 
         $alumni->delete();
-        DB::table('username_tokens')->where('token', $request->get('token'))->delete();
+        DB::table('username_tokens')->where('email', $context->email)->delete();
 
         return new UserResource($user);
     }
@@ -151,4 +170,13 @@ class AlumniRegistrationController extends Controller
     {
         //
     }
+
+
+    public function related(AlumniRegistration $alumni)
+    {
+        $data = AlumniDataCollection::where('email', $alumni->email)->orWhere('mobile', $alumni->mobile)->get();
+
+        return $data;
+    }
+
 }

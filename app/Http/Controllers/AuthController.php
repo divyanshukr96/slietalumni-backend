@@ -10,6 +10,13 @@ use App\Http\Requests\LoginRequestValidate;
 
 class AuthController extends Controller
 {
+    protected $username;
+
+    public function __construct()
+    {
+        $this->username = $this->findUsername();
+    }
+
     /**
      * Login user and create token
      * @param LoginRequestValidate $request
@@ -17,11 +24,15 @@ class AuthController extends Controller
      */
     public function login(LoginRequestValidate $request)
     {
-        $credentials = request(['email', 'password']);
+        $credentials = request([$this->getUsername(), 'password']);
         if (!Auth::attempt($credentials))
             return response()->json([
-                'message' => 'Unauthorized'
-            ], 401);
+                'message' => 'Unauthorized',
+                'errors' => [
+                    $this->getUsername() => 'Invalid username or password entered !!',
+                    'password' => ''
+                ],
+            ], 422);
         $user = $request->user();
         $tokenResult = $user->createToken('Personal Access Token');
         $token = $tokenResult->token;
@@ -49,6 +60,25 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Successfully logged out'
         ]);
+    }
+
+    public function findUsername()
+    {
+        $login = request()->input('username') ?: request()->input('email');
+
+        $fieldType = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+
+        request()->merge([$fieldType => $login]);
+
+        return $fieldType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username;
     }
 
 }

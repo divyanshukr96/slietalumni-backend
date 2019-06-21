@@ -14,6 +14,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed branch
  * @property mixed passing
  * @property mixed organisation
+ * @property mixed batch
  */
 class AlumniRegisterResource extends JsonResource
 {
@@ -31,6 +32,7 @@ class AlumniRegisterResource extends JsonResource
             "mobile" => $this->mobile,
             "programme" => $this->programme,
             "branch" => $this->branch,
+            "batch" => $this->batch,
             "passing" => $this->passing,
             "organisation" => $this->organisation,
             "designation" => $this->designation

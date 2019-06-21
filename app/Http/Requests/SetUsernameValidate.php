@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 
+use DB;
+
 class SetUsernameValidate extends APIRequest
 {
     /**
@@ -22,20 +24,23 @@ class SetUsernameValidate extends APIRequest
      */
     public function rules()
     {
-        return [
-            'token' => 'required|string|exists:username_tokens',
-            'email' => 'required|email|unique:users',
-            'username' => "required|regex:/^['\_\-a-zA-Z0-9 ]+$/|min:6|max:50|unique:users",
+        $context = DB::table('username_tokens')->where('token', request()->get('token'))->first();
+        if ($context) return [
+            'token' => 'bail|required|string|exists:username_tokens',
+            'email' => 'bail|required|email|exists:alumni_registrations|unique:users',
+            'username' => "bail|required|regex:/^[\_\-a-zA-Z0-9]+$/|min:6|max:50|unique:users",
             'password' => 'required|string|min:8'
         ];
+        return ['token' => 'bail|required|string|exists:username_tokens'];
     }
 
     public function messages()
     {
         return [
             'token.exists' => 'The selected link is invalid.',
+            'email.exists' => "The email has not been registered.",
             'email.unique' => "The email has already been registered.",
-            'username.regex' => "The username format is invalid only hyphen & underscore is allowed."
+            'username.regex' => "The username format is invalid only hyphen & underscore is allowed.",
         ];
     }
 

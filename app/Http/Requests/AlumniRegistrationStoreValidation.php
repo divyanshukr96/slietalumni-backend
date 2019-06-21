@@ -29,6 +29,7 @@ class AlumniRegistrationStoreValidation extends APIRequest
             'mobile' => ['required', new PhoneNumber],
             'programme' => 'required',
             'branch' => 'required',
+            'batch' => 'nullable|digits:4|integer|min:1980|max:' . (date('Y') - 3),
             'passing' => 'required|digits:4|integer|min:1980|max:' . (date('Y')),
             'organisation' => 'required|string|max:100',
             'designation' => 'required|string|max:100',
@@ -40,7 +41,8 @@ class AlumniRegistrationStoreValidation extends APIRequest
     public function messages()
     {
         return [
-            'name.regex' => "The name contains only alphabet."
+            'name.regex' => "The name contains only alphabet.",
+            'email.unique' => 'The :attribute has already been registered.',
         ];
     }
 
@@ -48,6 +50,7 @@ class AlumniRegistrationStoreValidation extends APIRequest
     {
         return [
             'passing' => 'passing year',
+            'image' => 'photo',
         ];
     }
 }

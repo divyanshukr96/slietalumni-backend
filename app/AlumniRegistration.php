@@ -2,20 +2,22 @@
 
 namespace App;
 
+use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @method static create(array $all)
  * @method static where(string $string, $email)
+ * @method static latest()
  * @property bool verified
  * @property mixed email
  */
 class AlumniRegistration extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, UsesUuid;
 
-    protected $fillable = ['name', 'email', 'mobile', 'programme', 'branch', 'passing', 'organisation', 'designation', 'image'];
+    protected $fillable = ['name', 'email', 'mobile', 'programme', 'branch', 'passing', 'batch', 'organisation', 'designation', 'image'];
 
     public function image()
     {

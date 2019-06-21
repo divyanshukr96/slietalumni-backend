@@ -14,8 +14,8 @@ class CreateBlogImage extends Migration
     public function up()
     {
         Schema::create('blog_image', function (Blueprint $table) {
-            $table->unsignedBigInteger('blog_id');
-            $table->unsignedBigInteger('image_id');
+            $table->uuid('blog_id');
+            $table->uuid('image_id');
         });
     }
 

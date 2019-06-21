@@ -14,8 +14,8 @@ class CreateImageNews extends Migration
     public function up()
     {
         Schema::create('image_news', function (Blueprint $table) {
-            $table->unsignedBigInteger('news_id');
-            $table->unsignedBigInteger('image_id');
+            $table->uuid('news_id');
+            $table->uuid('image_id');
         });
     }
 

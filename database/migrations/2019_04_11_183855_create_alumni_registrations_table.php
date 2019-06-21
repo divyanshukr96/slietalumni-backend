@@ -13,14 +13,15 @@ class CreateAlumniRegistrationsTable extends Migration
     public function up()
     {
         Schema::create('alumni_registrations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('image_id')->nullable();
+            $table->uuid('id')->primary();
+            $table->uuid('image_id')->nullable();
 
             $table->string('name');
             $table->string('email')->unique();
             $table->string('mobile');
             $table->string('programme');
             $table->string('branch');
+            $table->year('batch')->nullable();
             $table->year('passing')->nullable();
             $table->string('organisation')->nullable();
             $table->string('designation')->nullable();

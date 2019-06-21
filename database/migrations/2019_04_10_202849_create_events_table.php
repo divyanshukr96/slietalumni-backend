@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -14,14 +13,15 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
 
-            $table->unsignedBigInteger('event_type_id');
-            $table->unsignedBigInteger('image_id')->nullable();
-            $table->longText('description');
-            $table->string('venue');
-            $table->date('date');
-            $table->time('time');
+            $table->uuid('event_type_id');
+            $table->uuid('image_id')->nullable();
+            $table->string('title');
+            $table->longText('description')->nullable();
+            $table->string('venue')->nullable();
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

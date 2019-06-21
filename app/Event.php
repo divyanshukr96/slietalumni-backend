@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Event extends Model
 {
+    use UsesUuid;
+
     protected $fillable = ['description', 'venue', 'date', 'time', 'image_id'];
 
     public function image()

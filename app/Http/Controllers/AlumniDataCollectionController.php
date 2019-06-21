@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\AlumniDataCollection;
 use App\Http\Requests\AlumniDataCollectionStoreValidate;
-use Illuminate\Http\Request;
+use App\Http\Requests\AlumniDataCollectionUpdateValidate;
 use Illuminate\Http\Response;
 
 class AlumniDataCollectionController extends Controller
@@ -16,18 +16,9 @@ class AlumniDataCollectionController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(AlumniDataCollection::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -44,45 +35,39 @@ class AlumniDataCollectionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\AlumniDataCollection $alumniDataCollection
+     * @param $id
      * @return Response
      */
-    public function show(AlumniDataCollection $alumniDataCollection)
+    public function show($id)
     {
-        //
+        return response()->json(AlumniDataCollection::find($id));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\AlumniDataCollection $alumniDataCollection
-     * @return Response
-     */
-    public function edit(AlumniDataCollection $alumniDataCollection)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\AlumniDataCollection $alumniDataCollection
+     * @param AlumniDataCollectionUpdateValidate $request
+     * @param $id
      * @return Response
      */
-    public function update(Request $request, AlumniDataCollection $alumniDataCollection)
+    public function update(AlumniDataCollectionUpdateValidate $request, $id)
     {
-        //
+        $alumni = AlumniDataCollection::find($id);
+        $alumni->update($request->all());
+        return response()->json($alumni, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\AlumniDataCollection $alumniDataCollection
+     * @param $id
      * @return Response
      */
-    public function destroy(AlumniDataCollection $alumniDataCollection)
+    public function destroy($id)
     {
-        //
+        $alumni = AlumniDataCollection::findOrFail($id);
+        $alumni->delete();
+        return response()->json($alumni, 204);
     }
 }

@@ -13,8 +13,8 @@ class CreateProfessionalDetailsTable extends Migration
     public function up()
     {
         Schema::create('professional_details', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
+            $table->uuid('id')->primary();
+            $table->uuid('user_id');
 
             $table->string('organisation');
             $table->string('address')->nullable();

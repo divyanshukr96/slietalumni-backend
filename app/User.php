@@ -2,6 +2,9 @@
 
 namespace App;
 
+use App\Traits\UsesUuid;
+use Hash;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -11,10 +14,12 @@ use Spatie\Permission\Traits\HasRoles;
 
 /**
  * @method static create(array $data)
+ * @method static find(int $id)
+ * @method static role(string $string)
  */
 class User extends Authenticatable
 {
-    use HasApiTokens, Notifiable, HasRoles;
+    use HasApiTokens, Notifiable, HasRoles, UsesUuid, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -22,7 +27,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'username', 'mobile', 'image_id'
+        'name', 'email', 'password', 'username', 'mobile', 'image_id', 'active'
     ];
 
     /**
@@ -39,7 +44,7 @@ class User extends Authenticatable
      */
     public function photo()
     {
-        return $this->belongsTo(Academic::class);
+        return $this->belongsTo(Image::class);
     }
 
     /**
@@ -56,6 +61,14 @@ class User extends Authenticatable
     public function professional()
     {
         return $this->hasMany(ProfessionalDetails::class);
+    }
+
+    /**
+     * @param $value
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = strlen($value) < 60 ? Hash::make($value) : $value;
     }
 
 }

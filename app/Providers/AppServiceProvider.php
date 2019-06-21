@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Schema;
+use App\Rules\TokenExist;
 use Illuminate\Support\ServiceProvider;
+use Schema;
+use Validator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Validator::extend('token_exist', TokenExist::class);
     }
 }

@@ -26,9 +26,18 @@ class LoginRequestValidate extends APIRequest
     public function rules()
     {
         return [
-            'email' => 'required|string|email',
+            'email' => 'required_without:username|string|email',
+            'username' => 'required_without:email|string',
             'password' => 'required|string',
             'remember_me' => 'boolean'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'email.required_without' => 'The email field is required',
+            'username.required_without' => "The email / username field is required."
         ];
     }
 }

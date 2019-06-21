@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class News extends Model
 {
+    use UsesUuid;
+
     protected $fillable = ['title', 'content', 'social_link'];
 
     public function images()

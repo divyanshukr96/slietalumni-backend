@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -10,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class EventType extends Model
 {
+    use UsesUuid;
+
     protected $fillable = ['name', 'title', 'about'];
 
     public function events()

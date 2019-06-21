@@ -19,6 +19,9 @@ class CreatePermissionTables extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('guard_name');
+            $table->string('display_name')->nullable();
+            $table->string('description')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -26,6 +29,9 @@ class CreatePermissionTables extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('guard_name');
+            $table->string('display_name')->nullable();
+            $table->string('description')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
 
@@ -35,7 +41,7 @@ class CreatePermissionTables extends Migration
             $table->unsignedInteger('permission_id');
 
             $table->string('model_type');
-            $table->unsignedBigInteger($columnNames['model_morph_key']);
+            $table->uuid($columnNames['model_morph_key']);
             $table->index([$columnNames['model_morph_key'], 'model_type', ]);
 
             $table->foreign('permission_id')
@@ -51,7 +57,7 @@ class CreatePermissionTables extends Migration
             $table->unsignedInteger('role_id');
 
             $table->string('model_type');
-            $table->unsignedBigInteger($columnNames['model_morph_key']);
+            $table->uuid($columnNames['model_morph_key']);
             $table->index([$columnNames['model_morph_key'], 'model_type', ]);
 
             $table->foreign('role_id')

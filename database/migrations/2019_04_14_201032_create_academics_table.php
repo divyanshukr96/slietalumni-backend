@@ -13,13 +13,14 @@ class CreateAcademicsTable extends Migration
     public function up()
     {
         Schema::create('academics', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('user_id');
+            $table->uuid('id')->primary();
+            $table->uuid('user_id');
 
             $table->string('programme')->nullable();
             $table->string('branch')->nullable();
             $table->string('enrollment')->nullable();
             $table->year('passing')->nullable();
+            $table->year('batch')->nullable();
             $table->string('registration')->nullable();
             $table->string('institute')->nullable();
 

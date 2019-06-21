@@ -19,6 +19,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed designation
  * @property mixed created_at
  * @property mixed verified
+ * @property mixed batch
  */
 class RegisteredAlumni extends JsonResource
 {
@@ -31,13 +32,14 @@ class RegisteredAlumni extends JsonResource
     public function toArray($request)
     {
         return [
-            "id"=> $this->id,
-            "image"=> $this->image->image,
+            "id" => $this->id,
+            "image" => $this->image ? $this->image->image : null,
             "name" => $this->name,
             "email" => $this->email,
             "mobile" => $this->mobile,
             "programme" => $this->programme,
             "branch" => $this->branch,
+            "batch" => $this->batch,
             "passing" => $this->passing,
             "organisation" => $this->organisation,
             "designation" => $this->designation,
