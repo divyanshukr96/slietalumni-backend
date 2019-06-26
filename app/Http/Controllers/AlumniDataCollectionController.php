@@ -28,7 +28,7 @@ class AlumniDataCollectionController extends Controller
      */
     public function store(AlumniDataCollectionStoreValidate $request)
     {
-        $alumni = AlumniDataCollection::create($request->all());
+        $alumni = AlumniDataCollection::create($request->validated());
         return response()->json($alumni, 201);
     }
 
@@ -54,7 +54,7 @@ class AlumniDataCollectionController extends Controller
     public function update(AlumniDataCollectionUpdateValidate $request, $id)
     {
         $alumni = AlumniDataCollection::find($id);
-        $alumni->update($request->all());
+        $alumni->update($request->validated());
         return response()->json($alumni, 200);
     }
 

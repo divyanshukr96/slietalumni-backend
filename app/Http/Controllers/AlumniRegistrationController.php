@@ -41,7 +41,7 @@ class AlumniRegistrationController extends Controller
      */
     public function store(AlumniRegistrationStoreValidation $request)
     {
-        return new AlumniRegisterResource(AlumniRegistration::create($request->all()));
+        return new AlumniRegisterResource(AlumniRegistration::create($request->validated()));
     }
 
     /**

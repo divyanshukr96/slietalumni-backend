@@ -4,6 +4,7 @@ namespace App;
 
 use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @method static create(array $all)
@@ -11,9 +12,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class EventType extends Model
 {
-    use UsesUuid;
+    use UsesUuid, SoftDeletes;
 
-    protected $fillable = ['name', 'title', 'about'];
+    protected $fillable = ['name', 'title', 'description'];
 
     public function events()
     {

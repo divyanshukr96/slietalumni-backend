@@ -22,10 +22,20 @@ class EventTypeStoreValidate extends APIRequest
      */
     public function rules()
     {
+        $rules = [
+            'title' => 'required|string|max:60',
+            'description' => 'nullable|string|min:100'
+        ];
+        if (strtoupper(request()->method()) === "POST") {
+            $rules['name'] = 'required|alpha_dash|unique:event_types|max:50';
+        }
+        return $rules;
+    }
+
+    public function attributes()
+    {
         return [
-            'name' => 'required|string|unique:event_types',
-            'title' => 'required|string',
-            'about' => 'nullable|string|min:150'
+            'name' => 'event type',
         ];
     }
 }

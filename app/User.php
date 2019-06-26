@@ -4,6 +4,8 @@ namespace App;
 
 use App\Traits\UsesUuid;
 use Hash;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -16,6 +18,8 @@ use Spatie\Permission\Traits\HasRoles;
  * @method static create(array $data)
  * @method static find(int $id)
  * @method static role(string $string)
+ * @method static latest()
+ * @method static isAlumni()
  */
 class User extends Authenticatable
 {
@@ -69,6 +73,23 @@ class User extends Authenticatable
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = strlen($value) < 60 ? Hash::make($value) : $value;
+    }
+
+    /**
+     * @return HasOne
+     */
+    public function alumni()
+    {
+        return $this->hasOne(Alumni::class);
+    }
+
+    /**
+     * @param Builder $query
+     * @return Builder
+     */
+    public function scopeIsAlumni(Builder $query): Builder
+    {
+        return $query->whereHas('alumni');
     }
 
 }

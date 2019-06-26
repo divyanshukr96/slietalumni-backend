@@ -19,9 +19,13 @@ class CreateEventsTable extends Migration
             $table->uuid('image_id')->nullable();
             $table->string('title');
             $table->longText('description')->nullable();
+            $table->longText('content')->nullable();
             $table->string('venue')->nullable();
             $table->date('date')->nullable();
             $table->time('time')->nullable();
+
+            $table->string('published_by')->nullable();
+            $table->timestamp('published_at')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

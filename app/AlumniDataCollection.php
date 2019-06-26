@@ -16,7 +16,7 @@ class AlumniDataCollection extends Model
 {
     use SoftDeletes, UsesUuid;
 
-    protected $fillable = ['name', 'email', 'mobile', 'programme', 'batch', 'branch', 'passing', 'organisation'];
+    protected $fillable = ['name', 'email', 'mobile', 'programme', 'batch', 'branch', 'passing', 'organisation', 'designation'];
 
     protected static function boot()
     {

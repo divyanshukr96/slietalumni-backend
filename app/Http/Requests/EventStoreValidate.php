@@ -22,11 +22,13 @@ class EventStoreValidate extends APIRequest
     public function rules()
     {
         return [
-            'event' => 'required|exists:event_types,name',
-            'description' => 'required|string|min:200',
+            'event' => 'required|exists:event_types,name,deleted_at,NULL',
+            'title' => 'required|string|min:8|max:100',
+            'description' => 'required|string|min:100',
+            'content' => 'nullable|string',
             'venue' => 'required|string|max:100',
-            'date' => 'required|date',
-            'time' => 'required|date_format:H:i',
+            'date' => 'required|date|after_or_equal:today',  // validating the date is after today
+            'time' => 'required|date|',
             'image' => 'nullable|image|max:2000'
         ];
     }

@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use \Spatie\Permission\Models\Permission as Model;
 use Str;
 
+/**
+ * @method static latest()
+ */
 class Permission extends Model
 {
     use SoftDeletes;

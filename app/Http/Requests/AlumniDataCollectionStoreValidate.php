@@ -33,6 +33,7 @@ class AlumniDataCollectionStoreValidate extends APIRequest
             'batch' => 'nullable|digits:4|integer|min:1980|max:' . (date('Y') - 3),
             'passing' => 'nullable|digits:4|integer|min:1980|max:' . (date('Y')),
             'organisation' => 'nullable|string', //designation field
+            'designation' => 'nullable|string', //designation field
             'image' => 'nullable|image|max:2000',
             'accept' => 'required|accepted'
         ];

@@ -24,44 +24,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12e1a7c7-84a2-40b0-b66c-2b6a57bb2d36" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/PermissionStoreValidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ALumniBackend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ALumniBackend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Academic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Academic.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/AlumniDataCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AlumniDataCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AlumniRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AlumniRegistration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/EventType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EventType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlumniDataCollectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlumniDataCollectionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlumniRegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlumniRegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EventTypeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionStoreValidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AlumniRegistrationStoreValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AlumniRegistrationStoreValidation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/LoginRequestValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/LoginRequestValidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SetUsernameValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SetUsernameValidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/AlumniRegisterResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/AlumniRegisterResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/RegisteredAlumni.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/RegisteredAlumni.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ProfessionalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ProfessionalDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EventStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/EventStoreValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EventTypeStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/EventTypeStoreValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/NewsStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/NewsStoreValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Permission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Permission.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_124817_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_124817_create_images_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_123632_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_123632_create_news_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_202849_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_202849_create_events_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_204457_create_event_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_204457_create_event_types_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_alumni_data_collections_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_alumni_data_collections_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_alumni_registrations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_alumni_registrations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_14_201032_create_academics_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_14_201032_create_academics_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_14_202244_create_professional_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_14_202244_create_professional_details_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_16_192446_create_permission_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_16_192446_create_permission_tables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,6 +100,9 @@
       <find>user</find>
       <find>:</find>
       <find>$table-&gt;unsignedBigInteger($columnNames['model_morph_key'])</find>
+      <find>axios</find>
+      <find>news</find>
+      <find>role</find>
     </findStrings>
     <replaceStrings>
       <replace>=&gt;</replace>
@@ -128,57 +116,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Requests/EventStoreValidate.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/APIRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_alumni_data_collections_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_04_10_124817_create_images_table.php" />
-        <option value="$PROJECT_DIR$/app/Traits/UsesUuid.php" />
-        <option value="$PROJECT_DIR$/app/Image.php" />
-        <option value="$PROJECT_DIR$/database/factories/AlumniDataCollectionFactory.php" />
-        <option value="$PROJECT_DIR$/database/seeds/AlumniDataCollectionSeeder.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/LoginRequestValidate.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionUpdateValidate.php" />
-        <option value="$PROJECT_DIR$/app/AlumniDataCollection.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AlumniDataCollectionController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionStoreValidate.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_alumni_registrations_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/AlumniRegisterResource.php" />
-        <option value="$PROJECT_DIR$/app/AlumniRegistration.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/AlumniRegistrationStoreValidation.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/RegisteredAlumni.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php" />
-        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Rules/TokenExist.php" />
-        <option value="$PROJECT_DIR$/resources/lang/en/validation.php" />
-        <option value="$PROJECT_DIR$/app/Academic.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_04_14_201032_create_academics_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_04_14_202244_create_professional_details_table.php" />
-        <option value="$PROJECT_DIR$/app/ProfessionalDetails.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/UserResource.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/SetUsernameValidate.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AlumniRegistrationController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_06_01_000001_create_oauth_auth_codes_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_06_01_000002_create_oauth_access_tokens_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_06_01_000004_create_oauth_clients_table.php" />
-        <option value="$PROJECT_DIR$/app/Role.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/RoleCollection.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/Permission.php" />
-        <option value="$PROJECT_DIR$/app/Http/Resources/Role.php" />
-        <option value="$PROJECT_DIR$/storage/logs/laravel-2019-06-19.log" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PermissionController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Requests/RoleStoreValidate.php" />
         <option value="$PROJECT_DIR$/config/permission.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_16_192446_create_permission_tables.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/UserUpdateValidate.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/SACUserResource.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_10_191818_create_image_news.php" />
+        <option value="$PROJECT_DIR$/app/Blog.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_10_202512_create_blog_image.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_10_200527_create_blogs_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_14_202244_create_professional_details_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_14_201032_create_academics_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_14_163910_create_alumnis_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_alumni_registrations_table.php" />
+        <option value="$PROJECT_DIR$/app/AlumniRegistration.php" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/NewsController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_10_123632_create_news_table.php" />
+        <option value="$PROJECT_DIR$/storage/logs/laravel-2019-06-23.log" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/NewsStoreValidate.php" />
+        <option value="$PROJECT_DIR$/app/News.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/NewsController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_10_204457_create_event_types_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/EventTypeStoreValidate.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/EventTypeController.php" />
+        <option value="$PROJECT_DIR$/app/EventType.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_10_202849_create_events_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/Event.php" />
+        <option value="$PROJECT_DIR$/app/Event.php" />
+        <option value="$PROJECT_DIR$/storage/logs/laravel-2019-06-24.log" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/EventStoreValidate.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/News.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_alumni_data_collections_table.php" />
+        <option value="$PROJECT_DIR$/app/AlumniDataCollection.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AlumniDataCollectionController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionStoreValidate.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_06_25_150842_create_featured_alumnis_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
+        <option value="$PROJECT_DIR$/app/FeaturedAlumni.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AlumniRegistrationController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/FeaturedAlumniController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Resources/FeaturedAlumni.php" />
+        <option value="$PROJECT_DIR$/app/Rules/NotExist.php" />
+        <option value="$PROJECT_DIR$/app/Rules/CustomRule.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/FeaturedAlumniValidate.php" />
       </list>
     </option>
   </component>
@@ -305,28 +293,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -349,6 +315,78 @@
           <select />
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="API" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Rules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ALumniBackend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ALumniBackend" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -364,7 +402,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -373,6 +411,9 @@
       <recent name="E:\Alumni_Association\ALumniBackend\resources\views" />
       <recent name="E:\Alumni_Association\ALumniBackend\.idea" />
       <recent name="E:\Alumni_Association\ALumniBackend\app" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Controllers\API" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -428,17 +469,46 @@
       <workItem from="1560707473699" duration="45381000" />
       <workItem from="1560989976845" duration="80000" />
       <workItem from="1560990150539" duration="42000" />
-      <workItem from="1560990207860" duration="9437000" />
+      <workItem from="1560990207860" duration="31722000" />
+      <workItem from="1561283511540" duration="44000" />
+      <workItem from="1561283558250" duration="16000" />
+      <workItem from="1561283577929" duration="34289000" />
+      <workItem from="1561532193220" duration="201000" />
+      <workItem from="1561532410169" duration="21114000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="223157000" />
+    <option name="totallyTimeSpent" value="301106000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49944258" visible="true" weight="0.24466951" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49944258" visible="true" weight="0.19989339" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="npm" order="2" sideWeight="0.5005574" side_tool="true" weight="0.2553305" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="TeamCity" order="0" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32998884" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32998884" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3556299" />
+      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32998884" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.32998884" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49944258" visible="true" weight="0.24733475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5005574" side_tool="true" weight="0.2553305" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -453,393 +523,402 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3556299" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3556299" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32998884" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32998884" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32995737" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Validation/ValidatesWhenResolved.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/SACUserResource.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/ValidatesWhenResolvedTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
+        <state relative-caret-position="-203">
           <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/Role.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="198" column="53" selection-start-line="198" selection-start-column="53" selection-end-line="198" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Http/FormRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="155" column="38" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Validation/Rule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="28" column="60" lean-forward="true" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
-          <folding>
-            <element signature="e#33#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/lang/en/validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="119" column="54" lean-forward="true" selection-start-line="119" selection-start-column="54" selection-end-line="119" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_alumni_registrations_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_14_202244_create_professional_details_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Academic.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#23#47#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/ProfessionalDetails.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#23#47#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_14_201032_create_academics_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="52" lean-forward="true" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/AlumniRegisterResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Rules/TokenExist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="97" />
-          <folding>
-            <element signature="e#29#36#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/SetUsernameValidate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_01_000003_create_oauth_refresh_tokens_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_01_000002_create_oauth_access_tokens_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_01_000005_create_oauth_personal_access_clients_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_01_000004_create_oauth_clients_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2016_06_01_000001_create_oauth_auth_codes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/APIRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding>
-            <element signature="e#37#70#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlumniRegistrationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="139" column="28" lean-forward="true" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Rules/PermissionName.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-100">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/PermissionStoreValidate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="29" column="54" lean-forward="true" selection-start-line="29" selection-start-column="54" selection-end-line="29" selection-end-column="54" />
+        <state relative-caret-position="-252">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Resources/RegisteredAlumni.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="81" />
+        <state relative-caret-position="-131">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-18.log" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/Role.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/AlumniRegisterResource.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="-179">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/date/date_c.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="47" lean-forward="true" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-23.log" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_10_202849_create_events_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-24.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="35" column="78" selection-start-line="35" selection-start-column="78" selection-end-line="35" selection-end-column="78" />
           <folding>
             <element signature="e#38#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/PermissionCollection.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/RoleCollection.php" />
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-19.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_14_163910_create_alumnis_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../alumni-frontend/src/components/RolePermission/EditRolePermission.js">
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Support/Facades/Route.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
+          <caret line="17" column="29" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+        <state relative-caret-position="476">
+          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoleController.php">
+    <entry file="file://$PROJECT_DIR$/app/AlumniDataCollection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="60" column="74" lean-forward="true" selection-start-line="60" selection-start-column="74" selection-end-line="60" selection-end-column="74" />
-          <folding>
-            <element signature="e#40#80#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="336">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PermissionController.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_alumni_data_collections_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#86#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="26" column="54" lean-forward="true" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Permission.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionStoreValidate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="-72">
+          <caret line="30" column="38" lean-forward="true" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
-          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/PermissionTableSeeder.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/EventStoreValidate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        <state relative-caret-position="356">
+          <caret line="28" column="49" lean-forward="true" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/permission.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2808">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+        <state relative-caret-position="144">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/Permission.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ImagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="41" column="90" lean-forward="true" selection-start-line="41" selection-start-column="36" selection-end-line="41" selection-end-column="90" />
+        <state relative-caret-position="-288">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/EventTypeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1512">
+          <caret line="70" column="30" lean-forward="true" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/EventController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="84" column="7" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
+          <folding>
+            <element signature="e#44#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/NewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
+          <folding>
+            <element signature="e#44#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AlumniRegistration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="619">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/Event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="44" column="61" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
           <folding>
             <element signature="e#38#56#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/SACUserAddValidate.php">
+    <entry file="file://$PROJECT_DIR$/app/Event.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="31" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Role.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="860">
-          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_16_192446_create_permission_tables.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="63" column="34" lean-forward="true" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/UserResource.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="21" column="66" lean-forward="true" selection-start-line="21" selection-start-column="66" selection-end-line="21" selection-end-column="66" />
+        <state relative-caret-position="620">
+          <caret line="30" column="64" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="75" />
           <folding>
             <element signature="e#23#47#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Resources/SACUserResource.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RoleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding>
-            <element signature="e#38#56#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="168">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/UserUpdateValidate.php">
+    <entry file="file://$PROJECT_DIR$/vendor/spatie/laravel-permission/src/PermissionRegistrar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="30" column="91" lean-forward="true" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+        <state relative-caret-position="302">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/spatie/laravel-permission/src/Traits/HasRoles.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="75" column="60" lean-forward="true" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="497" column="40" lean-forward="true" selection-start-line="497" selection-start-column="40" selection-end-line="497" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="80" column="28" lean-forward="true" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="77" column="24" lean-forward="true" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
-          <folding>
-            <element signature="e#40#81#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="572">
+          <caret line="76" column="32" lean-forward="true" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PermissionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="17" column="35" lean-forward="true" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="240">
+          <caret line="20" column="62" lean-forward="true" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlumniDataCollectionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AlumniRegistrationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_04_10_200527_create_blogs_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="45" column="48" lean-forward="true" selection-start-line="45" selection-start-column="48" selection-end-line="45" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_25_150842_create_featured_alumnis_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="19" column="48" lean-forward="true" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
           <folding>
             <element signature="e#7#48#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/RoleStoreValidate.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/FeaturedAlumniController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+        <state relative-caret-position="452">
+          <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+          <folding>
+            <element signature="e#44#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/FeaturedAlumni.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="22" column="45" lean-forward="true" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
+          <folding>
+            <element signature="e#23#47#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/EventType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/Permission.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="38" column="54" lean-forward="true" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+          <folding>
+            <element signature="e#38#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Resources/FeaturedAlumni.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="36" column="52" lean-forward="true" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+          <folding>
+            <element signature="e#38#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Rules/TokenExist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+          <folding>
+            <element signature="e#29#36#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Rules/DatabaseRule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Rules/Exists.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Validation/Rule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-672">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Rules/NotExist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Rules/CustomRule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="e#29#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/FeaturedAlumniValidate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="46" column="56" lean-forward="true" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
+          <folding>
+            <element signature="e#37#62#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

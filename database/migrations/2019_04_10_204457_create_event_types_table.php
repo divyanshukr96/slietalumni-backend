@@ -17,7 +17,7 @@ class CreateEventTypesTable extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('title')->nullable();
-            $table->longText('about')->nullable();
+            $table->longText('description')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

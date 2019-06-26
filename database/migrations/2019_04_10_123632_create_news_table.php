@@ -17,6 +17,7 @@ class CreateNewsTable extends Migration
             $table->uuid('id')->primary();
 
             $table->string('title');
+            $table->string('cover')->nullable();
             $table->string('social_link')->nullable();
             $table->text('description')->nullable();
             $table->longText('content')->nullable();

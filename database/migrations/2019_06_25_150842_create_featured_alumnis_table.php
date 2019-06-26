@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlumniDataCollectionsTable extends Migration
+class CreateFeaturedAlumnisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,20 +12,18 @@ class CreateAlumniDataCollectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('alumni_data_collections', function (Blueprint $table) {
+        Schema::create('featured_alumnis', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('image_id')->nullable();
+            $table->uuid('alumni_id')->nullable();
 
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('mobile')->nullable();
-            $table->string('programme')->nullable();
-            $table->string('branch')->nullable();
-            $table->year('batch')->nullable();
-            $table->year('passing')->nullable();
             $table->string('organisation')->nullable();
             $table->string('designation')->nullable();
+            $table->string('image_id')->nullable();
 
+            $table->timestamp('featured')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
@@ -38,6 +36,6 @@ class CreateAlumniDataCollectionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumni_data_collections');
+        Schema::dropIfExists('featured_alumnis');
     }
 }
