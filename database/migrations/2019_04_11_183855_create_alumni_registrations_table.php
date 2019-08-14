@@ -25,6 +25,7 @@ class CreateAlumniRegistrationsTable extends Migration
             $table->year('passing')->nullable();
             $table->string('organisation')->nullable();
             $table->string('designation')->nullable();
+            $table->string('linkdein')->nullable();
 
             $table->boolean('verified')->default(false);
             $table->timestamp('verified_at')->nullable();

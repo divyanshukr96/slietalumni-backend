@@ -33,6 +33,7 @@ class AlumniRegistrationStoreValidation extends APIRequest
             'passing' => 'required|digits:4|integer|min:1980|max:' . (date('Y')),
             'organisation' => 'required|string|max:100',
             'designation' => 'required|string|max:100',
+            'linkdein' => 'nullable|url',
             'image' => "required|image|max:2000",
             'accept' => 'required|accepted'
         ];
@@ -43,6 +44,8 @@ class AlumniRegistrationStoreValidation extends APIRequest
         return [
             'name.regex' => "The name contains only alphabet.",
             'email.unique' => 'The :attribute has already been registered.',
+            'linkdein.url' =>'The linkdein profile link is invalid.',
+            'image.max' => 'The :attribute may not be greater than 2 MB.'
         ];
     }
 

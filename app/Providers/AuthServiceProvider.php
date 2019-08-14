@@ -28,6 +28,9 @@ class AuthServiceProvider extends ServiceProvider
 
 
         Passport::routes();
+        Passport::ignoreMigrations();
+
+        Passport::personalAccessClientId('1');
         //
     }
 }

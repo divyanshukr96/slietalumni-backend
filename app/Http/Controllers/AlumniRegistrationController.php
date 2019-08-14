@@ -140,22 +140,22 @@ class AlumniRegistrationController extends Controller
             'alumni' => true
         ];
         $user = new User($data);
-        $user->save();
-        $user->educations()->save(new Academic([
-            "programme" => $alumni->programme,
-            "branch" => $alumni->branch,
-            "batch" => $alumni->batch,
-            "passing" => $alumni->passing,
-        ]));
-        $user->professional()->save(new ProfessionalDetails([
-            "organisation" => $alumni->organisation,
-            "designation" => $alumni->designation,
-        ]));
-
-        // send welcome email to user
-
-        $alumni->delete();
-        DB::table('username_tokens')->where('email', $context->email)->delete();
+//        $user->save();
+//        $user->educations()->save(new Academic([
+//            "programme" => $alumni->programme,
+//            "branch" => $alumni->branch,
+//            "batch" => $alumni->batch,
+//            "passing" => $alumni->passing,
+//        ]));
+//        $user->professional()->save(new ProfessionalDetails([
+//            "organisation" => $alumni->organisation,
+//            "designation" => $alumni->designation,
+//        ]));
+//
+//        // send welcome email to user
+//
+//        $alumni->delete();
+//        DB::table('username_tokens')->where('email', $context->email)->delete();
 
         return new UserResource($user);
     }

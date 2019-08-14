@@ -2,10 +2,14 @@
 
 namespace App\Exceptions;
 
+use Carbon\Carbon;
 use Exception;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Spatie\Permission\Exceptions\UnauthorizedException;
 
 class Handler extends ExceptionHandler
 {
@@ -49,9 +53,31 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($request->expectsJson()) {
-            return response()->json(["message" => $exception->getMessage()], '404');
+        if ($exception instanceof UnauthorizedException) {
+            return response()->json([
+                "time" => Carbon::now()->toDateTimeString(),
+                "message" => $exception->getMessage()
+            ], '403');
         }
+        if ($exception instanceof ModelNotFoundException) {
+            return response()->json([
+                "time" => Carbon::now()->toDateTimeString(),
+                "message" => "Data not found"
+            ], '404');
+        }
+
+//        if ($request->expectsJson()) {
+//            return response()->json(["message" => $exception->getMessage()], '404');
+//        }
+
         return parent::render($request, $exception);
+    }
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        return response()->json([
+            "time" => Carbon::now()->toDateTimeString(),
+            "message" => $exception->getMessage()
+        ], '401');
     }
 }

@@ -12,6 +12,13 @@ use Illuminate\Http\Response;
 
 class UserController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+//        $this->middleware('role:divya');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -38,15 +45,11 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param User $user
      * @return SACUserResource
      */
-    public function show($id)
+    public function show(User $user)
     {
-        $user = User::find($id);
-        if (!$user) return response()->json([
-            'message' => 'User not found !!'
-        ],404);
         return new SACUserResource($user);
     }
 

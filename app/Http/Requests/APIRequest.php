@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\ValidationException;
@@ -55,6 +56,7 @@ class APIRequest extends FormRequest
         return response()->json([
             'status' => "invalid data",
             'code' => JsonResponse::HTTP_UNPROCESSABLE_ENTITY,
+            'time' => Carbon::now()->toDateTimeString(),
             'errors' => $response
         ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
     }

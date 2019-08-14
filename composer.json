@@ -14,7 +14,8 @@
         "doctrine/dbal": "^2.9",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
-        "laravel/passport": "^7.2",
+        "laravel/passport": "^7.3",
+        "laravel/telescope": "^2.0",
         "laravel/tinker": "^1.0",
         "spatie/laravel-permission": "^2.37"
     },
@@ -22,6 +23,7 @@
         "beyondcode/laravel-dump-server": "^1.0",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
+        "laravel/dusk": "^5.2",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^7.5"

@@ -17,7 +17,7 @@ class AlumniRegistration extends Model
 {
     use SoftDeletes, UsesUuid;
 
-    protected $fillable = ['name', 'email', 'mobile', 'programme', 'branch', 'passing', 'batch', 'organisation', 'designation', 'image'];
+    protected $fillable = ['name', 'email', 'mobile', 'programme', 'branch', 'passing', 'batch', 'organisation', 'designation', 'image', 'linkdein'];
 
     public function image()
     {

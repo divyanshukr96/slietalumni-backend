@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'auth'], function () {
+    Route::get('/', 'AuthController@check')->middleware('auth:api');
     Route::post('login', 'AuthController@login');
 
 //    Route::group(['middleware' => 'auth:api'], function () {
@@ -42,6 +43,7 @@ Route::apiResources([
     'news' => 'API\NewsController',
     'events' => 'API\EventController',
 ],['except' => ['update']]);
+
 Route::post('news/{news}','API\NewsController@update')->name('news.update');
 Route::patch('news/{news}/publish','API\NewsController@publish')->name('news.publish');
 Route::post('events/{event}','API\EventController@update')->name('events.update');

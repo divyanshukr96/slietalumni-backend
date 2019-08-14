@@ -29,7 +29,8 @@ class AuthController extends Controller
             return response()->json([
                 'message' => 'Unauthorized',
                 'errors' => [
-                    $this->getUsername() => 'Invalid username or password entered !!',
+                    'username' => "Invalid $this->username or password entered !!",
+                    'email' => "Invalid $this->username or password entered !!",
                     'password' => ''
                 ],
             ], 422);
@@ -40,11 +41,16 @@ class AuthController extends Controller
             $token->expires_at = Carbon::now()->addWeeks(1);
         $token->save();
         return response()->json([
+            'time' => Carbon::now()->toDateTimeString(),
             'access_token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse(
                 $tokenResult->token->expires_at
-            )->toDateTimeString()
+            )->toDateTimeString(),
+            'roles' => $user->getRoleNames(),
+            'permissions' => $user->getAllPermissions()->map(function ($data) {
+                return $data->name;
+            }),
         ]);
     }
 
@@ -79,6 +85,25 @@ class AuthController extends Controller
     public function getUsername()
     {
         return $this->username;
+    }
+
+    /**
+     * @return JsonResponse
+     */
+    public function check()
+    {
+        $user = auth()->user();
+        return response()->json([
+            'time' => Carbon::now()->toDateTimeString(),
+            'name' => $user->name,
+            'email' => $user->email,
+            'username' => $user->username,
+            'image' => $user->image,
+            'roles' => $user->getRoleNames(),
+            'permissions' => $user->getAllPermissions()->map(function ($data) {
+                return $data->name;
+            }),
+        ]);
     }
 
 }

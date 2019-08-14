@@ -54,6 +54,7 @@ class FeaturedAlumniController extends Controller
      */
     public function show($search)
     {
+        dd(User::isAlumni()->get());
         return User::isAlumni()->where(function (Builder $query) use ($search) {
             $query->where('name', 'LIKE', "%$search%")
                 ->orWhere('email', 'LIKE', "%$search%")
