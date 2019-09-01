@@ -20,6 +20,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @method static role(string $string)
  * @method static latest()
  * @method static isAlumni()
+ * @method static whereUsername($username)
  */
 class User extends Authenticatable
 {
@@ -65,6 +66,14 @@ class User extends Authenticatable
     public function professional()
     {
         return $this->hasMany(ProfessionalDetails::class);
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function donations()
+    {
+        return $this->hasMany(Donation::class);
     }
 
     /**

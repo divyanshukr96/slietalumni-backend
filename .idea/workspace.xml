@@ -29,25 +29,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AlumniRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AlumniRegistration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/FeaturedAlumniController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/FeaturedAlumniController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlumniRegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AlumniRegistrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/APIRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/APIRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AlumniRegistrationStoreValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AlumniRegistrationStoreValidation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SACUserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SACUserResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_alumni_registrations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_alumni_registrations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +109,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/psr/log" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
@@ -235,6 +223,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/dusk" />
       <path value="$PROJECT_DIR$/vendor/moontoast/math" />
       <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Oh4laV4AMM5nHTv3dPMceB00p9" />
@@ -245,7 +234,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="E:/SLIET/Teacher_Database" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/API" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -258,15 +247,15 @@
     <property name="settings.editor.selected.configurable" value="Erlang External Tools" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Controllers\API" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Controllers\API" />
       <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Requests" />
       <recent name="E:\Alumni_Association\ALumniBackend\app\Traits" />
       <recent name="E:\Alumni_Association\ALumniBackend\resources\views" />
       <recent name="E:\Alumni_Association\ALumniBackend\.idea" />
-      <recent name="E:\Alumni_Association\ALumniBackend\app" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Controllers\API" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -290,17 +279,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@442cfd43" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@442cfd43" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@269dbaf9" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -365,7 +344,15 @@
       <workItem from="1565161951027" duration="1197000" />
       <workItem from="1565178838103" duration="3469000" />
       <workItem from="1565199975068" duration="601000" />
-      <workItem from="1565206738720" duration="7336000" />
+      <workItem from="1565206738720" duration="10093000" />
+      <workItem from="1565952233879" duration="1137000" />
+      <workItem from="1565992128045" duration="2153000" />
+      <workItem from="1566165901143" duration="876000" />
+      <workItem from="1566245245657" duration="2613000" />
+      <workItem from="1566623006873" duration="20000" />
+      <workItem from="1566903354757" duration="614000" />
+      <workItem from="1567288256874" duration="81000" />
+      <workItem from="1567288375226" duration="11496000" />
     </task>
     <servers />
   </component>

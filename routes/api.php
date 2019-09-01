@@ -37,17 +37,18 @@ Route::apiResources([
     'event-type' => 'API\EventTypeController',
     'featured-alumni' => 'API\FeaturedAlumniController',
     'alumni-data' => 'AlumniDataCollectionController',
+    'donation' => 'API\DonationController',
 ]);
 
 Route::apiResources([
     'news' => 'API\NewsController',
     'events' => 'API\EventController',
-],['except' => ['update']]);
+], ['except' => ['update']]);
 
-Route::post('news/{news}','API\NewsController@update')->name('news.update');
-Route::patch('news/{news}/publish','API\NewsController@publish')->name('news.publish');
-Route::post('events/{event}','API\EventController@update')->name('events.update');
-Route::patch('events/{event}/publish','API\EventController@publish')->name('events.publish');
+Route::post('news/{news}', 'API\NewsController@update')->name('news.update');
+Route::patch('news/{news}/publish', 'API\NewsController@publish')->name('news.publish');
+Route::post('events/{event}', 'API\EventController@update')->name('events.update');
+Route::patch('events/{event}/publish', 'API\EventController@publish')->name('events.publish');
 
 Route::post('/blog/create', 'BlogController@store');
 
@@ -60,7 +61,7 @@ Route::patch('/alumni/confirm/{alumni}', 'AlumniRegistrationController@update');
 
 Route::get('/alumni/related/{alumni}', 'AlumniRegistrationController@related');
 
-Route::fallback(function(){
+Route::fallback(function () {
     return response()->json([
         'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);
 });

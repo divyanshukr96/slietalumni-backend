@@ -95,7 +95,7 @@ class AuthController extends Controller
         $user = auth()->user();
         return response()->json([
             'time' => Carbon::now()->toDateTimeString(),
-            'name' => $user->name,
+            'name' => ucwords($user->name),
             'email' => $user->email,
             'username' => $user->username,
             'image' => $user->image,
@@ -103,6 +103,7 @@ class AuthController extends Controller
             'permissions' => $user->getAllPermissions()->map(function ($data) {
                 return $data->name;
             }),
+            'professional' => $user->professional()->latest(),
         ]);
     }
 
