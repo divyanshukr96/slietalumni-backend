@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\AlumniDataCollection;
+use App\DataCollection;
+use App\Http\Requests\RegistrationPaymentValidation;
+use App\Image;
 use DB;
 use Str;
 use Hash;
 use App\User;
 use App\Academic;
-use App\AlumniRegistration;
+use App\Registration;
 use App\ProfessionalDetails;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -20,7 +22,7 @@ use App\Http\Resources\AlumniRegisterResource;
 use App\Http\Requests\AlumniRegistrationStoreValidation;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
-class AlumniRegistrationController extends Controller
+class RegistrationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,7 +31,7 @@ class AlumniRegistrationController extends Controller
      */
     public function index()
     {
-        return RegisteredAlumni::collection(AlumniRegistration::latest()->whereVerified(false)->get());
+        return RegisteredAlumni::collection(Registration::latest()->whereVerified(false)->get());
     }
 
 
@@ -41,16 +43,16 @@ class AlumniRegistrationController extends Controller
      */
     public function store(AlumniRegistrationStoreValidation $request)
     {
-        return new AlumniRegisterResource(AlumniRegistration::create($request->validated()));
+        return new AlumniRegisterResource(Registration::create($request->validated()));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param AlumniRegistration $alumni
+     * @param Registration $alumni
      * @return RegisteredAlumni
      */
-    public function show(AlumniRegistration $alumni)
+    public function show(Registration $alumni)
     {
         return new RegisteredAlumni($alumni);
     }
@@ -58,10 +60,10 @@ class AlumniRegistrationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param AlumniRegistration $alumniRegistration
+     * @param Registration $alumniRegistration
      * @return Response
      */
-    public function edit(AlumniRegistration $alumniRegistration)
+    public function edit(Registration $alumniRegistration)
     {
         //
     }
@@ -69,11 +71,11 @@ class AlumniRegistrationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param AlumniRegistration $alumni
+     * @param RegistrationPaymentValidation $request
+     * @param Registration $alumni
      * @return RegisteredAlumni
      */
-    public function update(Request $request, AlumniRegistration $alumni)
+    public function update(RegistrationPaymentValidation $request, Registration $alumni)
     {
         if ($alumni->verified) return response()->json([
             'alreadyVerified' => true,
@@ -85,7 +87,11 @@ class AlumniRegistrationController extends Controller
             'token' => $token,
             'created_at' => date('Y-m-d H:i:s')
         ]);
-        if ($status) $alumni->verified = true;
+        $payment = $alumni->payment ? true : $alumni->payment()->create($request->validated());
+        if ($status && $payment) {
+            $alumni->verified = true;
+            $alumni->verified_by = auth()->user()->getAuthIdentifier();
+        }
         $alumni->save();
 
         //send a mail to alumni with $tokenAP
@@ -117,7 +123,7 @@ class AlumniRegistrationController extends Controller
             ], JsonResponse::HTTP_NOT_FOUND);
         }
 
-        $alumni = AlumniRegistration::where('email', $context->email)->get()->first();
+        $alumni = Registration::where('email', $context->email)->get()->first();
 
         if (!$alumni) {
             return response()->json([
@@ -163,18 +169,18 @@ class AlumniRegistrationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param AlumniRegistration $alumniRegistration
+     * @param Registration $alumniRegistration
      * @return Response
      */
-    public function destroy(AlumniRegistration $alumniRegistration)
+    public function destroy(Registration $alumniRegistration)
     {
         //
     }
 
 
-    public function related(AlumniRegistration $alumni)
+    public function related(Registration $alumni)
     {
-        $data = AlumniDataCollection::where('email', $alumni->email)->orWhere('mobile', $alumni->mobile)->get();
+        $data = DataCollection::where('email', $alumni->email)->orWhere('mobile', $alumni->mobile)->get();
 
         return $data;
     }

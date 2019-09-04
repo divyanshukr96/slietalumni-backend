@@ -1,0 +1,73 @@
+<?php
+
+namespace App\Http\Controllers\API;
+
+use App\Carousel;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CarouselStoreValidate;
+use App\Http\Resources\Carousel as CarouselResource;
+use App\Image;
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Http\Response;
+
+class CarouselController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return AnonymousResourceCollection
+     */
+    public function index()
+    {
+        return CarouselResource::collection(Carousel::latest()->get());
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param CarouselStoreValidate $request
+     * @return CarouselResource
+     */
+    public function store(CarouselStoreValidate $request)
+    {
+        $user = auth()->user();
+        $image = $user->images()->create($request->validated());
+        $carousel = $image->carousel()->create(['active' => true]);
+        return new CarouselResource($carousel);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param Carousel $carousel
+     * @return Response
+     */
+    public function show(Carousel $carousel)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Request $request
+     * @param Carousel $carousel
+     * @return Response
+     */
+    public function update(Request $request, Carousel $carousel)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param Carousel $carousel
+     * @return Response
+     */
+    public function destroy(Carousel $carousel)
+    {
+        //
+    }
+}

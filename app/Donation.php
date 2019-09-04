@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @method static create(array $validated)
+ * @property mixed verified_by
+ * @property bool verified
+ * @property bool verified_at
+ * @property mixed verifyBy
  */
 class Donation extends Model
 {
@@ -37,6 +41,14 @@ class Donation extends Model
             $value = $this->generateFileNameAndStore($value, '', true);
         }
         $this->attributes['receipt'] = $value;
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function verifyBy()
+    {
+        return $this->belongsTo(User::class, 'verified_by');
     }
 
 }

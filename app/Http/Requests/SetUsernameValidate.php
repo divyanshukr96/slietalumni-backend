@@ -27,7 +27,7 @@ class SetUsernameValidate extends APIRequest
         $context = DB::table('username_tokens')->where('token', request()->get('token'))->first();
         if ($context) return [
             'token' => 'bail|required|string|exists:username_tokens',
-            'email' => 'bail|required|email|exists:alumni_registrations|unique:users',
+            'email' => 'bail|required|email|exists:registrations|unique:users',
             'username' => "bail|required|regex:/^[\_\-a-zA-Z0-9]+$/|min:6|max:50|unique:users",
             'password' => 'required|string|min:8'
         ];

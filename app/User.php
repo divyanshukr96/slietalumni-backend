@@ -101,4 +101,14 @@ class User extends Authenticatable
         return $query->whereHas('alumni');
     }
 
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+//    public function images()
+//    {
+//        return $this->morphToMany(Image::class, 'imageable');
+//    }
+
 }

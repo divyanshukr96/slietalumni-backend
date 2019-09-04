@@ -35,4 +35,9 @@ class Image extends Model
         $this->belongsToMany('App\Blog');
     }
 
+    public function carousel()
+    {
+        return $this->hasOne(Carousel::class);
+    }
+
 }

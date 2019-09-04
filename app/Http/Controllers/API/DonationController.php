@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Donation;
+use App\Http\Requests\DonationConfirmationValidation;
 use App\Http\Requests\DonationStoreValidate;
 use App\User;
 use Auth;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -59,24 +61,28 @@ class DonationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
-     * @return Response
+     * @param Donation $donation
+     * @return Donation
      */
-    public function show($id)
+    public function show(Donation $donation)
     {
-        //
+        return $donation->verifyBy;
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param int $id
-     * @return Response
+     * @param DonationConfirmationValidation $request
+     * @param Donation $donation
+     * @return Donation
      */
-    public function update(Request $request, $id)
+    public function update(DonationConfirmationValidation $request, Donation $donation)
     {
-        //
+        $donation->verified_by = auth()->user()->getAuthIdentifier();
+        $donation->verified_at = Carbon::now();
+        $donation->verified = true;
+        $donation->save();
+        return $donation;
     }
 
     /**

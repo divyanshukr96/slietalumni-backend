@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::group(['prefix' => "public"], function () {
+    Route::get('carousel','PublicController@carousel');
+    Route::post('contact', 'API\ContactController@store');
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -26,19 +31,24 @@ Route::group(['prefix' => 'auth'], function () {
 //    });
 });
 
-Route::post('/alumni/register', 'AlumniRegistrationController@store');
-Route::post('/alumni/set-username', 'AlumniRegistrationController@setUsername');
+Route::post('/alumni/register', 'RegistrationController@store');
+Route::post('/alumni/set-username', 'RegistrationController@setUsername');
 
 
-Route::apiResources([
-    'roles' => 'RoleController',
-    'permissions' => 'PermissionController',
-    'users' => 'UserController',
-    'event-type' => 'API\EventTypeController',
-    'featured-alumni' => 'API\FeaturedAlumniController',
-    'alumni-data' => 'AlumniDataCollectionController',
-    'donation' => 'API\DonationController',
-]);
+Route::group(['middleware' => 'auth:api'], function () {
+    Route::apiResources([
+        'roles' => 'RoleController',
+        'permissions' => 'PermissionController',
+        'users' => 'UserController',
+        'event-type' => 'API\EventTypeController',
+        'featured-alumni' => 'API\FeaturedAlumniController',
+        'alumni-data' => 'DataCollectionController',
+        'donation' => 'API\DonationController',
+        'carousel' => 'API\CarouselController',
+    ]);
+});
+
+Route::apiResource('contact','API\ContactController')->except('store');
 
 Route::apiResources([
     'news' => 'API\NewsController',
@@ -55,11 +65,11 @@ Route::post('/blog/create', 'BlogController@store');
 //Route::get('/event-type', 'API\EventTypeController@index');
 //Route::post('/event-type/create', 'API\EventTypeController@store');
 
-Route::get('/alumni', 'AlumniRegistrationController@index');
-Route::get('/alumni/{alumni}', 'AlumniRegistrationController@show');
-Route::patch('/alumni/confirm/{alumni}', 'AlumniRegistrationController@update');
+Route::get('/alumni', 'RegistrationController@index');
+Route::get('/alumni/{alumni}', 'RegistrationController@show');
+Route::patch('/alumni/confirm/{alumni}', 'RegistrationController@update')->middleware('auth:api');
 
-Route::get('/alumni/related/{alumni}', 'AlumniRegistrationController@related');
+Route::get('/alumni/related/{alumni}', 'RegistrationController@related');
 
 Route::fallback(function () {
     return response()->json([

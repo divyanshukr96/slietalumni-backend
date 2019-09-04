@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\AlumniDataCollection::class, function (Faker $faker) {
+$factory->define(App\DataCollection::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,

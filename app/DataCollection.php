@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static find($id)
  * @method static findOrFail($id)
  */
-class AlumniDataCollection extends Model
+class DataCollection extends Model
 {
     use SoftDeletes, UsesUuid;
 

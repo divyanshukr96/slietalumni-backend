@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\NotExists;
 use App\Rules\PhoneNumber;
 
 class AlumniRegistrationStoreValidation extends APIRequest
@@ -25,7 +26,8 @@ class AlumniRegistrationStoreValidation extends APIRequest
     {
         return [
             'name' => "required|regex:/^[.\'\-a-zA-Z ]+$/|max:50",
-            'email' => 'required|email|max:50|unique:alumni_registrations,email',
+//            'email' => 'required|email|max:50|unique:registrations,email',
+            'email' => ['required', 'email', 'max:50', new NotExists('users'), 'unique:registrations,email'],
             'mobile' => ['required', new PhoneNumber],
             'programme' => 'required',
             'branch' => 'required',
@@ -44,7 +46,7 @@ class AlumniRegistrationStoreValidation extends APIRequest
         return [
             'name.regex' => "The name contains only alphabet.",
             'email.unique' => 'The :attribute has already been registered.',
-            'linkdein.url' =>'The linkdein profile link is invalid.',
+            'linkdein.url' => 'The linkdein profile link is invalid.',
             'image.max' => 'The :attribute may not be greater than 2 MB.'
         ];
     }

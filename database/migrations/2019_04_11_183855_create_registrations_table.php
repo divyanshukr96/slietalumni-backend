@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlumniRegistrationsTable extends Migration
+class CreateRegistrationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateAlumniRegistrationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('alumni_registrations', function (Blueprint $table) {
+        Schema::create('registrations', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('image_id')->nullable();
 
@@ -29,6 +29,7 @@ class CreateAlumniRegistrationsTable extends Migration
 
             $table->boolean('verified')->default(false);
             $table->timestamp('verified_at')->nullable();
+            $table->uuid('user_id')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
@@ -42,6 +43,6 @@ class CreateAlumniRegistrationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumni_registrations');
+        Schema::dropIfExists('registrations');
     }
 }

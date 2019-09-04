@@ -29,11 +29,26 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AlumniDataCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AlumniRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Donation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Donation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/DonationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/DonationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlumniDataCollectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DataCollectionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlumniRegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AlumniRegistrationStoreValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AlumniRegistrationStoreValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SetUsernameValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SetUsernameValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/TelescopeServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/TelescopeServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/StoreImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/StoreImage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/AlumniDataCollectionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/AlumniDataCollectionFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_124817_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_124817_create_images_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_alumni_data_collections_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_data_collections_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_alumni_registrations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_registrations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_01_153030_create_donations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_01_153030_create_donations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/AlumniDataCollectionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AlumniDataCollectionSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
@@ -76,34 +91,8 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="alumni_backend: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="alumni_backend@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="alumni_backend: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="username_tokens: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>pass</find>
-      <find>passes</find>
-      <find>user</find>
-      <find>:</find>
-      <find>$table-&gt;unsignedBigInteger($columnNames['model_morph_key'])</find>
-      <find>axios</find>
-      <find>news</find>
-      <find>role</find>
-      <find>asse</find>
-      <find>mix</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>=&gt;</replace>
-      <replace>=&gt; $this</replace>
-      <replace>=&gt; $this-&gt;</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -219,11 +208,19 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/vendor/facebook/webdriver" />
-      <path value="$PROJECT_DIR$/vendor/laravel/dusk" />
       <path value="$PROJECT_DIR$/vendor/moontoast/math" />
       <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
       <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/league/glide-laravel" />
+      <path value="$PROJECT_DIR$/vendor/league/glide-symfony" />
+      <path value="$PROJECT_DIR$/vendor/league/glide" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/vendor/spatie/pdf-to-image" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-medialibrary" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image-optimizer" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Oh4laV4AMM5nHTv3dPMceB00p9" />
@@ -234,7 +231,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/API" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Alumni" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -247,15 +244,15 @@
     <property name="settings.editor.selected.configurable" value="Erlang External Tools" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Controllers\API" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Controllers\API" />
       <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Requests" />
       <recent name="E:\Alumni_Association\ALumniBackend\app\Traits" />
       <recent name="E:\Alumni_Association\ALumniBackend\resources\views" />
       <recent name="E:\Alumni_Association\ALumniBackend\.idea" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Controllers\API" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -279,7 +276,17 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3a594b6e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3a594b6e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2d149857" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -352,12 +359,27 @@
       <workItem from="1566623006873" duration="20000" />
       <workItem from="1566903354757" duration="614000" />
       <workItem from="1567288256874" duration="81000" />
-      <workItem from="1567288375226" duration="11496000" />
+      <workItem from="1567288375226" duration="13064000" />
+      <workItem from="1567342732441" duration="51000" />
+      <workItem from="1567342794765" duration="9326000" />
+      <workItem from="1567427173586" duration="9509000" />
+      <workItem from="1567455383049" duration="751000" />
+      <workItem from="1567459833261" duration="35177000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

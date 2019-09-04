@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\AlumniDataCollection;
+use App\DataCollection;
 use App\Http\Requests\AlumniDataCollectionStoreValidate;
 use App\Http\Requests\AlumniDataCollectionUpdateValidate;
 use Illuminate\Http\Response;
 
-class AlumniDataCollectionController extends Controller
+class DataCollectionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class AlumniDataCollectionController extends Controller
      */
     public function index()
     {
-        return response()->json(AlumniDataCollection::all());
+        return response()->json(DataCollection::all());
     }
 
 
@@ -28,7 +28,7 @@ class AlumniDataCollectionController extends Controller
      */
     public function store(AlumniDataCollectionStoreValidate $request)
     {
-        $alumni = AlumniDataCollection::create($request->validated());
+        $alumni = DataCollection::create($request->validated());
         return response()->json($alumni, 201);
     }
 
@@ -40,7 +40,7 @@ class AlumniDataCollectionController extends Controller
      */
     public function show($id)
     {
-        return response()->json(AlumniDataCollection::find($id));
+        return response()->json(DataCollection::find($id));
     }
 
 
@@ -53,7 +53,7 @@ class AlumniDataCollectionController extends Controller
      */
     public function update(AlumniDataCollectionUpdateValidate $request, $id)
     {
-        $alumni = AlumniDataCollection::find($id);
+        $alumni = DataCollection::find($id);
         $alumni->update($request->validated());
         return response()->json($alumni, 200);
     }
@@ -66,7 +66,7 @@ class AlumniDataCollectionController extends Controller
      */
     public function destroy($id)
     {
-        $alumni = AlumniDataCollection::findOrFail($id);
+        $alumni = DataCollection::findOrFail($id);
         $alumni->delete();
         return response()->json($alumni, 204);
     }

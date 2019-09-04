@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagesTable extends Migration
+class CreateCarouselsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('images', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->uuid('user_id')->nullable();
+        Schema::create('carousels', function (Blueprint $table) {
+            $table->uuid('id')->primary()->unique();
+            $table->uuid('image_id');
 
-            $table->string('image');
+            $table->boolean('active')->default(false);
 
             $table->softDeletes();
             $table->timestamps();
@@ -30,6 +30,6 @@ class CreateImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('images');
+        Schema::dropIfExists('carousels');
     }
 }

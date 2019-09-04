@@ -11,6 +11,6 @@ class AlumniDataCollectionSeeder extends Seeder
      */
     public function run()
     {
-        $users = factory(App\AlumniDataCollection::class, 1000)->create();
+        $users = factory(App\DataCollection::class, 1000)->create();
     }
 }

@@ -110,11 +110,19 @@
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
-      <path value="$PROJECT_DIR$/vendor/facebook/webdriver" />
-      <path value="$PROJECT_DIR$/vendor/laravel/dusk" />
       <path value="$PROJECT_DIR$/vendor/moontoast/math" />
       <path value="$PROJECT_DIR$/vendor/laravel/telescope" />
       <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/league/glide-laravel" />
+      <path value="$PROJECT_DIR$/vendor/league/glide-symfony" />
+      <path value="$PROJECT_DIR$/vendor/league/glide" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/vendor/spatie/pdf-to-image" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-medialibrary" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image-optimizer" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />

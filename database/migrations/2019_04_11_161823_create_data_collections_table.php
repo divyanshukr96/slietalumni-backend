@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlumniDataCollectionsTable extends Migration
+class CreateDataCollectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateAlumniDataCollectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('alumni_data_collections', function (Blueprint $table) {
+        Schema::create('data_collections', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('image_id')->nullable();
 
@@ -38,6 +38,6 @@ class CreateAlumniDataCollectionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumni_data_collections');
+        Schema::dropIfExists('data_collections');
     }
 }

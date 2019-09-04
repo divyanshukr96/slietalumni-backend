@@ -26,6 +26,10 @@ class CreateDonationsTable extends Migration
             $table->string('receipt')->nullable();
             $table->string('member')->nullable();
 
+            $table->boolean('verified')->default(false);
+            $table->uuid('verified_by')->nullable();
+            $table->timestamp('verified_at')->nullable();
+
             $table->softDeletes();
             $table->timestamps();
         });

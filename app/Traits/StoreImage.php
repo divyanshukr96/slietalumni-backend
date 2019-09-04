@@ -10,7 +10,7 @@ namespace App\Traits;
 
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use Str;
 
 trait StoreImage
 {
@@ -27,7 +27,7 @@ trait StoreImage
             if (!$request->file($fieldName)->isValid()) {
                 return redirect()->back()->withInput();
             }
-            return $request->file($fieldName)->store('image/' . $directory, 'public');
+            return $request->file($fieldName)->store('files/' . $directory, 'public');
         }
         return null;
     }
@@ -47,7 +47,7 @@ trait StoreImage
         $file_slug = Str::slug(basename($file->getClientOriginalName(), '.' . $extension));
         $file_name = time() . '__' . Str::limit($file_slug, '50', '') . '.' . $extension;
         if ($store) {
-            $storage = storage_path('app/images/' . date('Y') . '/' . date('m'));
+            $storage = storage_path('app/files/' . date('Y') . '/' . date('m'));
             $file->move($storage, $file_name);
         }
         return $file_name;
