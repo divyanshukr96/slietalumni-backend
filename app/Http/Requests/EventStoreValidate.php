@@ -26,9 +26,10 @@ class EventStoreValidate extends APIRequest
             'title' => 'required|string|min:8|max:100',
             'description' => 'required|string|min:100',
             'content' => 'nullable|string',
-            'venue' => 'required|string|max:100',
-            'date' => 'required|date|after_or_equal:today',  // validating the date is after today
-            'time' => 'required|date|',
+//            'announced' => 'required|boolean',
+            'venue' => 'nullable|string|max:100',
+            'date' => 'nullable|date|after_or_equal:today',  // validating the date is after today
+            'time' => 'nullable|date|',
             'image' => 'nullable|image|max:2000'
         ];
     }
@@ -37,6 +38,7 @@ class EventStoreValidate extends APIRequest
     {
         return [
 //            'time.date_format' => 'The time does not match the format H:i.'
+            'time.date' => 'The :attribute is not a valid time.'
         ];
     }
 }

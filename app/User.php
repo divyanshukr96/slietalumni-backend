@@ -36,7 +36,7 @@ class User extends Authenticatable implements HasMedia
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'username', 'mobile', 'profile', 'active'
+        'name', 'email', 'password', 'username', 'mobile', 'profile', 'active', 'is_alumni'
     ];
 
     /**
@@ -81,13 +81,14 @@ class User extends Authenticatable implements HasMedia
         $this->attributes['password'] = ($hash['algoName'] === Hash::getDefaultDriver()) ? $value : Hash::make($value);
     }
 
-    /**
-     * @return HasOne
-     */
-    public function alumni()
-    {
-        return $this->hasOne(Alumni::class);
-    }
+//    /**
+//     * @return HasOne
+//     * not required
+//     */
+//    public function alumni()
+//    {
+//        return $this->hasOne(Alumni::class);
+//    }
 
     /**
      * @param Builder $query
@@ -95,7 +96,7 @@ class User extends Authenticatable implements HasMedia
      */
     public function scopeIsAlumni(Builder $query): Builder
     {
-        return $query->whereHas('alumni');
+        return $query->where('is_alumni', true);
     }
 
     /**

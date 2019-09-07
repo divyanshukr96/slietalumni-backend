@@ -4,9 +4,11 @@ namespace App\Http\Controllers\API;
 
 use App\Event;
 use App\EventType;
+use App\Http\Requests\EventPublishValidate;
 use App\Http\Requests\EventStoreValidate;
 use App\Http\Resources\Event as EventResource;
 use App\Image;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -33,13 +35,8 @@ class EventController extends Controller
      */
     public function store(EventStoreValidate $request)
     {
-        $event_type = EventType::where('name', $request->only('event'))->first();
+        $event_type = EventType::whereName($request->only('event'))->first();
         $event = $event_type->events()->create($request->validated());
-        if ($request->hasFile('image')) {
-            $image = Image::create(['image' => $request->file('image')]);
-            $event->image()->associate($image);
-            $event->save();
-        }
         return new EventResource($event);
     }
 
@@ -47,11 +44,11 @@ class EventController extends Controller
      * Display the specified resource.
      *
      * @param Event $event
-     * @return Response
+     * @return EventResource|Response
      */
     public function show(Event $event)
     {
-        //
+        return new EventResource($event);
     }
 
     /**
@@ -64,10 +61,6 @@ class EventController extends Controller
     public function update(EventStoreValidate $request, Event $event)
     {
         $event->fill($request->validated());
-        if ($request->hasFile('image')) {
-            $image = Image::create(['image' => $request->file('image')]);
-            $event->image()->associate($image);
-        }
         $event->save();
         return new EventResource($event);
     }
@@ -75,13 +68,16 @@ class EventController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param EventPublishValidate $request
      * @param Event $event
      * @return EventResource
      */
-    public function publish(Request $request, Event $event)
+    public function publish(EventPublishValidate $request, Event $event)
     {
-//        $event->save();
+        $event->published = $request->validated()['publish'];
+        $event->published_by = auth()->user()->getAuthIdentifier();
+        $event->published_at = Carbon::now();
+        $event->save();
         return new EventResource($event);
     }
 

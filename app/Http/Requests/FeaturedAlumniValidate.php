@@ -30,7 +30,7 @@ class FeaturedAlumniValidate extends APIRequest
     {
         if ($this->request->has('alumni')) {
             return [
-                'alumni' => ['nullable', 'uuid', 'exists:alumnis,user_id,deleted_at,NULL',
+                'alumni' => ['nullable', 'uuid', 'exists:users,id,deleted_at,NULL',
                     Rule::unique('featured_alumnis', 'alumni_id')->where(function ($query) {
                         return $query->where('featured', '>=', Carbon::today())->where('deleted_at', null);
                     })],

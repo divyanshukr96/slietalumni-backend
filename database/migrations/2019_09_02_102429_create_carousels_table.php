@@ -14,7 +14,6 @@ class CreateCarouselsTable extends Migration
     {
         Schema::create('carousels', function (Blueprint $table) {
             $table->uuid('id')->primary()->unique();
-            $table->uuid('image_id');
 
             $table->boolean('active')->default(false);
 

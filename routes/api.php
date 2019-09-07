@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['prefix' => "public"], function () {
-    Route::get('carousel','PublicController@carousel');
+    Route::get('carousel', 'PublicController@carousel');
     Route::post('contact', 'API\ContactController@store');
 });
 
@@ -45,20 +45,18 @@ Route::group(['middleware' => 'auth:api'], function () {
         'alumni-data' => 'DataCollectionController',
         'donation' => 'API\DonationController',
         'carousel' => 'API\CarouselController',
+        'news' => 'API\NewsController',
+        'events' => 'API\EventController',
     ]);
+
+
+    Route::patch('news/{news}/publish', 'API\NewsController@publish')->name('news.publish');
+    Route::patch('events/{event}/publish', 'API\EventController@publish')->name('events.publish');
+
 });
 
-Route::apiResource('contact','API\ContactController')->except('store');
+Route::apiResource('contact', 'API\ContactController')->except('store');
 
-Route::apiResources([
-    'news' => 'API\NewsController',
-    'events' => 'API\EventController',
-], ['except' => ['update']]);
-
-Route::post('news/{news}', 'API\NewsController@update')->name('news.update');
-Route::patch('news/{news}/publish', 'API\NewsController@publish')->name('news.publish');
-Route::post('events/{event}', 'API\EventController@update')->name('events.update');
-Route::patch('events/{event}/publish', 'API\EventController@publish')->name('events.publish');
 
 Route::post('/blog/create', 'BlogController@store');
 

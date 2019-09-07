@@ -21,7 +21,6 @@ class CreateFeaturedAlumnisTable extends Migration
             $table->string('mobile')->nullable();
             $table->string('organisation')->nullable();
             $table->string('designation')->nullable();
-            $table->string('image_id')->nullable();
 
             $table->timestamp('featured')->nullable();
             $table->softDeletes();

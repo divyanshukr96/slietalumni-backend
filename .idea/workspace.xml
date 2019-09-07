@@ -25,35 +25,26 @@
   <component name="ChangeListManager">
     <list default="true" id="12e1a7c7-84a2-40b0-b66c-2b6a57bb2d36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Academic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Academic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Blog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DataCollectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DataCollectionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Carousel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Carousel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/EventType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EventType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/FeaturedAlumni.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FeaturedAlumni.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CarouselController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CarouselController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/FeaturedAlumniController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/FeaturedAlumniController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionStoreValidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionUpdateValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionUpdateValidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SACUserAddValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SACUserAddValidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserUpdateValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserUpdateValidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/RegisteredAlumni.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/RegisteredAlumni.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SACUserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SACUserResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/PaymentReceipt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PaymentReceipt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ProfessionalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Professional.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Rules/UserPasswordVerify.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/UserPasswordVerify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CarouselStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CarouselStoreValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/EventStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/EventStoreValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/FeaturedAlumniValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/FeaturedAlumniValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Carousel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Carousel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/EventType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/EventType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/FeaturedAlumni.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/FeaturedAlumni.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/medialibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/medialibrary.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_data_collections_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_data_collections_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_registrations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_registrations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_14_201032_create_academics_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_14_201032_create_academics_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_14_202244_create_professional_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_14_202244_create_professionals_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_03_153540_create_payment_receipts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_03_153540_create_payment_receipts_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_04_233529_create_media_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_04_233529_create_media_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_202849_create_events_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_202849_create_events_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_25_150842_create_featured_alumnis_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_25_150842_create_featured_alumnis_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_02_102429_create_carousels_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_02_102429_create_carousels_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -280,12 +271,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@eb0088d6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -365,7 +351,8 @@
       <workItem from="1567455383049" duration="751000" />
       <workItem from="1567459833261" duration="39595000" />
       <workItem from="1567642020191" duration="1976000" />
-      <workItem from="1567769894888" duration="32632000" />
+      <workItem from="1567769894888" duration="39364000" />
+      <workItem from="1567849916458" duration="5579000" />
     </task>
     <servers />
   </component>

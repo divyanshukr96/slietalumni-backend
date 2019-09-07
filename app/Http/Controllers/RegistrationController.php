@@ -146,6 +146,7 @@ class RegistrationController extends Controller
             'username' => $validateData['username'],
             'password' => $validateData['password'],
             'profile' => $alumni->image->getPath(),
+            'is_alumni' => true,
             'alumni' => true
         ];
         $user = new User($data);

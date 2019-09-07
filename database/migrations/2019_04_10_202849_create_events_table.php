@@ -14,9 +14,8 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->uuid('id')->primary();
-
             $table->uuid('event_type_id');
-            $table->uuid('image_id')->nullable();
+
             $table->string('title');
             $table->longText('description')->nullable();
             $table->longText('content')->nullable();
@@ -24,6 +23,7 @@ class CreateEventsTable extends Migration
             $table->date('date')->nullable();
             $table->time('time')->nullable();
 
+            $table->boolean('published')->default(false);
             $table->string('published_by')->nullable();
             $table->timestamp('published_at')->nullable();
 

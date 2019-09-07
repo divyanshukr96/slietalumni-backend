@@ -5,19 +5,35 @@ namespace App;
 use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * @method static whereActive(bool $true)
+ * @method static latest()
+ * @method static create(array $validated)
  */
-class Carousel extends Model
+class Carousel extends Model implements HasMedia
 {
-    use SoftDeletes, UsesUuid;
+    use SoftDeletes, UsesUuid, HasMediaTrait;
 
-    protected $fillable = ['active'];
+    protected $fillable = ['active', 'image'];
 
-    public function image()
+    /**
+     * @param $image
+     */
+    public function setImageAttribute($image)
     {
-        return $this->belongsTo(Image::class);
+        $this->addMedia($image)->toMediaCollection('carousel');
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getImageAttribute()
+    {
+        $data = $this->getMedia('carousel')->last();
+        return $data ?: null;
     }
 
 }

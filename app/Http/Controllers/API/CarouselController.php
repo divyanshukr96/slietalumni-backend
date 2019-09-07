@@ -6,7 +6,6 @@ use App\Carousel;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CarouselStoreValidate;
 use App\Http\Resources\Carousel as CarouselResource;
-use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
@@ -31,9 +30,7 @@ class CarouselController extends Controller
      */
     public function store(CarouselStoreValidate $request)
     {
-        $user = auth()->user();
-        $image = $user->images()->create($request->validated());
-        $carousel = $image->carousel()->create(['active' => true]);
+        $carousel = Carousel::create($request->validated());
         return new CarouselResource($carousel);
     }
 

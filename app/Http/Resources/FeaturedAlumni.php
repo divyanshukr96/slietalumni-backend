@@ -16,6 +16,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed designation
  * @property mixed featured
  * @property mixed created_at
+ * @property mixed image
  */
 class FeaturedAlumni extends JsonResource
 {
@@ -35,6 +36,9 @@ class FeaturedAlumni extends JsonResource
                 'mobile' => $this->mobile,
                 'organisation' => $this->organisation,
                 'designation' => $this->designation,
+                'image' => $this->when($this->image, function () {
+                    return $this->image->getUrl();
+                }),
             ]),
             $this->mergeWhen($this->alumni, [
                 'name' => $this->alumni['name'],
@@ -42,7 +46,9 @@ class FeaturedAlumni extends JsonResource
                 'mobile' => $this->alumni['mobile'],
                 'organisation' => $this->alumni['organisation'],
                 'designation' => $this->alumni['designation'],
+                'image' => $this->alumni['profile'],
             ]),
+
             'featured' => Carbon::parse($this->featured)->format('d M Y'),
             'created_at' => Carbon::parse($this->created_at)->format('d-m-Y'),
         ];

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * @method static create(array $all)
  * @method static where(string $string, array $only)
+ * @method static whereName(array $only)
  */
 class EventType extends Model
 {

@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\UserPasswordVerify;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CarouselStoreValidate extends APIRequest
+class EventPublishValidate extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,15 +25,8 @@ class CarouselStoreValidate extends APIRequest
     public function rules()
     {
         return [
-            'image' => 'required|image',
-            'active' => 'required|boolean',
-        ];
-    }
-
-    public function attributes()
-    {
-        return [
-            'image' => 'carousel'
+            'password' => ['required', 'min:6', new UserPasswordVerify],
+            'publish' => 'required|boolean'
         ];
     }
 }
