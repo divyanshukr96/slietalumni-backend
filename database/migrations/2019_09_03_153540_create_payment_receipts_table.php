@@ -21,7 +21,7 @@ class CreatePaymentReceiptsTable extends Migration
             $table->string('paymentable_type');
 
             $table->boolean('verified')->default(false);
-            $table->uuid('user_id')->nullable();
+            $table->uuid('user_id')->nullable();  // verified by which user
 
             $table->softDeletes();
             $table->timestamps();

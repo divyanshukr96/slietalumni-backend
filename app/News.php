@@ -4,40 +4,44 @@ namespace App;
 
 use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Image\Exceptions\InvalidManipulation;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 use Str;
 
 /**
  * @method static create(array $all)
- * @property bool publish
+ * @method static latest()
+ * @property bool published
+ * @property mixed published_by
+ * @property string published_at
  */
-class News extends Model
+class News extends Model implements HasMedia
 {
-    use UsesUuid, SoftDeletes;
+    use UsesUuid, SoftDeletes, HasMediaTrait;
 
     protected $fillable = ['title', 'description', 'content', 'social_link', 'cover'];
 
-    public function images()
+
+    /**
+     * @param $image
+     */
+    public function setCoverAttribute($image)
     {
-        return $this->belongsToMany('App\Image');
+        $this->addMedia($image)->toMediaCollection('cover');
     }
 
     /**
-     * @return HasOne
+     * @return mixed
      */
-    public function covers()
+    public function getCoverAttribute()
     {
-        return $this->hasOne('App\Image','id', 'cover');
+        $cover = $this->getMedia('cover')->last();
+        return $cover ? $cover->getUrl() : null;
     }
 
-    /**
-     * @param $value
-     */
-    public function setCoverAttribute($value)
-    {
-        $this->attributes['cover'] = Image::create(['image' => $value])->id;
-    }
 
     /**
      * @param $value
@@ -45,6 +49,20 @@ class News extends Model
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = Str::ucfirst($value);
+    }
+
+
+    /**
+     * @param Media|null $media
+     */
+    public function registerMediaConversions(Media $media = null)
+    {
+        try {
+            $this->addMediaConversion('thumb')
+                ->width(368)
+                ->height(232);
+        } catch (InvalidManipulation $e) {
+        }
     }
 
 }

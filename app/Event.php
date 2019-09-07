@@ -15,6 +15,7 @@ use Spatie\MediaLibrary\Models\Media;
 
 /**
  * @method static create(array $all)
+ * @method static latest()
  * @property mixed published_by
  * @property bool published
  * @property static published_at

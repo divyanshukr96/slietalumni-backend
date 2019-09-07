@@ -7,10 +7,8 @@ use App\EventType;
 use App\Http\Requests\EventPublishValidate;
 use App\Http\Requests\EventStoreValidate;
 use App\Http\Resources\Event as EventResource;
-use App\Image;
 use Carbon\Carbon;
 use Exception;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
@@ -90,6 +88,8 @@ class EventController extends Controller
      */
     public function destroy(Event $event)
     {
+//        $event->published = false;
+//        $event->save();
         $event->delete();
         return response()->json($event, 204);
     }

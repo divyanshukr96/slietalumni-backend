@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Http\Requests\NewsPublishValidate;
 use App\Http\Requests\NewsStoreValidate;
 use App\Http\Resources\News as NewsResource;
-use App\Image;
 use App\News;
+use Carbon\Carbon;
 use Exception;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
@@ -47,11 +47,11 @@ class NewsController extends Controller
      * Display the specified resource.
      *
      * @param News $news
-     * @return Response
+     * @return NewsResource|Response
      */
     public function show(News $news)
     {
-        //
+        return new NewsResource($news);
     }
 
     /**
@@ -63,7 +63,7 @@ class NewsController extends Controller
      */
     public function update(NewsStoreValidate $request, News $news)
     {
-        $news->fill($request->validated());
+        $news->update($request->validated());
         $news->save();
         return new NewsResource($news);
     }
@@ -71,14 +71,17 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
+     * @param NewsPublishValidate $request
      * @param News $news
      * @return NewsResource
      */
-    public function publish(Request $request, News $news)
+    public function publish(NewsPublishValidate $request, News $news)
     {
-        $news->publish = true;
+        $news->published = $request->validated()['publish'];
+        $news->published_by = auth()->user()->getAuthIdentifier();
+        $news->published_at = Carbon::now();
         $news->save();
+
         return new NewsResource($news);
     }
 
@@ -91,8 +94,8 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        $news->publish = false;
-        $news->save();
+//        $news->published = false;
+//        $news->save();
         $news->delete();
         return response()->json($news, 204);
     }

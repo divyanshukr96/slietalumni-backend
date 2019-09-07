@@ -40,11 +40,9 @@ class Event extends JsonResource
             'event_type' => $this->eventType->title,
             'description' => $this->description,
             'image' => $this->image,
-
             'image_thumb' => $this->when($this->getMedia()->last(), function () {
                 return $this->getMedia()->last()->getUrl('card');
             }),
-
             'content' => $this->content,
             'venue' => $this->venue,
             'date' => $this->when($this->date, function () {

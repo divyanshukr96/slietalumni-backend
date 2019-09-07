@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -17,10 +16,13 @@ class CreateNewsTable extends Migration
             $table->uuid('id')->primary();
 
             $table->string('title');
-            $table->string('cover')->nullable();
             $table->string('social_link')->nullable();
             $table->text('description')->nullable();
             $table->longText('content')->nullable();
+
+            $table->boolean('published')->default(false);
+            $table->string('published_by')->nullable();
+            $table->timestamp('published_at')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
