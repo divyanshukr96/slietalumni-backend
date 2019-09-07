@@ -7,10 +7,12 @@ use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
-class PaymentReceipt extends Model
+class PaymentReceipt extends Model implements HasMedia
 {
-    use SoftDeletes, UsesUuid, StoreImage;
+    use SoftDeletes, UsesUuid, StoreImage, HasMediaTrait;
 
     protected $fillable = ['receipt', 'amount'];
 
@@ -24,10 +26,7 @@ class PaymentReceipt extends Model
 
     public function setReceiptAttribute($receipt)
     {
-        if (is_object($receipt)) {
-            $receipt = $this->generateFileNameAndStore($receipt, '', true);
-        }
-        $this->attributes['receipt'] = $receipt;
+        $this->addMedia($receipt)->toMediaCollection('payment_receipt');
     }
 
 }

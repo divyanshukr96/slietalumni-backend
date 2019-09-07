@@ -32,7 +32,7 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::post('/alumni/register', 'RegistrationController@store');
-Route::post('/alumni/set-username', 'RegistrationController@setUsername');
+Route::post('/set-username', 'RegistrationController@setUsername');
 
 
 Route::group(['middleware' => 'auth:api'], function () {

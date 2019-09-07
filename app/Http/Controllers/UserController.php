@@ -57,13 +57,12 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param UserUpdateValidate $request
-     * @param int $id
+     * @param User $user
      * @return SACUserResource
      */
-    public function update(UserUpdateValidate $request, $id)
+    public function update(UserUpdateValidate $request, User $user)
     {
-        $user = User::find($id);
-        $user->fill($request->all());
+        $user->fill($request->validated());
         $user->save();
         if ($request->has('roles')) $user->syncRoles($request->get('roles'));
         return new SACUserResource($user);

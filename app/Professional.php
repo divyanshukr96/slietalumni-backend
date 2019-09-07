@@ -5,20 +5,22 @@ namespace App;
 use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class ProfessionalDetails extends Model
+class Professional extends Model
 {
-    use UsesUuid;
+    use SoftDeletes, UsesUuid;
 
     protected $fillable = ['organisation', 'address', 'contact', 'email', 'designation'];
 
 
     /**
-     * @return BelongsTo
+     * @return MorphTo
      */
-    public function user()
+    public function professionalable()
     {
-        return $this->belongsTo(User::class);
+        return $this->morphTo();
     }
 
 }

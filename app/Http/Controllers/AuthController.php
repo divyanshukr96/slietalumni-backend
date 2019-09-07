@@ -103,7 +103,7 @@ class AuthController extends Controller
             'permissions' => $user->getAllPermissions()->map(function ($data) {
                 return $data->name;
             }),
-            'professional' => $user->professional()->latest(),
+            'professional' => $user->professionals()->latest(),
         ]);
     }
 

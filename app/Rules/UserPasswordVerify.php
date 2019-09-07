@@ -26,7 +26,7 @@ class UserPasswordVerify implements Rule
      */
     public function passes($attribute, $value)
     {
-        return Hash::check($value, auth()->user()->password);
+        return auth()->user() ? Hash::check($value, auth()->user()->password) : false;
     }
 
     /**

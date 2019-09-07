@@ -5,7 +5,10 @@ namespace App;
 use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 /**
  * @method static create(array $all)
@@ -15,23 +18,41 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property mixed email
  * @property mixed verified_by
  * @property mixed payment
+ * @property static verified_at
  */
-class Registration extends Model
+class Registration extends Model implements HasMedia
 {
-    use SoftDeletes, UsesUuid;
+    use SoftDeletes, UsesUuid, HasMediaTrait;
 
     protected $fillable = ['name', 'email', 'mobile', 'programme', 'branch', 'passing', 'batch', 'organisation', 'designation', 'image', 'linkdein'];
 
-    public function image()
-    {
-        return $this->belongsTo('App\Image');
-    }
-
+    /**
+     * @param $value
+     */
     public function setImageAttribute($value)
     {
-        if (is_object($value)) $this->attributes['image_id'] = Image::create(['image' => $value])->id;
+        $this->addMedia($value)->toMediaCollection();
     }
 
+    /**
+     * @return mixed
+     */
+    public function getImageAttribute()
+    {
+        return $this->getMedia()->first();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageUrlAttribute()
+    {
+        return $this->getMedia()->first()->getUrl();
+    }
+
+    /**
+     * @return MorphOne
+     */
     public function payment()
     {
         return $this->morphOne(PaymentReceipt::class, 'paymentable');
@@ -40,9 +61,17 @@ class Registration extends Model
     /**
      * @return BelongsTo
      */
-    public function getVerifiedByAttribute()
+    public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return Model|BelongsTo|object|null
+     */
+    public function getVerifiedByAttribute()
+    {
+        return $this->user()->first();
     }
 
     /**

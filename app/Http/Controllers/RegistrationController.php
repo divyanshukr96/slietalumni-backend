@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use App\DataCollection;
 use App\Http\Requests\RegistrationPaymentValidation;
+use App\Http\Resources\DataCollection as DataCollectionResource;
 use App\Image;
+use Carbon\Carbon;
 use DB;
 use Str;
 use Hash;
 use App\User;
 use App\Academic;
 use App\Registration;
-use App\ProfessionalDetails;
+use App\Professional;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Http\JsonResponse;
@@ -90,6 +92,7 @@ class RegistrationController extends Controller
         $payment = $alumni->payment ? true : $alumni->payment()->create($request->validated());
         if ($status && $payment) {
             $alumni->verified = true;
+            $alumni->verified_at = Carbon::now();
             $alumni->verified_by = auth()->user()->getAuthIdentifier();
         }
         $alumni->save();
@@ -142,26 +145,26 @@ class RegistrationController extends Controller
             'mobile' => $alumni->mobile,
             'username' => $validateData['username'],
             'password' => $validateData['password'],
-            'image_id' => $alumni->image->id,
+            'profile' => $alumni->image->getPath(),
             'alumni' => true
         ];
         $user = new User($data);
-//        $user->save();
-//        $user->educations()->save(new Academic([
-//            "programme" => $alumni->programme,
-//            "branch" => $alumni->branch,
-//            "batch" => $alumni->batch,
-//            "passing" => $alumni->passing,
-//        ]));
-//        $user->professional()->save(new ProfessionalDetails([
-//            "organisation" => $alumni->organisation,
-//            "designation" => $alumni->designation,
-//        ]));
-//
-//        // send welcome email to user
-//
-//        $alumni->delete();
-//        DB::table('username_tokens')->where('email', $context->email)->delete();
+        $user->save();
+        $user->academics()->create([
+            "programme" => $alumni->programme,
+            "branch" => $alumni->branch,
+            "batch" => $alumni->batch,
+            "passing" => $alumni->passing,
+        ]);
+        $user->professionals()->create([
+            "organisation" => $alumni->organisation,
+            "designation" => $alumni->designation,
+        ]);
+
+        // send welcome email to user
+
+        $alumni->delete();
+        DB::table('username_tokens')->where('email', $context->email)->delete();
 
         return new UserResource($user);
     }
@@ -178,11 +181,15 @@ class RegistrationController extends Controller
     }
 
 
+    /**
+     * @param Registration $alumni
+     * @return DataCollectionResource|AnonymousResourceCollection
+     */
     public function related(Registration $alumni)
     {
         $data = DataCollection::where('email', $alumni->email)->orWhere('mobile', $alumni->mobile)->get();
 
-        return $data;
+        return DataCollectionResource::collection($data);
     }
 
 }

@@ -25,13 +25,13 @@ class AlumniDataCollectionStoreValidate extends APIRequest
     {
         $email = request()->get('email') ? request()->get('email') : 'NULL';
         return [
-            'name' => "required|regex:/^[.\'\-a-zA-Z ]+$/|max:150|unique:alumni_data_collections,name,NULL,id,email,{$email}",
-            'email' => 'nullable|email|unique:alumni_data_collections,email|unique:users,email',
+            'name' => "required|regex:/^[.\'\-a-zA-Z ]+$/|max:150|unique:data_collections,name,NULL,id,email,{$email}",
+            'email' => 'nullable|email|unique:data_collections,email|unique:users,email',
             'mobile' => ['nullable', new PhoneNumber],
             'programme' => 'nullable',
             'branch' => 'nullable',
             'batch' => 'nullable|digits:4|integer|min:1980|max:' . (date('Y') - 3),
-            'passing' => 'nullable|digits:4|integer|min:1980|max:' . (date('Y')),
+            'passing' => 'nullable|digits:4|integer|min:1980|max:' . (date('Y')), //add validation for check the passing year after batch
             'organisation' => 'nullable|string', //designation field
             'designation' => 'nullable|string', //designation field
             'image' => 'nullable|image|max:2000',

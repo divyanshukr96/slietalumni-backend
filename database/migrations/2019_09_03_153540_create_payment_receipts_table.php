@@ -15,7 +15,6 @@ class CreatePaymentReceiptsTable extends Migration
         Schema::create('payment_receipts', function (Blueprint $table) {
             $table->uuid('id')->primary()->unique();
 
-            $table->string('receipt');
             $table->string('amount')->nullable();
 
             $table->uuid('paymentable_id');
@@ -23,6 +22,7 @@ class CreatePaymentReceiptsTable extends Migration
 
             $table->boolean('verified')->default(false);
             $table->uuid('user_id')->nullable();
+
             $table->softDeletes();
             $table->timestamps();
         });

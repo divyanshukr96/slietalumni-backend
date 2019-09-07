@@ -14,7 +14,6 @@ class CreateRegistrationsTable extends Migration
     {
         Schema::create('registrations', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('image_id')->nullable();
 
             $table->string('name');
             $table->string('email')->unique();
@@ -29,7 +28,7 @@ class CreateRegistrationsTable extends Migration
 
             $table->boolean('verified')->default(false);
             $table->timestamp('verified_at')->nullable();
-            $table->uuid('user_id')->nullable();
+            $table->uuid('user_id')->nullable();  // user id of the User who verified the alumni
 
             $table->softDeletes();
             $table->timestamps();

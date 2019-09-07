@@ -24,33 +24,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12e1a7c7-84a2-40b0-b66c-2b6a57bb2d36" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ALumniBackend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ALumniBackend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AlumniDataCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AlumniRegistration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Donation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Donation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/DonationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/DonationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlumniDataCollectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DataCollectionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AlumniRegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AlumniRegistrationStoreValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AlumniRegistrationStoreValidation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SetUsernameValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SetUsernameValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Academic.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Academic.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DataCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataCollection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DataCollectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DataCollectionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionStoreValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionUpdateValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/AlumniDataCollectionUpdateValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SACUserAddValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SACUserAddValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/UserUpdateValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/UserUpdateValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/RegisteredAlumni.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/RegisteredAlumni.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/SACUserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/SACUserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/UserResource.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/TelescopeServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/TelescopeServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/StoreImage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/StoreImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/PaymentReceipt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PaymentReceipt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ProfessionalDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Professional.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Rules/UserPasswordVerify.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Rules/UserPasswordVerify.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/AlumniDataCollectionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/AlumniDataCollectionFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_124817_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_124817_create_images_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_alumni_data_collections_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_data_collections_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_alumni_registrations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_registrations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_01_153030_create_donations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_01_153030_create_donations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/AlumniDataCollectionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AlumniDataCollectionSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/medialibrary.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/medialibrary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_data_collections_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_data_collections_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_registrations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_183855_create_registrations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_14_201032_create_academics_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_14_201032_create_academics_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_14_202244_create_professional_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_14_202244_create_professionals_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_03_153540_create_payment_receipts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_03_153540_create_payment_receipts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_04_233529_create_media_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_04_233529_create_media_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -244,15 +248,15 @@
     <property name="settings.editor.selected.configurable" value="Erlang External Tools" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Controllers\API" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Controllers\API" />
       <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Requests" />
       <recent name="E:\Alumni_Association\ALumniBackend\app\Traits" />
       <recent name="E:\Alumni_Association\ALumniBackend\resources\views" />
       <recent name="E:\Alumni_Association\ALumniBackend\.idea" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Alumni_Association\ALumniBackend\app\Http\Controllers\API" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -279,12 +283,7 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3a594b6e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3a594b6e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@2d149857" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@eb0088d6" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
           </expand>
           <select />
@@ -364,7 +363,9 @@
       <workItem from="1567342794765" duration="9326000" />
       <workItem from="1567427173586" duration="9509000" />
       <workItem from="1567455383049" duration="751000" />
-      <workItem from="1567459833261" duration="35177000" />
+      <workItem from="1567459833261" duration="39595000" />
+      <workItem from="1567642020191" duration="1976000" />
+      <workItem from="1567769894888" duration="32632000" />
     </task>
     <servers />
   </component>

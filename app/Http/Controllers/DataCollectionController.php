@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\DataCollection;
 use App\Http\Requests\AlumniDataCollectionStoreValidate;
 use App\Http\Requests\AlumniDataCollectionUpdateValidate;
+use App\Http\Resources\DataCollection as DataCollectionResource;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 
 class DataCollectionController extends Controller
@@ -12,11 +14,11 @@ class DataCollectionController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return AnonymousResourceCollection|Response
      */
     public function index()
     {
-        return response()->json(DataCollection::all());
+        return DataCollectionResource::collection(DataCollection::all());
     }
 
 
@@ -24,23 +26,25 @@ class DataCollectionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param AlumniDataCollectionStoreValidate $request
-     * @return Response
+     * @return DataCollectionResource|Response
      */
     public function store(AlumniDataCollectionStoreValidate $request)
     {
         $alumni = DataCollection::create($request->validated());
-        return response()->json($alumni, 201);
+        if ($request->get('organisation')) $alumni->professional()->create($request->validated());
+        if ($request->get('programme')) $alumni->academic()->create($request->validated());
+        return new DataCollectionResource($alumni);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param $id
-     * @return Response
+     * @param DataCollection $alumni_datum
+     * @return DataCollectionResource|Response
      */
-    public function show($id)
+    public function show(DataCollection $alumni_datum)
     {
-        return response()->json(DataCollection::find($id));
+        return new DataCollectionResource($alumni_datum);
     }
 
 
@@ -53,6 +57,7 @@ class DataCollectionController extends Controller
      */
     public function update(AlumniDataCollectionUpdateValidate $request, $id)
     {
+        return response()->json('Should add observer on updating so that proper academic and professional detail can be updated', 400);
         $alumni = DataCollection::find($id);
         $alumni->update($request->validated());
         return response()->json($alumni, 200);

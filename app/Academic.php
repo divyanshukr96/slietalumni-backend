@@ -11,14 +11,15 @@ class Academic extends Model
 {
     use SoftDeletes, UsesUuid;
 
+    // enrollment is the enrolled year
     protected $fillable = ['programme', 'branch', 'enrollment', 'passing', 'batch', 'registration', 'institute'];
 
     /**
      * @return BelongsTo
      */
-    public function user()
+    public function academicable()
     {
-        return $this->belongsTo(User::class);
+        return $this->morphTo();
     }
 
 }

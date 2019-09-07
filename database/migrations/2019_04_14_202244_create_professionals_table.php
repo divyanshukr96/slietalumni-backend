@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProfessionalDetailsTable extends Migration
+class CreateProfessionalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,17 @@ class CreateProfessionalDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('professional_details', function (Blueprint $table) {
+        Schema::create('professionals', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('user_id');
 
-            $table->string('organisation');
+            $table->uuid('professionalable_id')->nullable();
+            $table->string('professionalable_type')->nullable();
+
+            $table->string('organisation')->nullable();  // not nullable using validation
+            $table->string('designation')->nullable();
             $table->string('address')->nullable();
             $table->string('contact')->nullable();
             $table->string('email')->nullable();
-            $table->string('designation')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
@@ -34,6 +36,6 @@ class CreateProfessionalDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('professional_details');
+        Schema::dropIfExists('professionals');
     }
 }

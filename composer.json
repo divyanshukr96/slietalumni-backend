@@ -19,7 +19,8 @@
         "laravel/tinker": "^1.0",
         "league/glide-laravel": "^1.0",
         "spatie/laravel-medialibrary": "^7.0.0",
-        "spatie/laravel-permission": "^2.37"
+        "spatie/laravel-permission": "^2.37",
+        "ext-mysql_xdevapi": "*"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.3",

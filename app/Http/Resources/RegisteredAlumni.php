@@ -20,6 +20,9 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed created_at
  * @property mixed verified
  * @property mixed batch
+ * @property mixed verified_at
+ * @property mixed verified_by
+ * @property mixed image_url
  */
 class RegisteredAlumni extends JsonResource
 {
@@ -33,7 +36,8 @@ class RegisteredAlumni extends JsonResource
     {
         return [
             "id" => $this->id,
-            "image" => $this->image ? $this->image->image : null,
+            "image" => $this->image->file_name,
+            "image_url" => $this->image_url,
             "name" => $this->name,
             "email" => $this->email,
             "mobile" => $this->mobile,
@@ -44,6 +48,18 @@ class RegisteredAlumni extends JsonResource
             "organisation" => $this->organisation,
             "designation" => $this->designation,
             'verified' => $this->verified,
+            'verified_at' => $this->when($this->verified and $this->verified_at, function () {
+                return Carbon::parse($this->verified_at)->format('d M Y H:i');
+            }),
+            'verified_by' => $this->when($this->verified and $this->verified_by, function () {
+                return [
+                    'name' => $this->verified_by->name,
+                    'email' => $this->verified_by->email,
+                    'username' => $this->verified_by->username,
+                    'active' => $this->verified_by->active,
+                    'profile' => $this->verified_by->profile
+                ];
+            }),
             "created_at" => Carbon::parse($this->created_at)->format('d-m-Y H:i'),
         ];
     }

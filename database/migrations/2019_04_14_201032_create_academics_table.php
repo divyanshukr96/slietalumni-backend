@@ -14,9 +14,11 @@ class CreateAcademicsTable extends Migration
     {
         Schema::create('academics', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('user_id');
 
-            $table->string('programme')->nullable();
+            $table->uuid('academicable_id')->nullable();
+            $table->string('academicable_type')->nullable();
+
+            $table->string('programme')->nullable();  // not nullable using validator
             $table->string('branch')->nullable();
             $table->string('enrollment')->nullable();
             $table->year('passing')->nullable();

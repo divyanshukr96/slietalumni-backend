@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Image extends Model
 {
+    protected $table = 'dochhsah';
     use StoreImage, UsesUuid;
 
     protected $fillable = ['image'];

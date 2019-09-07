@@ -6,12 +6,15 @@ use App\Traits\UsesUuid;
 use Hash;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Mix;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\Permission\Traits\HasRoles;
 
 /**
@@ -22,9 +25,10 @@ use Spatie\Permission\Traits\HasRoles;
  * @method static isAlumni()
  * @method static whereUsername($username)
  */
-class User extends Authenticatable
+class User extends Authenticatable implements HasMedia
 {
-    use HasApiTokens, Notifiable, HasRoles, UsesUuid, SoftDeletes;
+
+    use HasApiTokens, Notifiable, HasRoles, UsesUuid, SoftDeletes, HasMediaTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -32,7 +36,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'username', 'mobile', 'image_id', 'active'
+        'name', 'email', 'password', 'username', 'mobile', 'profile', 'active'
     ];
 
     /**
@@ -45,27 +49,19 @@ class User extends Authenticatable
     ];
 
     /**
-     * @return BelongsTo
+     * @return MorphMany
      */
-    public function photo()
+    public function academics()
     {
-        return $this->belongsTo(Image::class);
+        return $this->morphMany(Academic::class, 'academicable');
     }
 
     /**
-     * @return HasMany
+     * @return MorphMany
      */
-    public function educations()
+    public function professionals()
     {
-        return $this->hasMany(Academic::class);
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function professional()
-    {
-        return $this->hasMany(ProfessionalDetails::class);
+        return $this->morphMany(Professional::class, 'professionalable');
     }
 
     /**
@@ -81,7 +77,8 @@ class User extends Authenticatable
      */
     public function setPasswordAttribute($value)
     {
-        $this->attributes['password'] = strlen($value) < 60 ? Hash::make($value) : $value;
+        $hash = Hash::info($value);
+        $this->attributes['password'] = ($hash['algoName'] === Hash::getDefaultDriver()) ? $value : Hash::make($value);
     }
 
     /**
@@ -101,14 +98,28 @@ class User extends Authenticatable
         return $query->whereHas('alumni');
     }
 
+    /**
+     * @return HasMany
+     */
     public function images()
     {
-        return $this->hasMany(Image::class);
+        return $this->hasMany(Media::class);
     }
 
-//    public function images()
-//    {
-//        return $this->morphToMany(Image::class, 'imageable');
-//    }
+    /**
+     * @param $profile
+     */
+    public function setProfileAttribute($profile)
+    {
+        $this->copyMedia($profile)->toMediaCollection('profile');
+    }
 
+    /**
+     * @return Mix|null
+     */
+    public function getProfileAttribute()
+    {
+        $file = $this->getMedia('profile')->last();
+        return $file ? $file->getUrl() : null;
+    }
 }

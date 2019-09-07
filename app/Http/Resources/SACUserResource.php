@@ -15,6 +15,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed photo
  * @property mixed active
  * @property mixed created_at
+ * @property mixed profile
  * @method getRoleNames()
  * @method getAllPermissions()
  */
@@ -40,6 +41,7 @@ class SACUserResource extends JsonResource
             'permissions' => $this->getAllPermissions()->map(function ($data) {
                 return $data->name;
             }),
+            'profile' => $this->profile,
             'active' => $this->active,
             'created_at' => Carbon::parse($this->created_at)->format('d-m-Y H:i'),
         ];
