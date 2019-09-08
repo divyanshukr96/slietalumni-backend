@@ -14,6 +14,7 @@ class AuthController extends Controller
 
     public function __construct()
     {
+        $this->middleware('auth:api')->except('login');
         $this->username = $this->findUsername();
     }
 
@@ -64,7 +65,8 @@ class AuthController extends Controller
     {
         $request->user()->token()->revoke();
         return response()->json([
-            'message' => 'Successfully logged out'
+            'time' => Carbon::now()->toDateTimeString(),
+            'message' => 'User Successfully logged out . . .'
         ]);
     }
 
@@ -95,15 +97,17 @@ class AuthController extends Controller
         $user = auth()->user();
         return response()->json([
             'time' => Carbon::now()->toDateTimeString(),
-            'name' => ucwords($user->name),
-            'email' => $user->email,
-            'username' => $user->username,
-            'image' => $user->image,
-            'roles' => $user->getRoleNames(),
-            'permissions' => $user->getAllPermissions()->map(function ($data) {
-                return $data->name;
-            }),
-            'professional' => $user->professionals()->latest(),
+            'data' => [
+                'name' => ucwords($user->name),
+                'email' => $user->email,
+                'username' => $user->username,
+                'image' => $user->image,
+                'roles' => $user->getRoleNames(),
+                'permissions' => $user->getAllPermissions()->map(function ($data) {
+                    return $data->name;
+                }),
+                'professional' => $user->professionals()->latest(),
+            ]
         ]);
     }
 

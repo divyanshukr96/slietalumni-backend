@@ -21,8 +21,9 @@ class DataCollection extends Model implements HasMedia
 
     protected $fillable = ['name', 'email', 'mobile', 'profile', 'image'];
 
-//    protected $fillable = ['name', 'email', 'mobile', 'programme', 'batch', 'branch', 'passing', 'organisation', 'designation'];
-
+    /**
+     *
+     */
     protected static function boot()
     {
         parent::boot();

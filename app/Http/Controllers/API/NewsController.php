@@ -32,15 +32,7 @@ class NewsController extends Controller
      */
     public function store(NewsStoreValidate $request)
     {
-        $news = News::create($request->validated());
-        if ($request->hasFile('cover')) {
-            $photos = $request->file('cover');
-            foreach ($photos as $photo) {
-                $image = Image::create(['image' => $photo]);
-                $news->images()->attach($image);
-            }
-        }
-        return new NewsResource($news);
+        return new NewsResource(News::create($request->validated()));
     }
 
     /**

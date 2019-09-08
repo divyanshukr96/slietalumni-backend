@@ -39,13 +39,13 @@ class BlogController extends Controller
     public function store(NewsStoreValidate $request)
     {
         $blog = Blog::create($request->validated());
-        if ($request->hasFile('image')) {
-            $photos = $request->file('image');
-            foreach ($photos as $photo) {
-                $image = Image::create(['image' => $photo]);
-                $blog->images()->attach($image);
-            }
-        }
+//        if ($request->hasFile('image')) {
+//            $photos = $request->file('image');
+//            foreach ($photos as $photo) {
+//                $image = Image::create(['image' => $photo]);
+//                $blog->images()->attach($image);
+//            }
+//        }
         return response()->json([
             'status' => "success",
             'code' => 201,

@@ -38,11 +38,11 @@ class EventTypeController extends Controller
      * Display the specified resource.
      *
      * @param EventType $event_type
-     * @return Response
+     * @return EventTypeResource|Response
      */
     public function show(EventType $event_type)
     {
-        //
+        return new EventTypeResource($event_type);
     }
 
     /**

@@ -6,7 +6,7 @@ use App\Http\Requests\SACUserAddValidate;
 use App\Http\Requests\UserUpdateValidate;
 use App\Http\Resources\SACUserResource;
 use App\User;
-use Illuminate\Http\Request;
+use Exception;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 
@@ -71,13 +71,13 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
+     * @param User $user
      * @return Response
+     * @throws Exception
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        $user = User::find($id);
         $user->delete();
-        return response()->json();
+        return response()->json($user, 204);
     }
 }

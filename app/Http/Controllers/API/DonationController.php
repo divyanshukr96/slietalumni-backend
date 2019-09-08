@@ -44,7 +44,7 @@ class DonationController extends Controller
      * @param DonationStoreValidate $request
      * @return Response
      */
-    public function store(DonationStoreValidate $request)
+    public function store(DonationStoreValidate $request)  // public can access this to post a donation
     {
         if ($request->has('member')) {
             $authUser = $this->getUser($request);
@@ -74,11 +74,17 @@ class DonationController extends Controller
             }
             $donation = $user->donations()->create($data);
 
-            return \response($donation);
+            return response()->json([
+                'time' => Carbon::now()->toDateTimeString(),
+                'data' => $donation
+            ], 201);
         }
         $donation = Donation::create($request->validated());
 
-        return \response($donation);
+        return response()->json([
+            'time' => Carbon::now()->toDateTimeString(),
+            'data' => $donation
+        ], 201);
     }
 
     /**

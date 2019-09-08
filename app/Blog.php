@@ -16,8 +16,5 @@ class Blog extends Model implements HasMedia
 
     protected $fillable = ['title', 'content'];
 
-//    public function images()
-//    {
-//        return $this->belongsToMany('App\Image');
-//    }
+
 }

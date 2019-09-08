@@ -6,6 +6,7 @@ use App\DataCollection;
 use App\Http\Requests\AlumniDataCollectionStoreValidate;
 use App\Http\Requests\AlumniDataCollectionUpdateValidate;
 use App\Http\Resources\DataCollection as DataCollectionResource;
+use Carbon\Carbon;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 
@@ -60,7 +61,10 @@ class DataCollectionController extends Controller
         return response()->json('Should add observer on updating so that proper academic and professional detail can be updated', 400);
         $alumni = DataCollection::find($id);
         $alumni->update($request->validated());
-        return response()->json($alumni, 200);
+        return response()->json([
+            'time' => Carbon::now()->toDateTimeString(),
+            'data' => $alumni
+        ], 200);
     }
 
     /**

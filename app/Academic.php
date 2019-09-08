@@ -11,7 +11,7 @@ class Academic extends Model
 {
     use SoftDeletes, UsesUuid;
 
-    // enrollment is the enrolled year
+    // enrollment is the enrolled year / year of registration
     protected $fillable = ['programme', 'branch', 'enrollment', 'passing', 'batch', 'registration', 'institute'];
 
     /**

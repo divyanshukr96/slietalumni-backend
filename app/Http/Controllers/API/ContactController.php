@@ -31,7 +31,7 @@ class ContactController extends Controller
     public function store(ContactStoreValidation $request)
     {
         return response()->json([
-            'data' => Contact::create($request->validated())
+            'data' => Contact::create($request->validated())  // should not be restricted
         ]);
     }
 
