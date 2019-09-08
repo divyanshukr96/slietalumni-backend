@@ -38,12 +38,12 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id
+     * @param Role $role
      * @return RoleResource
      */
-    public function show($id)
+    public function show(Role $role)
     {
-        return new RoleResource(Role::findById($id));
+        return new RoleResource($role);
     }
 
     /**
