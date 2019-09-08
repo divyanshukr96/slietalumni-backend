@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\Traits\StoreImage;
 use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -21,7 +20,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 class Donation extends Model implements HasMedia
 {
 
-    use SoftDeletes, UsesUuid, StoreImage, HasMediaTrait;
+    use SoftDeletes, UsesUuid, HasMediaTrait;
 
     protected $fillable = ['name', 'email', 'mobile', 'organisation', 'designation', 'category', 'amount', 'receipt', 'member'];
 

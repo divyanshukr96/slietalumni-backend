@@ -25,12 +25,25 @@
   <component name="ChangeListManager">
     <list default="true" id="12e1a7c7-84a2-40b0-b66c-2b6a57bb2d36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Browser/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Browser/Pages/HomePage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Browser/Pages/Page.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Browser/console/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Browser/screenshots/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DuskTestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Alumni.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Blog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Blog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Donation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Donation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/EventType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/EventType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/FeaturedAlumni.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FeaturedAlumni.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/FeaturedAlumniController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/FeaturedAlumniController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/FeaturedAlumniValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/FeaturedAlumniValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/FeaturedAlumni.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/FeaturedAlumni.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/PaymentReceipt.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PaymentReceipt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2016_06_01_000001_create_oauth_auth_codes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2016_06_01_000001_create_oauth_auth_codes_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2016_06_01_000002_create_oauth_access_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2016_06_01_000002_create_oauth_access_tokens_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2016_06_01_000003_create_oauth_refresh_tokens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2016_06_01_000003_create_oauth_refresh_tokens_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2016_06_01_000004_create_oauth_clients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2016_06_01_000004_create_oauth_clients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2016_06_01_000005_create_oauth_personal_access_clients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2016_06_01_000005_create_oauth_personal_access_clients_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_191818_create_image_news.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_202512_create_blog_image.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_data_collections_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_data_collections_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_14_163910_create_alumnis_table.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -265,7 +278,7 @@
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
               <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@b84a8c34" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1cf3cb77" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@628cad3c" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -348,7 +361,7 @@
       <workItem from="1567459833261" duration="39595000" />
       <workItem from="1567642020191" duration="1976000" />
       <workItem from="1567769894888" duration="39364000" />
-      <workItem from="1567849916458" duration="26882000" />
+      <workItem from="1567849916458" duration="31315000" />
     </task>
     <servers />
   </component>

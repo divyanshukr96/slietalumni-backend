@@ -28,9 +28,19 @@ class FeaturedAlumni extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'id' => $this->id,
-            $this->mergeWhen(!$this->alumni, [
+        if ($this->alumni) {
+            $data = [
+                'name' => $this->alumni['name'],
+                'email' => $this->alumni['email'],
+                'mobile' => $this->alumni['mobile'],
+                'organisation' => $this->alumni['organisation'],
+                'designation' => $this->alumni['designation'],
+                'image' => $this->alumni['profile'] ?: $this->when($this->image, function () {
+                    return $this->image->getUrl();
+                }),
+            ];
+        } else {
+            $data = [
                 'name' => $this->name,
                 'email' => $this->email,
                 'mobile' => $this->mobile,
@@ -39,18 +49,12 @@ class FeaturedAlumni extends JsonResource
                 'image' => $this->when($this->image, function () {
                     return $this->image->getUrl();
                 }),
-            ]),
-            $this->mergeWhen($this->alumni, [
-                'name' => $this->alumni['name'],
-                'email' => $this->alumni['email'],
-                'mobile' => $this->alumni['mobile'],
-                'organisation' => $this->alumni['organisation'],
-                'designation' => $this->alumni['designation'],
-                'image' => $this->alumni['profile'],
-            ]),
+            ];
+        }
 
+        return array_merge(['id' => $this->id], $data, [
             'featured' => Carbon::parse($this->featured)->format('d M Y'),
             'created_at' => Carbon::parse($this->created_at)->format('d-m-Y'),
-        ];
+        ]);
     }
 }

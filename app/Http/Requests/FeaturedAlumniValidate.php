@@ -28,7 +28,7 @@ class FeaturedAlumniValidate extends APIRequest
      */
     public function rules()
     {
-        if ($this->request->has('alumni')) {
+        if ($this->request->get('alumni')) {
             return [
                 'alumni' => ['nullable', 'uuid', 'exists:users,id,deleted_at,NULL',
                     Rule::unique('featured_alumnis', 'alumni_id')->where(function ($query) {

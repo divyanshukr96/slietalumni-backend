@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Alumni;
 use App\FeaturedAlumni;
 use App\Http\Requests\FeaturedAlumniValidate;
 use App\Http\Resources\FeaturedAlumni as FeaturedAlumniResource;
@@ -34,7 +33,7 @@ class FeaturedAlumniController extends Controller
      */
     public function store(FeaturedAlumniValidate $request)
     {
-        if ($request->has('alumni')) {
+        if ($request->get('alumni')) {
             $data = User::find($request->validated()['alumni']);
             $alumni = FeaturedAlumni::create($request->validated());
             $alumni->alumni()->associate($data);

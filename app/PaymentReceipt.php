@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\Traits\StoreImage;
 use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -12,7 +11,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 
 class PaymentReceipt extends Model implements HasMedia
 {
-    use SoftDeletes, UsesUuid, StoreImage, HasMediaTrait;
+    use SoftDeletes, UsesUuid, HasMediaTrait;
 
     protected $fillable = ['receipt', 'amount'];
 

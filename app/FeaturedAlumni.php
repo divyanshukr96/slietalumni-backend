@@ -22,7 +22,7 @@ class FeaturedAlumni extends Model implements HasMedia
 
     public function alumni()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'alumni_id');
     }
 
 
