@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @method static create(array $all)
+ * @method static latest()
  */
 class Contact extends Model
 {

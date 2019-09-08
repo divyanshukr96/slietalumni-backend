@@ -18,7 +18,10 @@ class CreateBlogsTable extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->longText('content');
+
             $table->boolean('published')->default(false);
+            $table->string('published_by')->nullable();
+            $table->timestamp('published_at')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

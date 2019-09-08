@@ -5,7 +5,9 @@ namespace App\Http\Controllers\API;
 use App\Contact;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ContactStoreValidation;
+use App\Http\Resources\Contact as ContactResource;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 
 class ContactController extends Controller
@@ -13,11 +15,11 @@ class ContactController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return AnonymousResourceCollection|Response
      */
     public function index()
     {
-        //
+        return ContactResource::collection(Contact::latest()->get());
     }
 
     /**
@@ -28,18 +30,20 @@ class ContactController extends Controller
      */
     public function store(ContactStoreValidation $request)
     {
-        return response(Contact::create($request->all()));
+        return response()->json([
+            'data' => Contact::create($request->validated())
+        ]);
     }
 
     /**
      * Display the specified resource.
      *
      * @param Contact $contact
-     * @return Response
+     * @return ContactResource|Response
      */
     public function show(Contact $contact)
     {
-        //
+        return new ContactResource($contact);
     }
 
     /**
@@ -47,11 +51,11 @@ class ContactController extends Controller
      *
      * @param Request $request
      * @param Contact $contact
-     * @return Response
+     * @return ContactResource|Response
      */
     public function update(Request $request, Contact $contact)
     {
-        //
+        return new ContactResource($contact);
     }
 
     /**

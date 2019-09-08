@@ -38,7 +38,7 @@ class BlogController extends Controller
      */
     public function store(NewsStoreValidate $request)
     {
-        $blog = Blog::create($request->all());
+        $blog = Blog::create($request->validated());
         if ($request->hasFile('image')) {
             $photos = $request->file('image');
             foreach ($photos as $photo) {

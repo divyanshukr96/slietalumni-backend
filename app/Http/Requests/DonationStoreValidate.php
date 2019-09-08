@@ -31,8 +31,8 @@ class DonationStoreValidate extends APIRequest
             'organisation' => 'required_without:member|string',
             'designation' => 'required_without:member|string',
             'category' => 'required|string',
+            'receipt' => 'required|file|mimes:pdf,jpeg,bmp,png,jpg',
             'amount' => 'required',
-            'receipt' => 'required|file',
         ];
     }
 

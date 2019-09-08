@@ -25,15 +25,17 @@
   <component name="ChangeListManager">
     <list default="true" id="12e1a7c7-84a2-40b0-b66c-2b6a57bb2d36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/EventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/NewsStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/NewsStoreValidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_123632_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_123632_create_news_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_204457_create_event_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_204457_create_event_types_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_02_152158_create_imageables_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_03_153540_create_payment_receipts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_03_153540_create_payment_receipts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Donation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Donation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ContactController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/DonationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/DonationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ContactStoreValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ContactStoreValidation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DonationStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DonationStoreValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_200527_create_blogs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_200527_create_blogs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_01_153030_create_donations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_01_153030_create_donations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -345,7 +347,7 @@
       <workItem from="1567459833261" duration="39595000" />
       <workItem from="1567642020191" duration="1976000" />
       <workItem from="1567769894888" duration="39364000" />
-      <workItem from="1567849916458" duration="10279000" />
+      <workItem from="1567849916458" duration="23605000" />
     </task>
     <servers />
   </component>

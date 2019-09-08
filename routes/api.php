@@ -43,22 +43,23 @@ Route::group(['middleware' => 'auth:api'], function () {
         'event-type' => 'API\EventTypeController',
         'featured-alumni' => 'API\FeaturedAlumniController',
         'alumni-data' => 'DataCollectionController',
-        'donation' => 'API\DonationController',
         'carousel' => 'API\CarouselController',
         'news' => 'API\NewsController',
         'events' => 'API\EventController',
     ]);
 
-
+    Route::apiResource('donation', 'API\DonationController')->except('store');
+    Route::apiResource('contact', 'API\ContactController')->except('store');
     Route::patch('news/{news}/publish', 'API\NewsController@publish')->name('news.publish');
     Route::patch('events/{event}/publish', 'API\EventController@publish')->name('events.publish');
 
 });
 
-Route::apiResource('contact', 'API\ContactController')->except('store');
+Route::post('donation', 'API\DonationController@store');
+Route::post('contact', 'API\ContactController@store');
 
 
-Route::post('/blog/create', 'BlogController@store');
+//Route::post('/blog/create', 'BlogController@store');
 
 //Route::get('/event-type', 'API\EventTypeController@index');
 //Route::post('/event-type/create', 'API\EventTypeController@store');

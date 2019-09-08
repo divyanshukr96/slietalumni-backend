@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\DataCollection;
 use App\Http\Requests\RegistrationPaymentValidation;
 use App\Http\Resources\DataCollection as DataCollectionResource;
-use App\Image;
 use Carbon\Carbon;
 use DB;
 use Str;
