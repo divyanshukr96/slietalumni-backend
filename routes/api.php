@@ -15,8 +15,11 @@ use Illuminate\Http\Request;
 
 Route::group(['prefix' => "public"], function () {
     Route::get('carousel', 'PublicController@carousel');
-    Route::post('contact', 'API\ContactController@store');
+    Route::get('events', 'PublicController@events');
+    Route::get('featured-alumni', 'PublicController@featuredAlumni');
 });
+
+Route::post('contact', 'API\ContactController@store');
 Route::post('donation', 'API\DonationController@store');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

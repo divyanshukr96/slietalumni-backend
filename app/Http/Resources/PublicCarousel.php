@@ -20,7 +20,7 @@ class PublicCarousel extends JsonResource
     public function toArray($request)
     {
         if (!empty($this->image)) {
-            return $this->image->image;
+            return $this->image->getUrl();
         }
         return null;
     }

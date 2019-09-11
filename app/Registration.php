@@ -19,6 +19,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property mixed verified_by
  * @property mixed payment
  * @property static verified_at
+ * @property mixed name
  */
 class Registration extends Model implements HasMedia
 {
@@ -67,6 +68,14 @@ class Registration extends Model implements HasMedia
     }
 
     /**
+     * @param $value
+     */
+    public function setVerifiedByAttribute($value)
+    {
+        $this->attributes['user_id'] = $value;
+    }
+
+    /**
      * @return Model|BelongsTo|object|null
      */
     public function getVerifiedByAttribute()
@@ -74,11 +83,4 @@ class Registration extends Model implements HasMedia
         return $this->user()->first();
     }
 
-    /**
-     * @param $value
-     */
-    public function setVerifiedByAttribute($value)
-    {
-        $this->attributes['user_id'] = $value;
-    }
 }

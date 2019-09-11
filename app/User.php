@@ -13,8 +13,10 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Image\Exceptions\InvalidManipulation;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
 use Spatie\Permission\Traits\HasRoles;
 
 /**
@@ -122,5 +124,29 @@ class User extends Authenticatable implements HasMedia
     {
         $file = $this->getMedia('profile')->last();
         return $file ? $file->getUrl() : null;
+    }
+
+
+    /**
+     * @return Mix|null
+     */
+    public function getProfileThumbAttribute()
+    {
+        $file = $this->getMedia('profile')->last();
+        return $file ? $file->getUrl('thumb') : null;
+    }
+
+
+    /**
+     * @param Media|null $media
+     */
+    public function registerMediaConversions(Media $media = null)
+    {
+        try {
+            $this->addMediaConversion('thumb')
+                ->width(368)
+                ->height(232);
+        } catch (InvalidManipulation $e) {
+        }
     }
 }

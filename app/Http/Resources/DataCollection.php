@@ -20,6 +20,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed academic
  * @property mixed professional
  * @property mixed image
+ * @property mixed name
  */
 class DataCollection extends JsonResource
 {
@@ -33,7 +34,8 @@ class DataCollection extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->email,
+            'name' => $this->name,
+            'email' => $this->email,
             'mobile' => $this->mobile,
 
             // Academic Details Here

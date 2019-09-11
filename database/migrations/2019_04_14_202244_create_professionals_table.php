@@ -20,9 +20,9 @@ class CreateProfessionalsTable extends Migration
 
             $table->string('organisation')->nullable();  // not nullable using validation
             $table->string('designation')->nullable();
-            $table->string('address')->nullable();
-            $table->string('contact')->nullable();
-            $table->string('email')->nullable();
+            $table->string('org_address')->nullable();
+            $table->string('org_contact')->nullable();
+            $table->string('org_email')->nullable();
 
             $table->softDeletes();
             $table->timestamps();

@@ -53,18 +53,19 @@ class DataCollectionController extends Controller
      * Update the specified resource in storage.
      *
      * @param AlumniDataCollectionUpdateValidate $request
-     * @param $id
-     * @return Response
+     * @param DataCollection $alumni_datum
+     * @return DataCollectionResource|Response
      */
-    public function update(AlumniDataCollectionUpdateValidate $request, $id)
+    public function update(AlumniDataCollectionUpdateValidate $request, DataCollection $alumni_datum)
     {
-        return response()->json('Should add observer on updating so that proper academic and professional detail can be updated', 400);
-        $alumni = DataCollection::find($id);
-        $alumni->update($request->validated());
-        return response()->json([
-            'time' => Carbon::now()->toDateTimeString(),
-            'data' => $alumni
-        ], 200);
+        $alumni_datum->update($request->validated());
+        if ($alumni_datum->professional) $alumni_datum->professional->update($request->validated());
+        else $alumni_datum->professional()->create($request->validated());
+
+        if ($alumni_datum->academic) $alumni_datum->academic->update($request->validated());
+        else $alumni_datum->academic()->create($request->validated());
+
+        return new DataCollectionResource($alumni_datum);
     }
 
     /**

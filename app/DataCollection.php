@@ -14,6 +14,8 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @method static create(array $all)
  * @method static find($id)
  * @method static findOrFail($id)
+ * @property mixed professional
+ * @property mixed academic
  */
 class DataCollection extends Model implements HasMedia
 {

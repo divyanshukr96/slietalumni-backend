@@ -18,3 +18,23 @@
 //Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('confirm', function () {
+    return redirect('/registration/confirmation?token='.request()->get('token'));
+})->name('confirm');
+
+
+route::get('test', function () {
+    $data = (object)[
+        'name' => 'Divyanshu',
+        'email' => 'jhgfd'
+    ];
+
+//    return new App\Mail\RegistrationSuccess(App\Registration::first());
+    return (new App\Notifications\RegistrationSuccess(App\Registration::first()))->toMail('test@gmail.com')->render();
+
+//
+    $message = (new \App\Notifications\RegistrationConfirmation(App\Registration::first(), 'askdkjags'))->toMail('test@email.com');
+    return $message->render();
+
+});

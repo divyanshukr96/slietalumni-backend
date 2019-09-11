@@ -26,8 +26,8 @@ class AlumniDataCollectionStoreValidate extends APIRequest
         $email = request()->get('email') ? request()->get('email') : 'NULL';
         return [
             'name' => "required|regex:/^[.\'\-a-zA-Z ]+$/|max:150|unique:data_collections,name,NULL,id,email,{$email}",
-            'email' => 'nullable|email|unique:data_collections,email|unique:users,email',
-            'mobile' => ['nullable', new PhoneNumber],
+            'email' => 'required_without:mobile|email|unique:data_collections,email|unique:users,email',
+            'mobile' => ['required_without:email', new PhoneNumber],
             'programme' => 'nullable',
             'branch' => 'nullable',
             'batch' => 'nullable|digits:4|integer|min:1980|max:' . (date('Y') - 3),

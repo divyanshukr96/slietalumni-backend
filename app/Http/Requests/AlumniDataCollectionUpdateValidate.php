@@ -3,7 +3,13 @@
 namespace App\Http\Requests;
 
 use App\Rules\PhoneNumber;
+use Carbon\Carbon;
+use Illuminate\Validation\Rule;
 
+/**
+ * @property mixed alumni_datum
+ * @property mixed email
+ */
 class AlumniDataCollectionUpdateValidate extends APIRequest
 {
     /**
@@ -24,9 +30,24 @@ class AlumniDataCollectionUpdateValidate extends APIRequest
     public function rules()
     {
         $email = $this->request->get('email') ? $this->request->get('email') : 'NULL';
+//        $email = $this->email ? $this->email === $this->alumni_datum->email ? 'NULL' : $this->email : 'NULL';
+//        dd($email);
         return [
-            'name' => "required|regex:/^[.\'\-a-zA-Z ]+$/|max:150|unique:data_collections,name,{$this->alumni_datum},id,email,{$email}",
-            "email" => "nullable|email|unique:data_collections,email,{$this->alumni_datum}",
+//            'name' => "required|regex:/^[.\'\-a-zA-Z ]+$/|max:150|unique:data_collections,name,{$this->alumni_datum->name},id,email,{$email}",
+//            "email" => "nullable|email|unique:data_collections,email,{$email}",
+//            "email" => ["nullable", "email", "unique:data_collections,email,{$email}"],
+
+//            'name' => ["required", "regex:/^[.\'\-a-zA-Z ]+$/", "max:150", "unique:data_collections,name,{$this->alumni_datum->name},id,email,{$email}"],
+            'name' => ["required", "regex:/^[.\'\-a-zA-Z ]+$/", "max:150", Rule::unique('data_collections', 'name')
+                ->where(function ($query) use ($email) {
+                    return $query->where('id', '!=', $this->alumni_datum->id)
+                        ->where('email', $email)
+                        ->where('deleted_at', null);
+                })],
+            "email" => ["nullable", "email", Rule::unique('data_collections', 'email')
+                ->where(function ($query) {
+                    return $query->where('id', '!=', $this->alumni_datum->id)->where('deleted_at', null);
+                })],
             'mobile' => ['nullable', new PhoneNumber],
             'programme' => 'nullable',
             'branch' => 'nullable',

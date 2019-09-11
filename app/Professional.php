@@ -12,7 +12,7 @@ class Professional extends Model
 {
     use SoftDeletes, UsesUuid;
 
-    protected $fillable = ['organisation', 'address', 'contact', 'email', 'designation'];
+    protected $fillable = ['organisation', 'org_address', 'org_contact', 'org_email', 'designation'];
 
 
     /**
