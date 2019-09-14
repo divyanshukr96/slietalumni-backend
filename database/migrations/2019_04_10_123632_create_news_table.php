@@ -21,7 +21,7 @@ class CreateNewsTable extends Migration
             $table->longText('content')->nullable();
 
             $table->boolean('published')->default(false);
-            $table->string('published_by')->nullable();
+            $table->text('published_by')->nullable();
             $table->timestamp('published_at')->nullable();
 
             $table->softDeletes();

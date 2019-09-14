@@ -17,6 +17,7 @@ Route::group(['prefix' => "public"], function () {
     Route::get('carousel', 'PublicController@carousel');
     Route::get('events', 'PublicController@events');
     Route::get('featured-alumni', 'PublicController@featuredAlumni');
+    Route::get('news-stories', 'PublicController@newsAndStories');
 });
 
 Route::post('contact', 'API\ContactController@store');

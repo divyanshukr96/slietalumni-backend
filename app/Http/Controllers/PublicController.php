@@ -8,6 +8,8 @@ use App\FeaturedAlumni;
 use App\Http\Resources\PublicCarousel;
 use App\Http\Resources\PublicEvent;
 use App\Http\Resources\PublicFeaturedAlumni;
+use App\Http\Resources\PublicNewsAndStories;
+use App\News;
 use Illuminate\Support\Carbon;
 
 class PublicController extends Controller
@@ -27,5 +29,11 @@ class PublicController extends Controller
     {
         $featured = FeaturedAlumni::whereDate('featured', '>=', Carbon::today()->toDateString());
         return PublicFeaturedAlumni::collection($featured->latest()->get());
+    }
+
+    public function newsAndStories()
+    {
+        $newsStories = News::wherePublished(true)->latest()->get();
+        return PublicNewsAndStories::collection($newsStories);
     }
 }

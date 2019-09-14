@@ -11,6 +11,7 @@ use Exception;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
+use Request;
 
 class NewsController extends Controller
 {
@@ -63,13 +64,13 @@ class NewsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param NewsPublishValidate $request
+     * @param Request $request
      * @param News $news
      * @return NewsResource
      */
-    public function publish(NewsPublishValidate $request, News $news)
+    public function publish(Request $request, News $news)
     {
-        $news->published = $request->validated()['publish'];
+        $news->published = !$news->published;
         $news->published_by = auth()->user()->getAuthIdentifier();
         $news->published_at = Carbon::now();
         $news->save();
