@@ -24,7 +24,7 @@ class PublicNewsAndStories extends JsonResource
                 return $this->getMedia('cover')->last()->getUrl('thumb');
             }),
             'description' => $this->description,
-//            'content' => $this->content,
+            'content' => $this->content,
 //            'social_link' => $this->social_link,
             'created_at' => Carbon::parse($this->created_at)->format('d M Y'),
             $this->mergeWhen($this->published, [

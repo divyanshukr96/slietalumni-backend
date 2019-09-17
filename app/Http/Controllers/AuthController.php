@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Profile;
 use Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -109,6 +110,11 @@ class AuthController extends Controller
                 'professional' => $user->professionals()->latest(),
             ]
         ]);
+    }
+
+    public function profile()
+    {
+        return new Profile(auth()->user());
     }
 
 }

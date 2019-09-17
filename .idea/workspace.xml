@@ -25,11 +25,8 @@
   <component name="ChangeListManager">
     <list default="true" id="12e1a7c7-84a2-40b0-b66c-2b6a57bb2d36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PublicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PublicController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/News.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_10_123632_create_news_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_10_123632_create_news_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/PublicNewsAndStories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/PublicNewsAndStories.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -339,7 +336,9 @@
       <workItem from="1567642020191" duration="1976000" />
       <workItem from="1567769894888" duration="39364000" />
       <workItem from="1567849916458" duration="60565000" />
-      <workItem from="1568469023249" duration="4989000" />
+      <workItem from="1568469023249" duration="5697000" />
+      <workItem from="1568637394311" duration="6434000" />
+      <workItem from="1568716025962" duration="3360000" />
     </task>
     <servers />
   </component>
