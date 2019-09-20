@@ -28,6 +28,6 @@ class ObserverServiceProvider extends ServiceProvider
     public function boot()
     {
 //        User::observe(UserObserver::class);
-//        Registration::observe(RegistrationObserver::class);
+        Registration::observe(RegistrationObserver::class);
     }
 }

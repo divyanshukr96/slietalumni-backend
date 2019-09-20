@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Notifications\RegistrationSuccess;
 use App\Registration;
 
 class RegistrationObserver
@@ -14,7 +15,7 @@ class RegistrationObserver
      */
     public function created(Registration $registration)
     {
-        //
+        $registration->notify(new RegistrationSuccess($registration));
     }
 
     /**

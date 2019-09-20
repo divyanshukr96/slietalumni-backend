@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataCollection;
 use App\Http\Requests\RegistrationPaymentValidation;
 use App\Http\Resources\DataCollection as DataCollectionResource;
+use App\Notifications\RegistrationConfirmation;
 use Carbon\Carbon;
 use DB;
 use Str;
@@ -92,9 +93,7 @@ class RegistrationController extends Controller
         }
         $alumni->save();
 
-        \Log::info(route('confirm',['token' => $token]));
-        \Log::info($alumni->email);
-        //send a mail to alumni with $tokenAP
+        $alumni->notify(new RegistrationConfirmation($alumni, $token));
 
         return new RegisteredAlumni($alumni);
     }

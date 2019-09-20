@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\AlumniMeet;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MeetStoreValidate;
+use App\Notifications\MeetRegistration;
 use App\Traits\AuthUser;
 use App\User;
 use Carbon\Carbon;
@@ -27,11 +28,11 @@ class AlumniMeetController extends Controller
         $this->server = $server;
     }
 
-        /**
-         * Display a listing of the resource.
-         *
-         * @return Response
-         */
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
     public function index()
     {
         //
@@ -68,6 +69,8 @@ class AlumniMeetController extends Controller
             $meet = AlumniMeet::create($validateDta);
             $meet->alumni()->associate($user)->save();
 
+            $user->notify(new MeetRegistration($meet));  // Notification send
+
             return response()->json([
                 'time' => Carbon::now()->toDateTimeString(),
                 'data' => $meet
@@ -75,6 +78,8 @@ class AlumniMeetController extends Controller
         }
 
         $meet = AlumniMeet::create($request->validated());
+
+        $meet->notify(new MeetRegistration($meet));  // Notification send
 
         return response()->json([
             'time' => Carbon::now()->toDateTimeString(),

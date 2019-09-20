@@ -36,6 +36,6 @@ route::get('test', function () {
 //    return (new App\Notifications\MeetRegistration(App\AlumniMeet::first()))->toMail('test@gmail.com')->render();
 
 //
-    return (new \App\Notifications\RegistrationConfirmation(App\Registration::first(), 'askdkjags'))->toMail('test@email.com')->render();
+//    return (new \App\Notifications\RegistrationConfirmation(App\Registration::first(), 'askdkjags'))->toMail('test@email.com')->render();
 
 });

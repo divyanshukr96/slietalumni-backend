@@ -14,6 +14,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @method static create(array $all)
  * @method static where(string $string, $email)
  * @method static latest()
+ * @method notify(Notifications\RegistrationSuccess | Notifications\RegistrationConfirmation $param)
  * @property bool verified
  * @property mixed email
  * @property mixed verified_by
