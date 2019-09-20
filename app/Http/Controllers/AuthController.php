@@ -101,13 +101,15 @@ class AuthController extends Controller
             'data' => [
                 'name' => ucwords($user->name),
                 'email' => $user->email,
+                'mobile' => $user->mobile,
                 'username' => $user->username,
-                'image' => $user->image,
+                'image' => $user->profile,
                 'roles' => $user->getRoleNames(),
                 'permissions' => $user->getAllPermissions()->map(function ($data) {
                     return $data->name;
                 }),
                 'professional' => $user->professionals()->latest(),
+                'academics' => $user->academics()->latest(),
             ]
         ]);
     }

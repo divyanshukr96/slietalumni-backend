@@ -23,6 +23,10 @@ class DonationController extends Controller
 {
     use AuthUser;
 
+    /**
+     * DonationController constructor.
+     * @param ResourceServer $server
+     */
     public function __construct(ResourceServer $server)
     {
         $this->server = $server;

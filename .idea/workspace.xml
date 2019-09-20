@@ -25,9 +25,15 @@
   <component name="ChangeListManager">
     <list default="true" id="12e1a7c7-84a2-40b0-b66c-2b6a57bb2d36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/DonationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/DonationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/FeaturedAlumniController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/FeaturedAlumniController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/PublicNewsAndStories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/PublicNewsAndStories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_11_162737_create_notifications_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_11_162737_create_notifications_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,18 +61,18 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="alumni_backend@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="alumni_association_server@localhost" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="alumni_backend@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="alumni_association_server@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="alumni_backend@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="alumni_association_server@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="alumni_backend: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="alumni_association_server: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -254,7 +260,16 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand />
+          <expand>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@be66daa2" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@7713700d" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+          </expand>
           <select />
         </treeState>
       </serviceView>
@@ -338,7 +353,10 @@
       <workItem from="1567849916458" duration="60565000" />
       <workItem from="1568469023249" duration="5697000" />
       <workItem from="1568637394311" duration="6434000" />
-      <workItem from="1568716025962" duration="3360000" />
+      <workItem from="1568716025962" duration="4188000" />
+      <workItem from="1568813254411" duration="7196000" />
+      <workItem from="1568841804927" duration="552000" />
+      <workItem from="1568842370426" duration="44445000" />
     </task>
     <servers />
   </component>

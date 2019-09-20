@@ -22,6 +22,11 @@ Route::group(['prefix' => "public"], function () {
 
 Route::post('contact', 'API\ContactController@store');
 Route::post('donation', 'API\DonationController@store');
+Route::post('meet/register', 'API\AlumniMeetController@store');
+
+
+Route::post('/alumni/register', 'RegistrationController@store');
+Route::post('/set-username', 'RegistrationController@setUsername');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -34,9 +39,6 @@ Route::group(['prefix' => 'auth'], function () { // middleware are set in the co
 
     Route::get('profile', 'AuthController@profile');
 });
-
-Route::post('/alumni/register', 'RegistrationController@store');
-Route::post('/set-username', 'RegistrationController@setUsername');
 
 
 Route::group(['middleware' => 'auth:api'], function () {

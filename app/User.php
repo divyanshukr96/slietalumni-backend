@@ -26,6 +26,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @method static latest()
  * @method static isAlumni()
  * @method static whereUsername($username)
+ * @method static whereEmail($email)
  */
 class User extends Authenticatable implements HasMedia
 {

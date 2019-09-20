@@ -92,6 +92,8 @@ class RegistrationController extends Controller
         }
         $alumni->save();
 
+        \Log::info(route('confirm',['token' => $token]));
+        \Log::info($alumni->email);
         //send a mail to alumni with $tokenAP
 
         return new RegisteredAlumni($alumni);

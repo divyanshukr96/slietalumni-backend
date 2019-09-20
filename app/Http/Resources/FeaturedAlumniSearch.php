@@ -7,19 +7,17 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * @property mixed username
  * @property mixed name
  * @property mixed email
  * @property mixed mobile
- * @property mixed active
+ * @property mixed username
  * @property mixed is_alumni
  * @property mixed id
  * @property mixed created_at
- * @property mixed academics
+ * @property mixed active
  * @property mixed professionals
- * @property mixed profile
  */
-class Profile extends JsonResource
+class FeaturedAlumniSearch extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -31,16 +29,19 @@ class Profile extends JsonResource
     {
         return [
             "id" => $this->id,
-            "username" => $this->username,
-            "name" => ucwords(strtolower($this->name)),
+            "name" => $this->name,
             "email" => $this->email,
             "mobile" => $this->mobile,
-            "image" => $this->profile,
+            "username" => $this->username,
             "active" => $this->active,
             "is_alumni" => $this->is_alumni,
-            'academics' => $this->academics,
-            'professionals' => $this->professionals,
-            "registered_at" => Carbon::parse($this->created_at)->format('d-m-Y H:i'),
+            'organisation' => $this->when($this->professionals, function () {
+                return $this->professionals->first()->organisation;
+            }),
+            'designation' => $this->when($this->professionals, function () {
+                return $this->professionals->first()->designation;
+            }),
+            "created_at" => Carbon::parse($this->created_at)->format('d-m-Y H:i'),
         ];
     }
 }

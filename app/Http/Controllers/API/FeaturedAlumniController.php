@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\FeaturedAlumni;
 use App\Http\Requests\FeaturedAlumniValidate;
 use App\Http\Resources\FeaturedAlumni as FeaturedAlumniResource;
+use App\Http\Resources\FeaturedAlumniSearch;
 use App\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -49,15 +50,16 @@ class FeaturedAlumniController extends Controller
      * Display the specified resource.
      *
      * @param $search
-     * @return ResponseAlias
+     * @return FeaturedAlumni|AnonymousResourceCollection|ResponseAlias
      */
     public function show($search)
     {
-        return User::isAlumni()->where(function (Builder $query) use ($search) {
+        $user = User::isAlumni()->where(function (Builder $query) use ($search) {
             $query->where('name', 'LIKE', "%$search%")
                 ->orWhere('email', 'LIKE', "%$search%")
                 ->orWhere('mobile', 'LIKE', "%$search%");
         })->get();
+        return FeaturedAlumniSearch::collection($user);
     }
 
     /**
