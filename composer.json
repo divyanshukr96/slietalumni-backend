@@ -18,9 +18,9 @@
         "laravel/telescope": "^2.0",
         "laravel/tinker": "^1.0",
         "league/glide-laravel": "^1.0",
+        "owen-it/laravel-auditing": "^9.3",
         "spatie/laravel-medialibrary": "^7.0.0",
-        "spatie/laravel-permission": "^2.37",
-        "ext-mysql_xdevapi": "*"
+        "spatie/laravel-permission": "^2.37"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.3",

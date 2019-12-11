@@ -11,24 +11,28 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 //Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('confirm', function () {
-    return redirect('/registration/confirmation?token='.request()->get('token'));
+    return redirect('/registration/confirmation?token=' . request()->get('token'));
 })->name('confirm');
 
+Route::get('{all?}', function () {
+    return view('welcome');
+})->where('all', '.+');
 
-route::get('test', function () {
-    $data = (object)[
-        'name' => 'Divyanshu',
-        'email' => 'jhgfd'
-    ];
+Route::get('password/reset/{token}', function ($token) {
+    return redirect("/password/reset?token=$token");
+})->name('password.reset');
+
+
+
+//route::get('test', function () {
+//    $data = (object)[
+//        'name' => 'Divyanshu',
+//        'email' => 'jhgfd'
+//    ];
 
 //    return new App\Mail\RegistrationSuccess(App\Registration::first());
 //    return (new App\Notifications\RegistrationSuccess(App\Registration::first()))->toMail('test@gmail.com')->render();
@@ -38,4 +42,4 @@ route::get('test', function () {
 //
 //    return (new \App\Notifications\RegistrationConfirmation(App\Registration::first(), 'askdkjags'))->toMail('test@email.com')->render();
 
-});
+//});

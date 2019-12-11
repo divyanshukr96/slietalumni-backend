@@ -36,6 +36,8 @@ Route::group(['prefix' => 'auth'], function () { // middleware are set in the co
     Route::get('/', 'AuthController@check');
     Route::post('login', 'AuthController@login');
     Route::get('logout', 'AuthController@logout');
+    Route::post('password/forgot', 'PasswordResetController@forgot');
+    Route::post('password/reset', 'PasswordResetController@reset');
 
     Route::get('profile', 'AuthController@profile');
 });
