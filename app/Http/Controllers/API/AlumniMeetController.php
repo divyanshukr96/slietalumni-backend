@@ -69,7 +69,7 @@ class AlumniMeetController extends Controller
             $meet = AlumniMeet::create($validateDta);
             $meet->alumni()->associate($user)->save();
 
-            $user->notify(new MeetRegistration($meet));  // Notification send
+            // $user->notify(new MeetRegistration($meet));  // Notification send
 
             return response()->json([
                 'time' => Carbon::now()->toDateTimeString(),
@@ -79,7 +79,7 @@ class AlumniMeetController extends Controller
 
         $meet = AlumniMeet::create($request->validated());
 
-         $meet->notify(new MeetRegistration($meet));  // Notification send
+         // $meet->notify(new MeetRegistration($meet));  // Notification send
 
         return response()->json([
             'time' => Carbon::now()->toDateTimeString(),

@@ -8,16 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * @method static create(array $validateDta)
+ * @method notify(Notifications\MeetRegistration $param)
  * @property mixed name
  * @property mixed family
  * @property mixed fees
  */
 class AlumniMeet extends Model
 {
-    use UsesUuid, SoftDeletes;
+    use UsesUuid, SoftDeletes, Notifiable;
 
     protected $fillable = [
         'name', 'email', 'mobile',

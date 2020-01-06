@@ -1,10 +1,10 @@
 @component('mail::message')
 # Dear {{ $data['name'] }}
 
-Thanks a lot for registering yourself for **Alumni Meet {{ date('Y') }}**
+Thanks a lot for registering yourself for **Alumni Meet {{ $year }}**
 
 
-<u>Invoice Alumni Meet {{ date('Y') }}</u>
+<u>Invoice Alumni Meet {{ $year }}</u>
 =========
 Registration Charge  __({{ $data['coming'] }})    <span style="float: right;">₹ {{ $data['amount'] }}/-</span>__
 <hr><br>
@@ -32,6 +32,6 @@ Contact Details :-
 
 
 @lang('Regards'),<br>Student Alumni Cell<br>({{ config('app.name') }})<br>
-Alumni Meet {{ date('Y') }}
+Alumni Meet {{ $year }}
 
 @endcomponent

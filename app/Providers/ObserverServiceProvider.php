@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\AlumniMeet;
+use App\Observers\AlumniMeetObserver;
 use App\Observers\RegistrationObserver;
 use App\Observers\UserObserver;
 use App\Registration;
@@ -29,5 +31,6 @@ class ObserverServiceProvider extends ServiceProvider
     {
 //        User::observe(UserObserver::class);
         Registration::observe(RegistrationObserver::class);
+        AlumniMeet::observe(AlumniMeetObserver::class);
     }
 }
