@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static create(array $validateDta)
  * @property mixed name
  * @property mixed family
+ * @property mixed fees
  */
 class AlumniMeet extends Model
 {
@@ -26,11 +27,25 @@ class AlumniMeet extends Model
     ];
 
 
+    /**
+     * @param $data
+     * @return int
+     */
+    private static function fees($data)
+    {
+        if ($data->family) {
+            return 3500; // Alumni Meet Registration fees with family
+        }
+        return 2500; // Alumni Meet Registration fees
+    }
+
+
     protected static function boot()
     {
         parent::boot();
-        self::creating(function ($query){
+        self::creating(function ($query) {
             $query->year = Carbon::now()->year;
+            $query->fees = self::fees($query);
         });
     }
 
@@ -39,7 +54,7 @@ class AlumniMeet extends Model
      */
     public function alumni()
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 

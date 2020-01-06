@@ -42,7 +42,7 @@ class AlumniMeetController extends Controller
      * Store a newly created resource in storage.
      *
      * @param MeetStoreValidate $request
-     * @return Response
+     * @return JsonResponse|Response
      */
     public function store(MeetStoreValidate $request)
     {
@@ -79,7 +79,7 @@ class AlumniMeetController extends Controller
 
         $meet = AlumniMeet::create($request->validated());
 
-        $meet->notify(new MeetRegistration($meet));  // Notification send
+         $meet->notify(new MeetRegistration($meet));  // Notification send
 
         return response()->json([
             'time' => Carbon::now()->toDateTimeString(),

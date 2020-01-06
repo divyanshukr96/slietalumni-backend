@@ -4,7 +4,7 @@
 Thanks a lot for registering yourself for **Alumni Meet {{ date('Y') }}**
 
 
-<u>Invoice Alumni Meet 2019</u>
+<u>Invoice Alumni Meet {{ date('Y') }}</u>
 =========
 Registration Charge  __({{ $data['coming'] }})    <span style="float: right;">â‚¹ {{ $data['amount'] }}/-</span>__
 <hr><br>
@@ -12,7 +12,7 @@ Registration Charge  __({{ $data['coming'] }})    <span style="float: right;">â‚
 
 
 Kindly Pay your Alumni Meet registration fees on the given Bank Details and send us your payment receipt on
-[association@slietalumni.com](mailto:association@slietalumni.com) for your payment Confirmation
+[alumnicell@sliet.ac.in](mailto:alumnicell@sliet.ac.in) for your payment Confirmation
 
 <hr>
 Bank Details :-
@@ -26,13 +26,12 @@ Bank Details :-
 
 Contact Details :-
 ==========================
-**Balraj ** - [+91-9041542991](tel:+91-9041542991)<br>
 **Raghav Sharma ** - [+91-9569468234](tel:+91-9569468234)<br>
 **Yash Verma** - [+91-7300633011](tel:+91-7300633011)<br>
 <hr>
 
 
 @lang('Regards'),<br>Student Alumni Cell<br>({{ config('app.name') }})<br>
-Alumni Meet 2019
+Alumni Meet {{ date('Y') }}
 
 @endcomponent

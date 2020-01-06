@@ -7,6 +7,7 @@ use App\Http\Requests\UserUpdateValidate;
 use App\Http\Resources\SACUserResource;
 use App\User;
 use Exception;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 
@@ -72,7 +73,7 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param User $user
-     * @return Response
+     * @return JsonResponse|Response
      * @throws Exception
      */
     public function destroy(User $user)

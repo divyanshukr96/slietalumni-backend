@@ -32,6 +32,8 @@ class CreateAlumniMeetsTable extends Migration
             $table->boolean('accommodation')->default(false);
             $table->text('requirements')->nullable();
 
+            $table->integer('fees')->nullable();
+
             $table->boolean('verified')->default(false);
             $table->text('verified_by')->nullable();
             $table->timestamp('verified_at')->nullable();
