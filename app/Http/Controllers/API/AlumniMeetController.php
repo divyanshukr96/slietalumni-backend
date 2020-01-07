@@ -5,12 +5,13 @@ namespace App\Http\Controllers\API;
 use App\AlumniMeet;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MeetStoreValidate;
-use App\Notifications\MeetRegistration;
+use App\Http\Resources\AlumniMeet as AlumniMeetResource;
 use App\Traits\AuthUser;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use League\OAuth2\Server\ResourceServer;
 
@@ -31,11 +32,15 @@ class AlumniMeetController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return AnonymousResourceCollection|Response
      */
     public function index()
     {
-        //
+        $alumniMeet = AlumniMeet::latest();
+
+        if (request()->year) $alumniMeet->where('year', request()->year);
+
+        return AlumniMeetResource::collection($alumniMeet->get());
     }
 
     /**
@@ -59,7 +64,7 @@ class AlumniMeetController extends Controller
                 'errors' => [
                     'member' => 'User is not authenticated currently!'
                 ]
-            ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY);;
+            ], JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
 
             $validateDta = $request->validated();
             $validateDta['name'] = $user->name;
@@ -69,8 +74,6 @@ class AlumniMeetController extends Controller
             $meet = AlumniMeet::create($validateDta);
             $meet->alumni()->associate($user)->save();
 
-            // $user->notify(new MeetRegistration($meet));  // Notification send
-
             return response()->json([
                 'time' => Carbon::now()->toDateTimeString(),
                 'data' => $meet
@@ -78,8 +81,6 @@ class AlumniMeetController extends Controller
         }
 
         $meet = AlumniMeet::create($request->validated());
-
-         // $meet->notify(new MeetRegistration($meet));  // Notification send
 
         return response()->json([
             'time' => Carbon::now()->toDateTimeString(),

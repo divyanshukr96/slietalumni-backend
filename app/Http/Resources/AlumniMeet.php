@@ -6,34 +6,18 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/**
- * @property mixed id
- * @property mixed image
- * @property mixed name
- * @property mixed email
- * @property mixed mobile
- * @property mixed programme
- * @property mixed branch
- * @property mixed passing
- * @property mixed organisation
- * @property mixed designation
- * @property mixed created_at
- * @property mixed verified
- * @property mixed batch
- * @property mixed verified_at
- * @property mixed verified_by
- * @property mixed image_url
- */
-class RegisteredAlumni extends JsonResource
+class AlumniMeet extends JsonResource
 {
     /**
      * Transform the resource into an array.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return array
      */
     public function toArray($request)
     {
+        return parent::toArray($request);
+
         return [
             "id" => $this->id,
             "image" => $this->when($this->image, function () {

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
+use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Image\Exceptions\InvalidManipulation;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist;
@@ -24,9 +25,10 @@ use Spatie\MediaLibrary\Models\Media;
  * @property bool published
  * @property static published_at
  */
-class Event extends Model implements HasMedia
+class Event extends Model implements HasMedia, Auditable
 {
     use UsesUuid, SoftDeletes, HasMediaTrait;
+    use \OwenIt\Auditing\Auditable;
 
     protected $fillable = ['title', 'description', 'venue', 'date', 'time', 'image', 'content'];
 

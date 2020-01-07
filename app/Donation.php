@@ -6,6 +6,7 @@ use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileIsTooBig;
@@ -20,10 +21,11 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property bool verified_at
  * @property mixed verifyBy
  */
-class Donation extends Model implements HasMedia
+class Donation extends Model implements HasMedia, Auditable
 {
 
     use SoftDeletes, UsesUuid, HasMediaTrait;
+    use \OwenIt\Auditing\Auditable;
 
     protected $fillable = ['name', 'email', 'mobile', 'organisation', 'designation', 'category', 'amount', 'receipt', 'member'];
 

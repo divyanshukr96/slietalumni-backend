@@ -6,6 +6,7 @@ use App\Traits\UsesUuid;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Image\Exceptions\InvalidManipulation;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist;
@@ -19,9 +20,10 @@ use Spatie\MediaLibrary\Models\Media;
  * @method static create(array $validated)
  * @method static whereDate(string $string, string $string1, string $toDateString)
  */
-class FeaturedAlumni extends Model implements HasMedia
+class FeaturedAlumni extends Model implements HasMedia, Auditable
 {
     use UsesUuid, SoftDeletes, HasMediaTrait;
+    use \OwenIt\Auditing\Auditable;
 
     protected $fillable = ['name', 'email', 'mobile', 'organisation', 'designation', 'image', 'featured'];
 

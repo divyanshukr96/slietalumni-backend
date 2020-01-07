@@ -3,15 +3,17 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 use \Spatie\Permission\Models\Role as Model;
 use Str;
 
 /**
  * @method static latest()
  */
-class Role extends Model
+class Role extends Model implements Auditable
 {
     use SoftDeletes;
+    use \OwenIt\Auditing\Auditable;
 
     protected $fillable = ['name', 'display_name', 'description', 'guard_name'];
 

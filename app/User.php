@@ -13,6 +13,7 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Image\Exceptions\InvalidManipulation;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist;
@@ -31,10 +32,11 @@ use Spatie\Permission\Traits\HasRoles;
  * @method static whereUsername($username)
  * @method static whereEmail($email)
  */
-class User extends Authenticatable implements HasMedia
+class User extends Authenticatable implements HasMedia, Auditable
 {
 
     use HasApiTokens, Notifiable, HasRoles, UsesUuid, SoftDeletes, HasMediaTrait;
+    use \OwenIt\Auditing\Auditable;
 
     /**
      * The attributes that are mass assignable.

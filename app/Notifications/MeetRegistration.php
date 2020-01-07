@@ -51,11 +51,11 @@ class MeetRegistration extends Notification implements ShouldQueue
             'coming' => $this->alumni->family ? 'Family' : 'Single',
             'amount' => $this->alumni->fees
         ];
-        $date = date('Y');
+        $year = date('Y');
         return (new MailMessage)
-            ->subject(`SLIET Alumni Meet $date Registration`)
+            ->subject(`SLIET Alumni Meet $year Registration`)
             ->replyTo('alumnicell@sliet.ac.in', 'SLIET Alumni Association')
-            ->markdown('emails.meet.success', ['data' => $data]);
+            ->markdown('emails.meet.success', ['data' => $data, 'year' => $year]);
     }
 
     /**

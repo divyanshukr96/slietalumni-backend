@@ -9,17 +9,20 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
+use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * @method static create(array $validateDta)
  * @method notify(Notifications\MeetRegistration $param)
+ * @method static latest()
  * @property mixed name
  * @property mixed family
  * @property mixed fees
  */
-class AlumniMeet extends Model
+class AlumniMeet extends Model implements Auditable
 {
     use UsesUuid, SoftDeletes, Notifiable;
+    use \OwenIt\Auditing\Auditable;
 
     protected $fillable = [
         'name', 'email', 'mobile',

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileIsTooBig;
@@ -20,9 +21,10 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property mixed professional
  * @property mixed academic
  */
-class DataCollection extends Model implements HasMedia
+class DataCollection extends Model implements HasMedia, Auditable
 {
     use SoftDeletes, UsesUuid, HasMediaTrait;
+    use \OwenIt\Auditing\Auditable;
 
     protected $fillable = ['name', 'email', 'mobile', 'profile', 'image'];
 

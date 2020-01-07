@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
+use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileIsTooBig;
@@ -26,9 +27,10 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @property static verified_at
  * @property mixed name
  */
-class Registration extends Model implements HasMedia
+class Registration extends Model implements HasMedia, Auditable
 {
     use SoftDeletes, UsesUuid, HasMediaTrait, Notifiable;
+    use \OwenIt\Auditing\Auditable;
 
     protected $fillable = ['name', 'email', 'mobile', 'programme', 'branch', 'passing', 'batch', 'organisation', 'designation', 'image', 'linkdein'];
 
@@ -56,7 +58,10 @@ class Registration extends Model implements HasMedia
      */
     public function getImageUrlAttribute()
     {
-        return $this->getMedia()->first()->getUrl();
+        $data = $this->getMedia()->first();
+        if ($data) return $data->getUrl();
+
+        return $data;
     }
 
     /**

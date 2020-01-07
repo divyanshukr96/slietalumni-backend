@@ -6,6 +6,7 @@ use App\Traits\UsesUuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Image\Exceptions\InvalidManipulation;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\DiskDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist;
@@ -23,9 +24,10 @@ use Str;
  * @property mixed published_by
  * @property string published_at
  */
-class News extends Model implements HasMedia
+class News extends Model implements HasMedia, Auditable
 {
     use UsesUuid, SoftDeletes, HasMediaTrait;
+    use \OwenIt\Auditing\Auditable;
 
     protected $fillable = ['title', 'description', 'content', 'social_link', 'cover'];
 
