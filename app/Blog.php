@@ -20,4 +20,8 @@ class Blog extends Model implements HasMedia, Auditable
     protected $fillable = ['title', 'content'];
 
 
+
+    protected $casts = [
+        'published' => 'boolean',
+    ];
 }

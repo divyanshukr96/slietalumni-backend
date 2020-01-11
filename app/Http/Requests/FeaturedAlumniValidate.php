@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\CustomRule;
 use App\Rules\PhoneNumber;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 class FeaturedAlumniValidate extends APIRequest
@@ -35,7 +33,7 @@ class FeaturedAlumniValidate extends APIRequest
                         return $query->where('featured', '>=', Carbon::today())->where('deleted_at', null);
                     })],
                 'featured' => 'required|date|after_or_equal:today',
-                'image' => 'required_without:alumni|image|max:2000'
+                'image' => 'nullable|image|max:2000'
             ];
         }
         return [

@@ -15,9 +15,16 @@ use OwenIt\Auditing\Contracts\Auditable;
  * @method static create(array $validateDta)
  * @method notify(Notifications\MeetRegistration $param)
  * @method static latest()
+ * @method static whereNotNull(string $string)
  * @property mixed name
+ * @property mixed year
  * @property mixed family
  * @property mixed fees
+ * @property mixed verified
+ * @property mixed payment
+ * @property Carbon verified_at
+ * @property mixed verified_by
+ * @property string meet_id
  */
 class AlumniMeet extends Model implements Auditable
 {
@@ -36,7 +43,7 @@ class AlumniMeet extends Model implements Auditable
      * @param $data
      * @return int
      */
-    private static function fees($data)
+    public static function fees($data)
     {
         if ($data->family) {
             return 3500; // Alumni Meet Registration fees with family
@@ -70,5 +77,21 @@ class AlumniMeet extends Model implements Auditable
     {
         return $this->morphOne(PaymentReceipt::class, 'paymentable');
     }
+
+
+    /**
+     * @return BelongsTo
+     */
+    public function verifyBy()
+    {
+        return $this->belongsTo(User::class, 'verified_by');
+    }
+
+
+    protected $casts = [
+        'accommodation' => 'boolean',
+        'verified' => 'boolean',
+        'family' => 'boolean',
+    ];
 
 }

@@ -18,6 +18,7 @@ Route::group(['prefix' => "public"], function () {
     Route::get('events', 'PublicController@events');
     Route::get('featured-alumni', 'PublicController@featuredAlumni');
     Route::get('news-stories', 'PublicController@newsAndStories');
+    Route::get('members', 'PublicController@members');
 });
 
 Route::post('contact', 'API\ContactController@store');
@@ -54,7 +55,11 @@ Route::group(['middleware' => 'auth:api'], function () {
         'carousel' => 'API\CarouselController',
         'news' => 'API\NewsController',
         'events' => 'API\EventController',
+        'members' => 'API\MemberController',
     ]);
+
+    Route::post('alumni-meet/confirm/{alumni_meet}', 'API\AlumniMeetController@confirm');
+    Route::apiResource('alumni-meet', 'API\AlumniMeetController')->except('store');
 
     Route::apiResource('donation', 'API\DonationController')->except('store');
     Route::apiResource('contact', 'API\ContactController')->except('store');
@@ -68,6 +73,9 @@ Route::group(['middleware' => 'auth:api'], function () {
 
 });
 
+Route::apiResources([
+
+]);
 
 //Route::post('/blog/create', 'BlogController@store');
 

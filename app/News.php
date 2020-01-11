@@ -84,4 +84,10 @@ class News extends Model implements HasMedia, Auditable
         }
     }
 
+
+    protected $casts = [
+        'published' => 'boolean',
+    ];
+
+
 }

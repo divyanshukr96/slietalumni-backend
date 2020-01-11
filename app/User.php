@@ -116,6 +116,14 @@ class User extends Authenticatable implements HasMedia, Auditable
     }
 
     /**
+     * @return HasMany
+     */
+    public function alumniMeet()
+    {
+        return $this->hasMany(AlumniMeet::class);
+    }
+
+    /**
      * @param $profile
      * @throws DiskDoesNotExist
      * @throws FileDoesNotExist
@@ -158,4 +166,10 @@ class User extends Authenticatable implements HasMedia, Auditable
         } catch (InvalidManipulation $e) {
         }
     }
+
+    protected $casts = [
+        'is_alumni' => 'boolean',
+        'active' => 'boolean',
+    ];
+
 }

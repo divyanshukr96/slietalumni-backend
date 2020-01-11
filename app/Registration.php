@@ -96,4 +96,9 @@ class Registration extends Model implements HasMedia, Auditable
         return $this->user()->first();
     }
 
+
+    protected $casts = [
+        'verified' => 'boolean',
+    ];
+
 }

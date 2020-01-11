@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\API;
 
 use App\FeaturedAlumni;
+use App\Http\Requests\FeaturedAlumniUpdateValidate;
 use App\Http\Requests\FeaturedAlumniValidate;
 use App\Http\Resources\FeaturedAlumni as FeaturedAlumniResource;
 use App\Http\Resources\FeaturedAlumniSearch;
 use App\User;
+use Exception;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response as ResponseAlias;
@@ -18,7 +20,7 @@ class FeaturedAlumniController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return AnonymousResourceCollection
+     * @return JsonResponse|AnonymousResourceCollection
      */
     public function index()
     {
@@ -43,7 +45,7 @@ class FeaturedAlumniController extends Controller
             $alumni = FeaturedAlumni::create($request->validated());
         }
 
-        return new  FeaturedAlumniResource($alumni);
+        return new FeaturedAlumniResource($alumni);
     }
 
     /**
@@ -65,23 +67,26 @@ class FeaturedAlumniController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param FeaturedAlumni $featuredAlumni
-     * @return ResponseAlias
+     * @param FeaturedAlumniUpdateValidate $request
+     * @param FeaturedAlumni $featured_alumnus
+     * @return FeaturedAlumniResource
      */
-    public function update(Request $request, FeaturedAlumni $featuredAlumni)
+    public function update(FeaturedAlumniUpdateValidate $request, FeaturedAlumni $featured_alumnus)
     {
-        //
+        $featured_alumnus->update($request->validated());
+        return new FeaturedAlumniResource($featured_alumnus);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param FeaturedAlumni $featuredAlumni
-     * @return ResponseAlias
+     * @param FeaturedAlumni $featured_alumnus
+     * @return FeaturedAlumniResource|ResponseAlias
+     * @throws Exception
      */
-    public function destroy(FeaturedAlumni $featuredAlumni)
+    public function destroy(FeaturedAlumni $featured_alumnus)
     {
-        //
+        $featured_alumnus->delete();
+        return new FeaturedAlumniResource($featured_alumnus);
     }
 }

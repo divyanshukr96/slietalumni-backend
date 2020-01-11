@@ -9,6 +9,7 @@ use App\News;
 use Carbon\Carbon;
 use Exception;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use Request;
@@ -82,7 +83,7 @@ class NewsController extends Controller
      * Remove the specified resource from storage.
      *
      * @param News $news
-     * @return Response
+     * @return JsonResponse|Response
      * @throws Exception
      */
     public function destroy(News $news)

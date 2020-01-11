@@ -30,14 +30,14 @@ class FeaturedAlumni extends JsonResource
     {
         if ($this->alumni) {
             $data = [
+                "registered" => true,
                 'name' => $this->alumni['name'],
                 'email' => $this->alumni['email'],
                 'mobile' => $this->alumni['mobile'],
-                'organisation' => $this->alumni['organisation'],
-                'designation' => $this->alumni['designation'],
-                'image' => $this->alumni['profile'] ?: $this->when($this->image, function () {
-                    return $this->image->getUrl();
-                }),
+                $this->mergeWhen($this->alumni->professionals->first(), [
+                    'organisation' => $this->alumni->professionals->first()['organisation'],
+                    'designation' => $this->alumni->professionals->first()['designation'],
+                ]),
             ];
         } else {
             $data = [
@@ -46,13 +46,15 @@ class FeaturedAlumni extends JsonResource
                 'mobile' => $this->mobile,
                 'organisation' => $this->organisation,
                 'designation' => $this->designation,
-                'image' => $this->when($this->image, function () {
-                    return $this->image->getUrl();
-                }),
             ];
         }
 
         return array_merge(['id' => $this->id], $data, [
+
+            'image' => $this->image ? $this->image->getUrl() : $this->when($this->alumni, function () {
+                return $this->alumni['profile'];
+            }),
+
             'featured' => Carbon::parse($this->featured)->format('d M Y'),
             'created_at' => Carbon::parse($this->created_at)->format('d-m-Y'),
         ]);

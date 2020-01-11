@@ -71,7 +71,7 @@ class RegistrationController extends Controller
      *
      * @param RegistrationPaymentValidation $request
      * @param Registration $alumni
-     * @return RegisteredAlumni
+     * @return RegisteredAlumni|JsonResponse
      */
     public function update(RegistrationPaymentValidation $request, Registration $alumni)
     {
@@ -102,7 +102,7 @@ class RegistrationController extends Controller
      * Update the specified resource in storage.
      *
      * @param SetUsernameValidate $request
-     * @return UserResource
+     * @return UserResource|JsonResponse
      */
     public function setUsername(SetUsernameValidate $request)
     {

@@ -18,4 +18,9 @@ class Contact extends Model implements Auditable
 
     protected $fillable = ['name', 'email', 'subject', 'message'];
 
+
+    protected $casts = [
+        'status' => 'boolean',
+    ];
+
 }

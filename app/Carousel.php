@@ -16,6 +16,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
  * @method static whereActive(bool $true)
  * @method static latest()
  * @method static create(array $validated)
+ * @property mixed active
  */
 class Carousel extends Model implements HasMedia, Auditable
 {
@@ -43,5 +44,10 @@ class Carousel extends Model implements HasMedia, Auditable
         $data = $this->getMedia('carousel')->last();
         return $data ?: null;
     }
+
+
+    protected $casts = [
+        'active' => 'boolean',
+    ];
 
 }

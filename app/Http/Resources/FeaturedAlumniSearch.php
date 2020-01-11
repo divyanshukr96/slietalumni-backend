@@ -36,11 +36,17 @@ class FeaturedAlumniSearch extends JsonResource
             "active" => $this->active,
             "is_alumni" => $this->is_alumni,
             'organisation' => $this->when($this->professionals, function () {
-                return $this->professionals->first()->organisation;
+                return $this->professionals->first()['organisation'];
             }),
             'designation' => $this->when($this->professionals, function () {
-                return $this->professionals->first()->designation;
+                return $this->professionals->first()['designation'];
             }),
+
+            $this->mergeWhen($this->getMedia('profile')->last(), [
+                "image" => $this->getMedia('profile')->last()->getFullUrl(),
+                "image_thumb" => $this->getMedia('profile')->last()->getFullUrl('thumb'),
+            ]),
+
             "created_at" => Carbon::parse($this->created_at)->format('d-m-Y H:i'),
         ];
     }

@@ -22,6 +22,7 @@ use Str;
  * @property mixed published_at
  * @property mixed imageUrls
  * @property mixed published
+ * @property mixed publisher
  * @method getMedia()
  */
 class Event extends JsonResource
@@ -56,7 +57,9 @@ class Event extends JsonResource
             'created_at' => Carbon::parse($this->created_at)->format('d-m-Y'),
             $this->mergeWhen($this->published, [
                 'published' => $this->published,
-                'published_by' => Str::ucfirst($this->published_by),
+                'published_by' => $this->when($this->publisher, function () {
+                    return $this->publisher->name;
+                }),
                 'published_at' => Carbon::parse($this->published_at)->format('d M Y'),
             ]),
         ];

@@ -12,13 +12,14 @@ use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileDoesNotExist;
 use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileIsTooBig;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Str;
 
 class PaymentReceipt extends Model implements HasMedia, Auditable
 {
     use SoftDeletes, UsesUuid, HasMediaTrait;
     use \OwenIt\Auditing\Auditable;
 
-    protected $fillable = ['receipt', 'amount'];
+    protected $fillable = ['receipt', 'amount', 'mode', 'description'];
 
     /**
      * @return MorphTo
@@ -26,6 +27,11 @@ class PaymentReceipt extends Model implements HasMedia, Auditable
     public function paymentable()
     {
         return $this->morphTo();
+    }
+
+    public function setModeAttribute($value)
+    {
+        $this->attributes['mode'] = Str::upper($value);
     }
 
     /**
@@ -38,5 +44,10 @@ class PaymentReceipt extends Model implements HasMedia, Auditable
     {
         $this->addMedia($receipt)->toMediaCollection('payment_receipt');
     }
+
+
+    protected $casts = [
+        'verified' => 'boolean',
+    ];
 
 }

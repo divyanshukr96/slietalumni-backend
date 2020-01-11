@@ -10,8 +10,10 @@ use App\Http\Resources\Event as EventResource;
 use Carbon\Carbon;
 use Exception;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
+use Request;
 
 class EventController extends Controller
 {
@@ -58,21 +60,20 @@ class EventController extends Controller
      */
     public function update(EventStoreValidate $request, Event $event)
     {
-        $event->fill($request->validated());
-        $event->save();
+        $event->update($request->validated());
         return new EventResource($event);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param EventPublishValidate $request
+     * @param Request $request
      * @param Event $event
      * @return EventResource
      */
-    public function publish(EventPublishValidate $request, Event $event)
+    public function publish(Request $request, Event $event)
     {
-        $event->published = $request->validated()['publish'];
+        $event->published = !$event->published ;
         $event->published_by = auth()->user()->getAuthIdentifier();
         $event->published_at = Carbon::now();
         $event->save();
@@ -83,7 +84,7 @@ class EventController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Event $event
-     * @return Response
+     * @return JsonResponse|Response
      * @throws Exception
      */
     public function destroy(Event $event)

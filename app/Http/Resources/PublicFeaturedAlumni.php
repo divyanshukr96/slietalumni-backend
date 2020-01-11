@@ -26,14 +26,14 @@ class PublicFeaturedAlumni extends JsonResource
             'name' => $this->name ?: $this->when($this->alumni, function () {
                 return $this->alumni->name;
             }),
-            'image' => $this->alumni['profile_thumb'] ?: $this->when($this->image, function () {
-                return $this->image->getUrl('thumb');
+            'image' => $this->image ? $this->image->getUrl('thumb') : $this->when($this->alumni, function () {
+                return $this->alumni['profile_thumb'];
             }),
-            'designation' => $this->designation ?: $this->when($this->alumni, function () {
-                return $this->alumni['designation'];
+            'designation' => $this->designation ?: $this->when($this->alumni and $this->alumni->professionals, function () {
+                return $this->alumni->professionals->first()['designation'];
             }),
-            'organisation' => $this->organisation ?: $this->when($this->alumni, function () {
-                return $this->alumni['organisation'];
+            'organisation' => $this->organisation ?: $this->when($this->alumni and $this->alumni->professionals, function () {
+                return $this->alumni->professionals->first()['organisation'];
             }),
 
         ];

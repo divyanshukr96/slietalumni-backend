@@ -77,6 +77,14 @@ class Event extends Model implements HasMedia, Auditable
         return $data ? $data->getUrl() : null;
     }
 
+    /**
+     * @return BelongsTo
+     */
+    public function publisher()
+    {
+        return $this->belongsTo(User::class, 'published_by');
+    }
+
 
     /**
      * @param Media|null $media
@@ -90,5 +98,10 @@ class Event extends Model implements HasMedia, Auditable
         } catch (InvalidManipulation $e) {
         }
     }
+
+
+    protected $casts = [
+        'published' => 'boolean',
+    ];
 
 }

@@ -5,15 +5,20 @@ namespace App\Http\Controllers;
 use App\Carousel;
 use App\Event;
 use App\FeaturedAlumni;
+use App\Http\Resources\Member as MemberResource;
 use App\Http\Resources\PublicCarousel;
 use App\Http\Resources\PublicEvent;
 use App\Http\Resources\PublicFeaturedAlumni;
 use App\Http\Resources\PublicNewsAndStories;
+use App\Member;
 use App\News;
+use App\Traits\MemberTypes;
 use Illuminate\Support\Carbon;
 
 class PublicController extends Controller
 {
+    use MemberTypes;
+
     public function carousel()
     {
         $carousel = Carousel::whereActive(true)->latest()->get();
@@ -35,5 +40,12 @@ class PublicController extends Controller
     {
         $newsStories = News::wherePublished(true)->latest()->get();
         return PublicNewsAndStories::collection($newsStories);
+    }
+
+    public function members()
+    {
+        $orderBy = self::$memberOrderBy;
+        $members = Member::orderByRaw("FIELD(designation , $orderBy)")->get();
+        return MemberResource::collection($members);
     }
 }

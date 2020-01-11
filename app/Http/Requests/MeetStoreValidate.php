@@ -25,6 +25,12 @@ class MeetStoreValidate extends FormRequest
      */
     public function rules()
     {
+        if (strtoupper(request()->method()) !== "POST")
+            return [
+                'family' => 'nullable|boolean',
+                'accommodation' => 'nullable|boolean',
+            ];
+
         return [
             'member' => 'nullable|exists:users,email|unique:alumni_meets,email',
 

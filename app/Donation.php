@@ -69,4 +69,9 @@ class Donation extends Model implements HasMedia, Auditable
     }
 
 
+
+    protected $casts = [
+        'verified' => 'boolean',
+    ];
+
 }
