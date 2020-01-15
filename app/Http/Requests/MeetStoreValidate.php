@@ -6,7 +6,7 @@ use App\Rules\NotExists;
 use App\Rules\PhoneNumber;
 use Illuminate\Foundation\Http\FormRequest;
 
-class MeetStoreValidate extends FormRequest
+class MeetStoreValidate extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.

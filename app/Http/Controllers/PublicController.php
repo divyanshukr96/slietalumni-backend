@@ -14,7 +14,9 @@ use App\Http\Resources\PublicFeaturedAlumni;
 use App\Http\Resources\PublicNewsAndStories;
 use App\Member;
 use App\News;
+use App\PublicNotice;
 use App\Traits\MemberTypes;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Support\Carbon;
 
@@ -74,5 +76,16 @@ class PublicController extends Controller
     {
         $donations = Donation::whereVerified(true)->latest()->get();
         return PublicDonation::collection($donations);
+    }
+
+    /**
+     * @return JsonResponse|AnonymousResourceCollection
+     */
+    public function notice()
+    {
+        $donations = PublicNotice::whereDate('notice_till', '>=', Carbon::today()->toDateString());
+        return response()->json([
+            'data' => $donations->latest()->get()
+        ]);
     }
 }

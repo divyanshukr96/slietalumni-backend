@@ -20,14 +20,15 @@ Route::group(['prefix' => "public"], function () {
     Route::get('carousel', 'PublicController@carousel');
     Route::get('members', 'PublicController@members');
     Route::get('events', 'PublicController@events');
+    Route::get('notice', 'PublicController@notice');
 });
 
 Route::post('contact', 'API\ContactController@store');
 Route::post('donation', 'API\DonationController@store');
-Route::post('meet/register', 'API\AlumniMeetController@store');
+Route::post('meet/registration', 'API\AlumniMeetController@store');
 
 
-Route::post('/alumni/register', 'RegistrationController@store');
+Route::post('/alumni/registration', 'RegistrationController@store');
 Route::post('/set-username', 'RegistrationController@setUsername');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

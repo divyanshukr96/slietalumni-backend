@@ -13,6 +13,7 @@ use OwenIt\Auditing\Contracts\Auditable;
 /**
  * @method static create(array $validated)
  * @method static latest()
+ * @method static whereDate(string $string, string $string1, string $toDateString)
  */
 class PublicNotice extends Model implements Auditable
 {

@@ -25,21 +25,10 @@
   <component name="ChangeListManager">
     <list default="true" id="12e1a7c7-84a2-40b0-b66c-2b6a57bb2d36" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DataCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Donation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Donation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/DonationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/DonationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DataCollectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DataCollectionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PublicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PublicController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DonationConfirmationValidation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DonationConfirmationValidation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/DonationStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/DonationStoreValidate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/DataCollection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/DataCollection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Donation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Donation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_data_collections_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_04_11_161823_create_data_collections_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_01_153030_create_donations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_01_153030_create_donations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/MeetStoreValidate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/MeetStoreValidate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/PublicNotice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/PublicNotice.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -387,7 +376,8 @@
       <workItem from="1578350991062" duration="18291000" />
       <workItem from="1578552843924" duration="61902000" />
       <workItem from="1578901231689" duration="4297000" />
-      <workItem from="1579038497073" duration="7254000" />
+      <workItem from="1579038497073" duration="12673000" />
+      <workItem from="1579095699140" duration="2488000" />
     </task>
     <servers />
   </component>
@@ -460,22 +450,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1576647782613" />
-    <state width="1877" height="258" key="GridCell.Tab.0.bottom" timestamp="1579065322810">
+    <state width="1877" height="258" key="GridCell.Tab.0.bottom" timestamp="1579096677409">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579065322810" />
-    <state width="1877" height="258" key="GridCell.Tab.0.center" timestamp="1579065322810">
+    <state width="1877" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579096677409" />
+    <state width="1877" height="258" key="GridCell.Tab.0.center" timestamp="1579096677408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579065322810" />
-    <state width="1877" height="258" key="GridCell.Tab.0.left" timestamp="1579065322810">
+    <state width="1877" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579096677408" />
+    <state width="1877" height="258" key="GridCell.Tab.0.left" timestamp="1579096677408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579065322810" />
-    <state width="1877" height="258" key="GridCell.Tab.0.right" timestamp="1579065322810">
+    <state width="1877" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579096677408" />
+    <state width="1877" height="258" key="GridCell.Tab.0.right" timestamp="1579096677409">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579065322810" />
+    <state width="1877" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579096677409" />
     <state x="734" y="318" key="NewPhpClassDialog" timestamp="1578047199551">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -488,17 +478,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575956046955" />
-    <state x="636" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1578552883218">
+    <state x="636" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1579095714032">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="636" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578552883218" />
+    <state x="636" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579095714032" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1576079663792">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576079663792" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1579061383478">
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1579096575165">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579061383478" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579096575165" />
   </component>
 </project>
