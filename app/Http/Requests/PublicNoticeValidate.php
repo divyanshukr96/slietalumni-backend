@@ -2,10 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Rules\UserPasswordVerify;
 use Illuminate\Foundation\Http\FormRequest;
 
-class DonationConfirmationValidation extends APIRequest
+class PublicNoticeValidate extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,16 +24,15 @@ class DonationConfirmationValidation extends APIRequest
     public function rules()
     {
         return [
-            'password' => ['required', 'min:6', new UserPasswordVerify],
-            'confirm_amount' => ['required', 'integer'],
-            'description' => 'nullable|string',
+            'notice' => 'required|min:200',
+            'notice_till' => 'required|date|after:today'
         ];
     }
 
     public function attributes()
     {
         return [
-            'confirm_amount' => 'amount'
+            'notice' => 'notice content'
         ];
     }
 }

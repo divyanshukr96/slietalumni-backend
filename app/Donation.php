@@ -16,6 +16,7 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 /**
  * @method static create(array $validated)
  * @method static latest()
+ * @method static whereVerified(bool $true)
  * @property mixed verified_by
  * @property bool verified
  * @property bool verified_at
@@ -27,7 +28,7 @@ class Donation extends Model implements HasMedia, Auditable
     use SoftDeletes, UsesUuid, HasMediaTrait;
     use \OwenIt\Auditing\Auditable;
 
-    protected $fillable = ['name', 'email', 'mobile', 'organisation', 'designation', 'category', 'amount', 'receipt', 'member'];
+    protected $fillable = ['name', 'email', 'mobile', 'organisation', 'designation', 'category', 'amount', 'receipt', 'member', 'confirm_amount', 'description'];
 
 
     /**
@@ -69,9 +70,9 @@ class Donation extends Model implements HasMedia, Auditable
     }
 
 
-
     protected $casts = [
         'verified' => 'boolean',
+        'confirm_amount' => 'string'
     ];
 
 }

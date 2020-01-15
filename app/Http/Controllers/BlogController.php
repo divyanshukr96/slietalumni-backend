@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Image;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\NewsStoreValidate;
 use Illuminate\Http\Response;
@@ -34,7 +35,7 @@ class BlogController extends Controller
      * Store a newly created resource in storage.
      *
      * @param NewsStoreValidate $request
-     * @return Response
+     * @return JsonResponse|Response
      */
     public function store(NewsStoreValidate $request)
     {
@@ -56,7 +57,7 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Blog  $blog
+     * @param Blog $blog
      * @return Response
      */
     public function show(Blog $blog)
@@ -67,7 +68,7 @@ class BlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Blog  $blog
+     * @param Blog $blog
      * @return Response
      */
     public function edit(Blog $blog)
@@ -78,8 +79,8 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Blog  $blog
+     * @param Request $request
+     * @param Blog $blog
      * @return Response
      */
     public function update(Request $request, Blog $blog)
@@ -90,7 +91,7 @@ class BlogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Blog  $blog
+     * @param Blog $blog
      * @return Response
      */
     public function destroy(Blog $blog)

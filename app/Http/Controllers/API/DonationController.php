@@ -46,7 +46,7 @@ class DonationController extends Controller
      * Store a newly created resource in storage.
      *
      * @param DonationStoreValidate $request
-     * @return Response
+     * @return JsonResponse|Response
      */
     public function store(DonationStoreValidate $request)  // public can access this to post a donation
     {
@@ -112,6 +112,7 @@ class DonationController extends Controller
     public function update(DonationConfirmationValidation $request, Donation $donation)
     {
         if ($donation->verified) return new DonationResource($donation);
+        $donation->fill($request->validated());
         $donation->verified_by = auth()->user()->getAuthIdentifier();
         $donation->verified_at = Carbon::now();
         $donation->verified = true;
@@ -123,12 +124,12 @@ class DonationController extends Controller
      * Remove the specified resource from storage.
      *
      * @param Donation $donation
-     * @return Response
+     * @return DonationResource
      * @throws Exception
      */
     public function destroy(Donation $donation)
     {
         $donation->delete();
-        return response()->json($donation, 204);
+        return new DonationResource($donation);
     }
 }

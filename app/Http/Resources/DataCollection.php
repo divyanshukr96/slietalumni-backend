@@ -21,6 +21,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
  * @property mixed professional
  * @property mixed image
  * @property mixed name
+ * @property mixed creator
  */
 class DataCollection extends JsonResource
 {
@@ -68,6 +69,9 @@ class DataCollection extends JsonResource
                 return $this->image->getUrl();
             }),
 
+            'created_by' => $this->when($this->creator, function () {
+                return $this->creator->name;
+            }),
 
             "created_at" => Carbon::parse($this->created_at)->format('d M Y h:m'),
         ];

@@ -7,6 +7,7 @@ use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Spatie\Permission\Exceptions\UnauthorizedException;
@@ -49,7 +50,7 @@ class Handler extends ExceptionHandler
      *
      * @param Request $request
      * @param Exception $exception
-     * @return Response
+     * @return JsonResponse|Response
      */
     public function render($request, Exception $exception)
     {

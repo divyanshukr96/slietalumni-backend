@@ -7,6 +7,7 @@ use App\Http\Requests\AlumniDataCollectionStoreValidate;
 use App\Http\Requests\AlumniDataCollectionUpdateValidate;
 use App\Http\Resources\DataCollection as DataCollectionResource;
 use Carbon\Carbon;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 
@@ -72,7 +73,7 @@ class DataCollectionController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
-     * @return Response
+     * @return JsonResponse|Response
      */
     public function destroy($id)
     {

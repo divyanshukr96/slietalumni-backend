@@ -14,11 +14,12 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['prefix' => "public"], function () {
-    Route::get('carousel', 'PublicController@carousel');
-    Route::get('events', 'PublicController@events');
     Route::get('featured-alumni', 'PublicController@featuredAlumni');
     Route::get('news-stories', 'PublicController@newsAndStories');
+    Route::get('donation', 'PublicController@donation');
+    Route::get('carousel', 'PublicController@carousel');
     Route::get('members', 'PublicController@members');
+    Route::get('events', 'PublicController@events');
 });
 
 Route::post('contact', 'API\ContactController@store');
@@ -56,6 +57,7 @@ Route::group(['middleware' => 'auth:api'], function () {
         'news' => 'API\NewsController',
         'events' => 'API\EventController',
         'members' => 'API\MemberController',
+        'publicnotice' => 'API\PublicNoticeController',
     ]);
 
     Route::post('alumni-meet/confirm/{alumni_meet}', 'API\AlumniMeetController@confirm');

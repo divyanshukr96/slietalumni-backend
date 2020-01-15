@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDataCollectionsTable extends Migration
+class CreatePublicNoticesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,12 @@ class CreateDataCollectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('data_collections', function (Blueprint $table) {
+        Schema::create('public_notices', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('user_id')->nullable();
 
-            $table->string('name');
-            $table->string('email')->nullable();
-            $table->string('mobile')->nullable();
-            $table->string('created_by')->nullable();
-            $table->text('extra')->nullable();
+            $table->text('notice');
+            $table->date('notice_till')->nullable();
 
             $table->softDeletes();
             $table->timestamps();
@@ -33,6 +31,6 @@ class CreateDataCollectionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('data_collections');
+        Schema::dropIfExists('public_notices');
     }
 }

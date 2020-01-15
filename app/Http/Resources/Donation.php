@@ -23,6 +23,9 @@ use Str;
  * @property mixed verified
  * @property mixed verified_by
  * @property mixed verified_at
+ * @property mixed verifyBy
+ * @property mixed confirm_amount
+ * @property mixed description
  */
 class Donation extends JsonResource
 {
@@ -44,10 +47,18 @@ class Donation extends JsonResource
             "designation" => $this->designation,
             "category" => $this->category,
             "amount" => $this->amount,
+            "confirm_amount" => $this->when($this->confirm_amount, function () {
+                return $this->confirm_amount;
+            }),
             "receipt" => $this->receipt,
+            "description" => $this->when($this->description, function () {
+                return $this->description;
+            }),
             $this->mergeWhen($this->verified, [
                 'verified' => $this->verified,
-                'verified_by' => $this->verified_by,
+                'verified_by' => $this->when($this->verifyBy, function () {
+                    return $this->verifyBy->name;
+                }),
                 'verified_at' => Carbon::parse($this->verified_at)->format('d M Y'),
             ]),
             "created_at" => Carbon::parse($this->created_at)->format('d-m-Y H:i'),

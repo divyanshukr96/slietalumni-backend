@@ -3,8 +3,10 @@
 namespace App;
 
 use App\Traits\UsesUuid;
+use Auth;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use OwenIt\Auditing\Contracts\Auditable;
@@ -26,7 +28,7 @@ class DataCollection extends Model implements HasMedia, Auditable
     use SoftDeletes, UsesUuid, HasMediaTrait;
     use \OwenIt\Auditing\Auditable;
 
-    protected $fillable = ['name', 'email', 'mobile', 'profile', 'image'];
+    protected $fillable = ['name', 'email', 'mobile', 'profile', 'image', 'extra'];
 
     /**
      *
@@ -36,6 +38,9 @@ class DataCollection extends Model implements HasMedia, Auditable
         parent::boot();
         static::addGlobalScope('orderCreate', function (Builder $builder) {
             $builder->orderBy('created_at', 'DESC');
+        });
+        self::creating(function ($query) {
+            $query->created_by = Auth::user()->getAuthIdentifier();
         });
     }
 
@@ -53,6 +58,14 @@ class DataCollection extends Model implements HasMedia, Auditable
     public function professional()
     {
         return $this->morphOne(Professional::class, 'professionalable');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'created_by');
     }
 
     /**
@@ -82,5 +95,9 @@ class DataCollection extends Model implements HasMedia, Auditable
     {
         return $this->getMedia('data_collection')->last();
     }
+
+    protected $casts = [
+        'extra' => 'array'
+    ];
 
 }

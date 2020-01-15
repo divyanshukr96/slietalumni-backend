@@ -23,7 +23,7 @@ class CreateDonationsTable extends Migration
             $table->string('designation')->nullable();
             $table->string('category')->nullable();
             $table->string('amount');
-//            $table->string('receipt')->nullable();
+
             $table->string('member')->nullable();
 
             $table->boolean('verified')->default(false);
