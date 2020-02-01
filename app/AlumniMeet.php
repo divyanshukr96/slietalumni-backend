@@ -46,9 +46,9 @@ class AlumniMeet extends Model implements Auditable
     public static function fees($data)
     {
         if ($data->family) {
-            return 3500; // Alumni Meet Registration fees with family
+            return 2500; // Alumni Meet Registration fees with family
         }
-        return 2500; // Alumni Meet Registration fees
+        return 1500; // Alumni Meet Registration fees
     }
 
 

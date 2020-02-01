@@ -6,11 +6,13 @@ use App\Carousel;
 use App\Donation;
 use App\Event;
 use App\FeaturedAlumni;
+use App\GalleryImage;
 use App\Http\Resources\Member as MemberResource;
 use App\Http\Resources\PublicCarousel;
 use App\Http\Resources\PublicDonation;
 use App\Http\Resources\PublicEvent;
 use App\Http\Resources\PublicFeaturedAlumni;
+use App\Http\Resources\PublicGallery;
 use App\Http\Resources\PublicNewsAndStories;
 use App\Member;
 use App\News;
@@ -87,5 +89,11 @@ class PublicController extends Controller
         return response()->json([
             'data' => $donations->latest()->get()
         ]);
+    }
+
+
+    public function gallery()
+    {
+        return PublicGallery::collection(GalleryImage::latest()->get());
     }
 }

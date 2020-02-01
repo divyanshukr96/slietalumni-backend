@@ -21,9 +21,11 @@ Route::group(['prefix' => "public"], function () {
     Route::get('members', 'PublicController@members');
     Route::get('events', 'PublicController@events');
     Route::get('notice', 'PublicController@notice');
+    Route::get('gallery', 'PublicController@gallery');
 });
 
-Route::post('contact', 'API\ContactController@store');
+Route::post('contact', 'API\ContactController@store');  // depreciated
+Route::post('enquiry', 'API\ContactController@store');
 Route::post('donation', 'API\DonationController@store');
 Route::post('meet/registration', 'API\AlumniMeetController@store');
 
@@ -61,11 +63,19 @@ Route::group(['middleware' => 'auth:api'], function () {
         'publicnotice' => 'API\PublicNoticeController',
     ]);
 
+    Route::prefix('gallery')->group(function () {
+        Route::apiResources([
+            'image' => 'API\GalleryImageController',
+            'album' => 'API\GalleryAlbumController',
+        ]);
+    });
+
     Route::post('alumni-meet/confirm/{alumni_meet}', 'API\AlumniMeetController@confirm');
     Route::apiResource('alumni-meet', 'API\AlumniMeetController')->except('store');
 
     Route::apiResource('donation', 'API\DonationController')->except('store');
-    Route::apiResource('contact', 'API\ContactController')->except('store');
+    Route::apiResource('contact', 'API\ContactController')->except('store'); // depreciated
+    Route::apiResource('enquiry', 'API\ContactController')->except('store');
     Route::patch('news/{news}/publish', 'API\NewsController@publish')->name('news.publish');
     Route::patch('events/{event}/publish', 'API\EventController@publish')->name('events.publish');
 
@@ -88,6 +98,6 @@ Route::apiResources([
 
 Route::fallback(function () {
     return response()->json([
-        'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);
+        'message' => 'Page Not Found. If error persists, contact enquiry@alietalumni.com'], 404);
 });
 

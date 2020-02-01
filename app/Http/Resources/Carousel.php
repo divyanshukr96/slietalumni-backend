@@ -24,8 +24,8 @@ class Carousel extends JsonResource
     {
         return [
             "id" => $this->id,
-            'image' => $this->image->file_name,
-            'image_url' => $this->image->getUrl(),
+            'image' => $this->image ? $this->image->file_name : null,
+            'image_url' => $this->image ? $this->image->getUrl() : null,
             "active" => $this->active,
             "created_at" => Carbon::parse($this->created_at)->format('d M Y h:m'),
         ];
