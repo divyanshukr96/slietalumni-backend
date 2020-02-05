@@ -13,7 +13,6 @@ use OwenIt\Auditing\Contracts\Auditable;
 
 /**
  * @method static create(array $validateDta)
- * @method notify(Notifications\MeetRegistration $param)
  * @method static latest()
  * @method static whereNotNull(string $string)
  * @property mixed name

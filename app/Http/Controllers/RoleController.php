@@ -50,12 +50,11 @@ class RoleController extends Controller
      * Update the specified resource in storage.
      *
      * @param RoleUpdateValidate $request
-     * @param int $id
+     * @param Role $role
      * @return RoleResource
      */
-    public function update(RoleUpdateValidate $request, $id)
+    public function update(RoleUpdateValidate $request, Role $role)
     {
-        $role = Role::findById($id);
         $d_name = $request->get('display_name');
         $desc = $request->get('description');
         if ($d_name != $role->display_name) $role->display_name = $d_name;

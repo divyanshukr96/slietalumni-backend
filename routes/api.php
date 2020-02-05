@@ -24,7 +24,7 @@ Route::group(['prefix' => "public"], function () {
     Route::get('gallery', 'PublicController@gallery');
 });
 
-Route::post('contact', 'API\ContactController@store');  // depreciated
+
 Route::post('enquiry', 'API\ContactController@store');
 Route::post('donation', 'API\DonationController@store');
 Route::post('meet/registration', 'API\AlumniMeetController@store');
@@ -74,7 +74,7 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::apiResource('alumni-meet', 'API\AlumniMeetController')->except('store');
 
     Route::apiResource('donation', 'API\DonationController')->except('store');
-    Route::apiResource('contact', 'API\ContactController')->except('store'); // depreciated
+
     Route::apiResource('enquiry', 'API\ContactController')->except('store');
     Route::patch('news/{news}/publish', 'API\NewsController@publish')->name('news.publish');
     Route::patch('events/{event}/publish', 'API\EventController@publish')->name('events.publish');

@@ -41,5 +41,6 @@ Route::get('password/reset/{token}', function ($token) {
 
 //
 //    return (new \App\Notifications\RegistrationConfirmation(App\Registration::first(), 'askdkjags'))->toMail('test@email.com')->render();
+//    return (new App\Notifications\MeetConfirmation(App\AlumniMeet::first()))->toMail('test@gmail.com')->render();
 
 //});

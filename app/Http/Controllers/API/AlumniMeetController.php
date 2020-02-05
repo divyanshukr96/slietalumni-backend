@@ -7,12 +7,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MeetConfirmValidate;
 use App\Http\Requests\MeetStoreValidate;
 use App\Http\Resources\AlumniMeet as AlumniMeetResource;
+use App\Notifications\MeetConfirmation;
 use App\Traits\AuthUser;
 use App\User;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Http\Response;
 use League\OAuth2\Server\ResourceServer;
@@ -139,7 +139,7 @@ class AlumniMeetController extends Controller
         }
         $alumniMeet->save();
 
-//        $alumniMeet->notify(new RegistrationConfirmation($alumni, $token));
+        $alumniMeet->notify(new MeetConfirmation($alumniMeet));
 
         return new AlumniMeetResource($alumniMeet);
     }
