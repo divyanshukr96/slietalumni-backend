@@ -7,7 +7,7 @@ The first step towards a great bond is taken. Thank you for registering on **SLI
 **“Great things take time”** – Your account is under evaluation. Once approved, a greeting will be sent to you in form of a Confirmation Email.
 
 
-A small price for a life time connection. For Life Membership, kindly pay your membership fee on the given bank details and send us a receipt of your payment on [association@slietalumni.com](mailto:association@slietalumni.com) for payment confirmation. The fee amount and bank details are mentioned below:-
+A small price for a life time connection. For Life Membership, kindly pay your membership fee on the given bank details and send us a receipt of your payment on [association@slietalumni.org](mailto:association@slietalumni.org) for payment confirmation. The fee amount and bank details are mentioned below:-
 
 
 For Domestic Alumni – Rs. 2000/-

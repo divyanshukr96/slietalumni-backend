@@ -1,6 +1,6 @@
 @component('mail::message')
-<span style="float: right; max-width: 120px;">![Student Alumni Cell](https://slietalumni.com/images/sac.png "Title")</span>
-<span style="float: left; max-width: 120px;">![SLIET Alumni Association](https://slietalumni.com/images/SAA-logo-color.png "Title")</span>
+<span style="float: right; max-width: 120px;">![Student Alumni Cell](https://slietalumni.org/images/sac.png "Title")</span>
+<span style="float: left; max-width: 120px;">![SLIET Alumni Association](https://slietalumni.org/images/SAA-logo-color.png "Title")</span>
 <div style="margin-top: 80px;"></div>
 #Greetings,
 # Dear {{ ucwords($data->name) }}

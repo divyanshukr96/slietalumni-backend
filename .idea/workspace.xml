@@ -24,12 +24,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12e1a7c7-84a2-40b0-b66c-2b6a57bb2d36" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AlumniMeet.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AlumniMeet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/AlumniMeetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/AlumniMeetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/RegistrationSuccess.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/RegistrationSuccess.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/RegistrationSuccess.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/RegistrationSuccess.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/meet/confirmation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/meet/confirmation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/registration/success.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/registration/success.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +37,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
+    <execution />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -74,6 +71,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -217,18 +222,18 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -242,6 +247,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -272,6 +278,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -389,11 +396,12 @@
       <workItem from="1580405537143" duration="1103000" />
       <workItem from="1580461365663" duration="9102000" />
       <workItem from="1580660814769" duration="17778000" />
+      <workItem from="1617436171885" duration="322000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.History.Properties">
     <option name="COLUMN_ORDER">
@@ -427,91 +435,11 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-    <option name="OPEN_TABS">
-      <set>
-        <option value="1" />
-      </set>
-    </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="727" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579243336704">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="727" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1579243336704" />
-    <state x="788" y="361" key="#com.intellij.ide.actions.DebugLogConfigureAction" timestamp="1577628204267">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="788" y="361" key="#com.intellij.ide.actions.DebugLogConfigureAction/0.0.1920.1040@0.0.1920.1040" timestamp="1577628204267" />
-    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580328328261">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580328328261" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580891140062">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580891140062" />
-    <state x="740" y="447" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1579416473193">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="447" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.0.1920.1040@0.0.1920.1040" timestamp="1579416473193" />
-    <state x="723" y="430" width="474" height="254" key="ComposerInitDialogKey" timestamp="1579245867878">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="723" y="430" width="474" height="254" key="ComposerInitDialogKey/0.0.1920.1040@0.0.1920.1040" timestamp="1579245867878" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1576647782613">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1576647782613" />
-    <state width="1877" height="258" key="GridCell.Tab.0.bottom" timestamp="1580885669623">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1580885669623" />
-    <state width="1877" height="258" key="GridCell.Tab.0.center" timestamp="1580885669623">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1580885669623" />
-    <state width="1877" height="258" key="GridCell.Tab.0.left" timestamp="1580885669623">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1580885669623" />
-    <state width="1877" height="258" key="GridCell.Tab.0.right" timestamp="1580885669623">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1580885669623" />
-    <state x="734" y="318" key="NewPhpClassDialog" timestamp="1578047199551">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="734" y="318" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578047199551" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1580328189766">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1580328189766" />
-    <state x="669" y="157" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1579451402000">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="669" y="157" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579451402000" />
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1575956046955">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1575956046955" />
-    <state x="636" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1580660823879">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="636" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580660823879" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1576079663792">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1576079663792" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1580892200131">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580892200131" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

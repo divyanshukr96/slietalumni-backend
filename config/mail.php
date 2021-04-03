@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@slietalumni.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@slietalumni.org'),
         'name' => env('MAIL_FROM_NAME', 'SLIET Alumni Association'),
     ],
 

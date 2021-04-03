@@ -35,7 +35,7 @@ class RegistrationSuccess extends Mailable implements ShouldQueue
     {
         $name = ucwords(strtolower($this->alumni->name));
         return $this->subject('SLIET Alumni Association Life Membership Registration')
-            ->replyTo('association@slietalumni.com', 'SLIET Alumni Association')
+            ->replyTo('association@slietalumni.org', 'SLIET Alumni Association')
             ->to($this->alumni->email, $name)
             ->markdown('emails.registration.success', ['name' => $name]);
     }

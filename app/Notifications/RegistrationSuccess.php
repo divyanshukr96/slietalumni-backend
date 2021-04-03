@@ -48,7 +48,7 @@ class RegistrationSuccess extends Notification implements ShouldQueue
         $name = ucwords(strtolower($this->alumni->name));
         return (new MailMessage)
             ->subject('SLIET Alumni Association Life Membership Registration')
-            ->replyTo('association@slietalumni.com', 'SLIET Alumni Association')
+            ->replyTo('association@slietalumni.org', 'SLIET Alumni Association')
             ->markdown('emails.registration.success', ['name' => $name]);
     }
 
