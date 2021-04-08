@@ -64,6 +64,26 @@ class PublicController extends Controller
     /**
      * @return AnonymousResourceCollection
      */
+    public function previousMembers()
+    {
+        $orderBy = self::$executiveMember;
+        $members = Member::orderByRaw("FIELD(designation , $orderBy)")->get();
+        return MemberResource::collection($members);
+    }
+
+    /**
+     * @return AnonymousResourceCollection
+     */
+    public function sacMembers()
+    {
+        $orderBy = self::$sacMemberOrderBy;
+        $members = Member::orderByRaw("FIELD(designation , $orderBy)")->where('sac', true)->whereDate('to', '>=', Carbon::today()->toDateString())->get();
+        return MemberResource::collection($members);
+    }
+
+    /**
+     * @return AnonymousResourceCollection
+     */
     public function members()
     {
         $orderBy = self::$memberOrderBy;
