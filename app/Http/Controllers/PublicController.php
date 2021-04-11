@@ -62,12 +62,14 @@ class PublicController extends Controller
     }
 
     /**
+     * @param $session
      * @return AnonymousResourceCollection
      */
-    public function previousMembers()
+    public function previousMembers($session)
     {
-        $orderBy = self::$executiveMember;
-        $members = Member::orderByRaw("FIELD(designation , $orderBy)")->get();
+        $mid = ($session - 1) .'-12-12';
+        $orderBy = self::$sacMemberOrderBy;
+        $members = Member::orderByRaw("FIELD(designation , $orderBy)")->where('sac', true)->whereDate('from', '<=', $mid)->whereDate('to', '>=', $mid)->get();
         return MemberResource::collection($members);
     }
 

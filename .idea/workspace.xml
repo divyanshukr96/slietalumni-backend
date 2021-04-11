@@ -24,11 +24,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12e1a7c7-84a2-40b0-b66c-2b6a57bb2d36" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ALumniBackend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ALumniBackend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PublicController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PublicController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/MemberTypes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/MemberTypes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +70,11 @@
     <select />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -406,7 +408,8 @@
       <workItem from="1617726446958" duration="885000" />
       <workItem from="1617727373659" duration="77000" />
       <workItem from="1617727467594" duration="1247000" />
-      <workItem from="1617901585766" duration="3488000" />
+      <workItem from="1617901585766" duration="3779000" />
+      <workItem from="1618132564502" duration="3723000" />
     </task>
     <servers />
   </component>

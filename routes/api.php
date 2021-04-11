@@ -20,6 +20,7 @@ Route::group(['prefix' => "public"], function () {
     Route::get('carousel', 'PublicController@carousel');
     Route::get('members', 'PublicController@members');
     Route::get('members/sac', 'PublicController@sacMembers');
+    Route::get('members/sac/{session}', 'PublicController@previousMembers');
     Route::get('events', 'PublicController@events');
     Route::get('notice', 'PublicController@notice');
     Route::get('gallery', 'PublicController@gallery');
